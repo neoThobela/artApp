@@ -19,12 +19,20 @@
                 {
                     "component": "artworkComponent",
                     "path": "artwork"
+                },
+                {
+                    "path": "shop",
+                    "component": "BuyArtComponent"
                 }
             ]
         },
         {
             "path": "login",
             "component": "loginComponent"
+        },
+        {
+            "component": "registerComponent",
+            "path": "register"
         },
         {
             "path": "''",

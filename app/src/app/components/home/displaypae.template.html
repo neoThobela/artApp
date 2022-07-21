@@ -2,8 +2,8 @@
   <div fxLayout="column wrap" style="position:relative;" class="background" fxLayoutAlign="start stretch" [fxShow]="true">
     <div fxLayout="row wrap" class="whiteText" fxLayoutAlign="center center" [fxShow]="true">
       <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
-        <h1 class="marginbottom fontSize4em">
-          Art Gallery App</h1>
+        <p class="marginbottom fontSize4em">
+          Art Gallery App</p>
         <p class="centerText width80 whiteText">
           Browse original paintings, fine art and photographs from talented artists around the world. An art Gallary application for art lovers, that showcases the art that we currently have in our gallary and its story.</p>
         <p class="whiteText">
@@ -14,9 +14,13 @@
               Search By Category</p>
             <form class="fullWidth">
               <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="center center" [fxShow]="true">
-                <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                  <input matInput placeholder="Search artists, catergories or years" [required]="false" #search>
-                  <mat-icon matSuffix (click)="findCategory(search.value)">search</mat-icon>
+                <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;">
+                  <mat-select [required]="false" (click)="findCategory(search.value)" #search>
+                    <ng-template ngFor let-option [ngForOf] let-i="index">
+                      <mat-option [value]></mat-option>
+                    </ng-template>
+                  </mat-select>
+
                 </mat-form-field>
               </div>
             </form>

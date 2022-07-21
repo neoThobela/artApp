@@ -2,6 +2,7 @@
     "classes": [
         "Monoton",
         "marginbottom",
+        "width95",
         "mat-input-element",
         "mat-form-field-appearance-legacy",
         "mat-form-field-underline",
@@ -12,8 +13,10 @@
         "width90",
         "width80",
         "marginTop2em",
+        "shoppingBg",
         "background",
         "bgColor",
+        "overfflow",
         "fontSize2em",
         "padding20px",
         "mat-form-field",

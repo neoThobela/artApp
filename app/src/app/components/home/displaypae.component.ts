@@ -15,7 +15,6 @@ import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.ser
 import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
 import { connectToDB } from 'app/sd-services/connectToDB'; //_splitter_
 import { Router } from '@angular/router'; //_splitter_
-import { FormControl, Validators, FormBuilder } from '@angular/forms'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -34,7 +33,6 @@ export class displaypaeComponent {
   ) {
     this.__page_injector__.get(SDPageCommonService).addPageDefaults(this.page);
     this.registerListeners();
-    this.page.dep.FormBuilder = this.__page_injector__.get(FormBuilder); //FormBuilder
     //appendnew_element_inject
   }
 

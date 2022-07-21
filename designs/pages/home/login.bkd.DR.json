@@ -19,6 +19,7 @@
             {
                 "_key": "class",
                 "_value": [
+                    "overfflow",
                     "fullWidth"
                 ],
                 "_type": "dav",
@@ -82,6 +83,7 @@
                 {
                     "_key": "class",
                     "_value": [
+                        "overfflow",
                         "width80",
                         "loginHeight"
                     ],
@@ -1672,7 +1674,7 @@
                                         },
                                         {
                                             "_key": "html",
-                                            "_value": "Don't have an account? <a href=\"#\" class=\"yellowText\">Register</a>",
+                                            "_value": "Don't have an account? <a href=\"/register\" class=\"yellowText\">Register</a>",
                                             "_type": "a",
                                             "_attrDef": "p"
                                         }

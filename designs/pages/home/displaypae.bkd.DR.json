@@ -338,14 +338,14 @@
                             },
                             {
                                 "_key": "htmlElement",
-                                "_value": "h1",
+                                "_value": "p",
                                 "_type": "dav",
                                 "_attrDef": "p",
                                 "_useAsLabel": true
                             },
                             {
                                 "_key": "tagType",
-                                "_value": "h1",
+                                "_value": "p",
                                 "_type": "a",
                                 "_attrDef": "p",
                                 "_visibility": false
@@ -1430,8 +1430,8 @@
                                         "paletteKey": "NG-Select",
                                         "parentEditorKey": "a3007c4b-4e7f-f0ad-3282-dec3b097b489",
                                         "isAdvancedComponent": true,
-                                        "isCommented": "true",
-                                        "commentid": "1658386579018",
+                                        "isCommented": "false",
+                                        "commentid": null,
                                         "designerReference": [
                                             {
                                                 "_key": "style",
@@ -1447,7 +1447,7 @@
                                             },
                                             {
                                                 "_key": "placeholder",
-                                                "_value": "Select",
+                                                "_value": "",
                                                 "_type": "kv",
                                                 "_attrDef": "p",
                                                 "_useAsLabel": true
@@ -1523,7 +1523,7 @@
                                             },
                                             {
                                                 "_key": "[appearance]",
-                                                "_value": "'legacy'",
+                                                "_value": "'outline'",
                                                 "_type": "a",
                                                 "_attrDef": "p"
                                             },
@@ -1607,6 +1607,27 @@
                                                 "_type": "a",
                                                 "_attrDef": "p",
                                                 "_visibility": true
+                                            },
+                                            {
+                                                "_key": "(click)",
+                                                "_value": "findCategory(search.value)",
+                                                "_type": "kv",
+                                                "_attrDef": "c",
+                                                "objValue": {
+                                                    "nodeID": "sd_jii6SjVAtzvgiPym",
+                                                    "functionName": "findCategory",
+                                                    "activeTree": "pages",
+                                                    "z": "sd_WR6iyBIOiJbrUCez",
+                                                    "input": [
+                                                        "search.value"
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "_key": "#search",
+                                                "_value": "#search",
+                                                "_type": "a",
+                                                "_attrDef": "c"
                                             }
                                         ]
                                     },
@@ -1614,7 +1635,8 @@
                                         "paletteKey": "NG-Input",
                                         "parentEditorKey": "a3007c4b-4e7f-f0ad-3282-dec3b097b489",
                                         "isAdvancedComponent": true,
-                                        "commentid": null,
+                                        "isCommented": "true",
+                                        "commentid": "1658437156432",
                                         "designerReference": [
                                             {
                                                 "_key": "style",

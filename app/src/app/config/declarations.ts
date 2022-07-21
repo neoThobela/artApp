@@ -15,6 +15,10 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-BuyArtComponent
+import { BuyArtComponent } from '../components/home/BuyArt.component';
+//CORE_REFERENCE_IMPORT-registerComponent
+import { registerComponent } from '../components/home/register.component';
 //CORE_REFERENCE_IMPORT-loginComponent
 import { loginComponent } from '../components/home/login.component';
 //CORE_REFERENCE_IMPORT-categoryDialogeComponent
@@ -65,6 +69,10 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-BuyArtComponent
+  BuyArtComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-registerComponent
+  registerComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-loginComponent
   loginComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-categoryDialogeComponent
@@ -116,9 +124,11 @@ export const appRoutes = [
       { path: 'category/:searchString', component: cateoryComponent },
       { path: 'about', component: aboutUsComponent },
       { path: 'artwork', component: artworkComponent },
+      { path: 'shop', component: BuyArtComponent },
     ],
   },
   { path: 'login', component: loginComponent },
+  { path: 'register', component: registerComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
