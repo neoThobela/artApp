@@ -1,0 +1,134 @@
+[
+    {
+        "id": "sd_paB43yE3391tmHyp",
+        "type": "tab",
+        "createdDate": "2022-07-21T07:02:42.344Z",
+        "label": "dialogeArtInfo",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "dialogeArtInfoComponent"
+    },
+    {
+        "id": "sd_rJR1L9BGisavMuGt",
+        "type": "OnInit",
+        "z": "sd_paB43yE3391tmHyp",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_rJR1L9BGisavMuGt",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_yz7SH8jM6r0Bf8HV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "dialogeArtInfoComponent"
+    },
+    {
+        "id": "sd_yz7SH8jM6r0Bf8HV",
+        "type": "PageVariables",
+        "z": "sd_paB43yE3391tmHyp",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_yz7SH8jM6r0Bf8HV",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            [
+                "sd_XErNj0lzs4R1xEvQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_Ry5Sr4zqJsYNOtns",
+        "type": "Script",
+        "z": "sd_paB43yE3391tmHyp",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(page.arr)",
+        "functionName": "sd_Ry5Sr4zqJsYNOtns",
+        "category": "Function",
+        "x": 525,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_XErNj0lzs4R1xEvQ",
+        "type": "PageServiceVariables",
+        "z": "sd_paB43yE3391tmHyp",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "get",
+        "globalVariables": [
+            {
+                "textIp": "allArtists",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "arr"
+                }
+            }
+        ],
+        "functionName": "sd_XErNj0lzs4R1xEvQ",
+        "service": {
+            "id": "sd_fSGlHyApcayt5tky",
+            "type": "tab",
+            "createdDate": "2022-07-20T13:20:26.916Z",
+            "label": "connectToDB",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "generateNext": true,
+            "serviceName": "connectToDB",
+            "relativeParentPath": "",
+            "_def": {
+                "defaults": {
+                    "label": {
+                        "value": ""
+                    },
+                    "disabled": {
+                        "value": false
+                    },
+                    "info": {
+                        "value": ""
+                    }
+                }
+            }
+        },
+        "serviceImportPath": "app/sd-services/connectToDB",
+        "category": "Function",
+        "x": 325,
+        "y": 40,
+        "wires": [
+            [
+                "sd_Ry5Sr4zqJsYNOtns"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    }
+]

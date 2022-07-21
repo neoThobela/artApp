@@ -1,0 +1,9 @@
+<div fxLayout="column wrap" class="width80" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="row wrap" style="margin-top:5em" class="width80" fxLayoutAlign="center center" [fxShow]="true">
+    <div fxLayout="column wrap" fxFlex="24" fxLayoutGap="2em" fxLayoutAlign="center center" [fxShow]="true" *ngFor="let item of page.arr"><img [src]="item.artwork" style="margin-top:0.5em" class="roundImg">
+      <p>
+        {{item.artistName}}
+      </p>
+    </div>
+  </div>
+</div>

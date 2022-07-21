@@ -1,0 +1,296 @@
+[
+    {
+        "id": "sd_fSGlHyApcayt5tky",
+        "type": "tab",
+        "createdDate": "2022-07-20T13:20:26.916Z",
+        "label": "connectToDB",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "connectToDB",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_yAnCQFNnDv9epwv0",
+        "type": "Start",
+        "z": "sd_fSGlHyApcayt5tky",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "getCategory",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "category",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "client_result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getCategory",
+        "category": "General",
+        "x": 80,
+        "y": 120,
+        "wires": [
+            [
+                "sd_bmya1kh9KTqdey9i"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "connectToDB"
+    },
+    {
+        "id": "sd_LAk8ELSW9719prT1",
+        "type": "HttpRequest",
+        "z": "sd_fSGlHyApcayt5tky",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.client_result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "client_result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_LAk8ELSW9719prT1",
+        "category": "HTTP",
+        "x": 365,
+        "y": 120,
+        "wires": [
+            [
+                "sd_24okF4nCWjeKVuZt"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_bmya1kh9KTqdey9i",
+        "type": "Script",
+        "z": "sd_fSGlHyApcayt5tky",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log('client',bh)\nbh.local.url = 'http://localhost:8081/api/get-cat/' + bh.input.category",
+        "functionName": "sd_bmya1kh9KTqdey9i",
+        "category": "Function",
+        "x": 220,
+        "y": 120,
+        "wires": [
+            [
+                "sd_LAk8ELSW9719prT1"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_24okF4nCWjeKVuZt",
+        "type": "ServiceVariables",
+        "z": "sd_fSGlHyApcayt5tky",
+        "viewType": "client-server",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "artistsByCategory",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "client_result"
+                }
+            }
+        ],
+        "functionName": "sd_24okF4nCWjeKVuZt",
+        "category": "Function",
+        "x": 480,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_wWLt0L5xLxnb37WB",
+        "type": "Start",
+        "z": "sd_fSGlHyApcayt5tky",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "getAllArtists",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "artist",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "client_result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getAllArtists",
+        "category": "General",
+        "x": 100,
+        "y": 300,
+        "wires": [
+            [
+                "sd_adRrqUGfQF3vHhJq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "connectToDB"
+    },
+    {
+        "id": "sd_Z4NxSGEOg73XGxlQ",
+        "type": "HttpRequest",
+        "z": "sd_fSGlHyApcayt5tky",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.client_result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "client_result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_Z4NxSGEOg73XGxlQ",
+        "category": "HTTP",
+        "x": 365,
+        "y": 300,
+        "wires": [
+            [
+                "sd_WxzPmmFjxxRk5xHv"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_adRrqUGfQF3vHhJq",
+        "type": "Script",
+        "z": "sd_fSGlHyApcayt5tky",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log('client',bh)\nbh.local.url = 'http://localhost:8081/api/get-all-artist';",
+        "functionName": "sd_adRrqUGfQF3vHhJq",
+        "category": "Function",
+        "x": 245,
+        "y": 300,
+        "wires": [
+            [
+                "sd_Z4NxSGEOg73XGxlQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_WxzPmmFjxxRk5xHv",
+        "type": "ServiceVariables",
+        "z": "sd_fSGlHyApcayt5tky",
+        "viewType": "client-server",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "allArtists",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "client_result"
+                }
+            }
+        ],
+        "functionName": "sd_WxzPmmFjxxRk5xHv",
+        "category": "Function",
+        "x": 525,
+        "y": 300,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    }
+]

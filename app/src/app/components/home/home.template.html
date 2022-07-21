@@ -1,0 +1,31 @@
+<div fxLayout="row wrap" style="height:100vh" fxLayoutAlign="start stretch" [fxShow]="true" fxFill>
+  <div fxLayout="column wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" style="height:100%" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start center" [fxShow]="true">
+        <div fxLayout="row wrap" style="height:80px" class="width90" fxLayoutAlign="space-between center" [fxShow]="true">
+          <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true"><label class="yellowlines bold600 fontSize24 primaryBlackText">
+              ART GALLARY</label></div>
+          <div fxLayout="column wrap" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+              <div fxLayout="column wrap" class="primaryBlackText" fxLayoutAlign="start stretch" [fxShow]="true"><label routerLink="display" class="bluebottom">
+                  Home</label></div>
+              <div fxLayout="column wrap" class="primaryBlackText" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="about"><label>
+                  About Us</label></div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" (click)="getArtsits(allArtist)"><label (click)="getArtsits(allArtists)">
+                  Artwork</label></div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><label>
+                  Artist</label></div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><label>
+                  category</label></div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row wrap" style="overflow-y:auto" class="mainContent fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

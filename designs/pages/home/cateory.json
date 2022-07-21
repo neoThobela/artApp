@@ -1,0 +1,149 @@
+[
+    {
+        "id": "sd_VZaS5qLGMHz8zBUH",
+        "type": "tab",
+        "createdDate": "2022-07-20T12:45:23.464Z",
+        "label": "cateory",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "cateoryComponent"
+    },
+    {
+        "id": "sd_aZo2RKbC8mwxlyOG",
+        "type": "OnInit",
+        "z": "sd_VZaS5qLGMHz8zBUH",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_aZo2RKbC8mwxlyOG",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_1haIXsXHricLW2nS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "cateoryComponent"
+    },
+    {
+        "id": "sd_1haIXsXHricLW2nS",
+        "type": "PageVariables",
+        "z": "sd_VZaS5qLGMHz8zBUH",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "artType",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "arr",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
+            }
+        ],
+        "functionName": "sd_1haIXsXHricLW2nS",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            [
+                "sd_gqIXgBLg1NFYlFaB"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_C9ci01m0fDGhTWZM",
+        "type": "Script",
+        "z": "sd_VZaS5qLGMHz8zBUH",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nconsole.log(page.arr)",
+        "functionName": "sd_C9ci01m0fDGhTWZM",
+        "category": "Function",
+        "x": 385,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_gqIXgBLg1NFYlFaB",
+        "type": "PageServiceVariables",
+        "z": "sd_VZaS5qLGMHz8zBUH",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "get",
+        "globalVariables": [
+            {
+                "textIp": "artistsByCategory",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "arr"
+                }
+            }
+        ],
+        "functionName": "sd_gqIXgBLg1NFYlFaB",
+        "service": {
+            "id": "sd_fSGlHyApcayt5tky",
+            "type": "tab",
+            "createdDate": "2022-07-20T13:20:26.916Z",
+            "label": "connectToDB",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "generateNext": true,
+            "serviceName": "connectToDB",
+            "relativeParentPath": "",
+            "_def": {
+                "defaults": {
+                    "label": {
+                        "value": ""
+                    },
+                    "disabled": {
+                        "value": false
+                    },
+                    "info": {
+                        "value": ""
+                    }
+                }
+            }
+        },
+        "serviceImportPath": "app/sd-services/connectToDB",
+        "category": "Function",
+        "x": 285,
+        "y": 40,
+        "wires": [
+            [
+                "sd_C9ci01m0fDGhTWZM"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    }
+]

@@ -1,0 +1,26 @@
+{
+    "classes": [
+        "marginbottom",
+        "roundImg",
+        "centerText",
+        "fullWidth",
+        "width90",
+        "width80",
+        "marginTop2em",
+        "background",
+        "fontSize2em",
+        "fontSize4em",
+        "whiteText",
+        "mainContent",
+        "primaryBlackText",
+        "bluebottom",
+        "mat-form-field-appearance-outline",
+        "mat-form-field-infix",
+        "mat-form-field-flex",
+        "fontSize24",
+        "bold600",
+        "yellowlines",
+        "mat-form-field-outline",
+        "img"
+    ]
+}

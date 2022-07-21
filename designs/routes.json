@@ -1,0 +1,36 @@
+{
+    "routes": [
+        {
+            "component": "homeComponent",
+            "path": "home",
+            "children": [
+                {
+                    "component": "displaypaeComponent",
+                    "path": "display"
+                },
+                {
+                    "path": "category",
+                    "component": "cateoryComponent"
+                },
+                {
+                    "component": "aboutUsComponent",
+                    "path": "about"
+                },
+                {
+                    "component": "artworkComponent",
+                    "path": "artwork"
+                }
+            ]
+        },
+        {
+            "path": "''",
+            "redirectTo": "/home",
+            "pathMatch": "full",
+            "default": true
+        },
+        {
+            "path": "**",
+            "component": "PageNotFoundComponent"
+        }
+    ]
+}

@@ -1,0 +1,98 @@
+/*Importing default angular material css theme. */
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "nDefaults.scss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200&family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+ 
+ $yellow:#f7ab54;
+ $primaryBlack:#0f0e08;
+ $primaryBlue:cornflowerblue;
+ $white:white;
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+p, h1{
+    margin:0px;
+}
+.marginbottom{
+    margin-bottom: 0;
+}
+.roundImg{
+    border-radius: 50%;
+    width:200px;
+    height:180px;
+}
+.centerText{
+    text-align: center;
+}
+.fullWidth{
+    width:100%
+}
+.width90{
+    width:90%;
+}
+.width80{
+    width:80%
+}
+bh-displaypae ,bh-cateory{
+    width:100%;
+}
+.marginTop2em{
+    margin-top:2em;
+}
+.background{
+ background-image: linear-gradient(180deg,rgba(14, 0, 0,0.567),rgba(14, 0, 0,0.65) ) ,url("Assets/Web/images/bg.jpg");
+// background-color:black;
+ background-size: cover;
+ background-repeat: no-repeat;
+ height:80vh;
+ width:800px;
+ opacity:2;
+ background-color:black;
+}
+.fontSize2em{
+    font-size: 2em;
+}
+
+.fontSize4em{
+    font-size: 4em;
+}
+.whiteText{
+    color:$white
+}
+.mainContent{
+    height: calc(100vh - 80px)
+}
+.primaryBlackText{
+    color:$primaryBlack;
+}
+.bluebottom{
+    border-bottom:$primaryBlue solid 2px;
+}
+.mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: .5em 0 .5em 0;
+}
+mat-form-field-appearance-outline .mat-form-field-flex {
+    width: 411px!important;
+}
+.fontSize24{
+    font-size: 24px;
+}
+.bold600{
+    font-weight:600;
+}
+.yellowlines{
+    border-bottom: $yellow 3px solid ;
+    height:50px;
+    left: -83px;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: $white;
+    border: 1px solid;
+  }
+.img:hover{
+    width:300px;
+    height: 300px;
+    border-radius: 0px!important;
+}

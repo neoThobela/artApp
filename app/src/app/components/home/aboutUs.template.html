@@ -1,0 +1,13 @@
+<div fxLayout="column wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+    <div fxLayout="column wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true"><img imgSrc="/Web/images/more.jpg" style="width: 1085px; height: 495px;">
+      <div fxLayout="row wrap" style="margin-top:5em" class="width80" fxLayoutAlign="center center" [fxShow]="true">
+        <div fxLayout="column wrap" fxFlex="24" fxLayoutAlign="center center" [fxShow]="true" *ngFor="let item of page.arr"><img [src]="item.artwork" style="margin-top:0.5em" class="img roundImg">
+          <p>
+            {{item.artistName}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
