@@ -76,6 +76,20 @@ export class homeComponent {
     }
   }
 
+  findCategory(textToSearch = '', ...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { textToSearch: textToSearch };
+      bh.local = {};
+      bh = this.sd_TVB8SPU5tAxAuaVp(bh);
+      //appendnew_next_findCategory
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_4onYLNkEYs9pDJ5a');
+    }
+  }
+
   //appendnew_flow_homeComponent_start
 
   sd_UZEj1ChhDxSM2kF0(bh) {
@@ -127,6 +141,52 @@ export class homeComponent {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_1S59GCj3MXydRn15');
+    }
+  }
+
+  async sd_TVB8SPU5tAxAuaVp(bh) {
+    try {
+      const connectToDBInstance: connectToDB =
+        this.__page_injector__.get(connectToDB);
+
+      let outputVariables = await connectToDBInstance.getCategory(
+        bh.input.textToSearch
+      );
+      this.page.data = outputVariables.local.client_result;
+
+      bh = this.sd_5sHfbHmm5SmBmvd6(bh);
+      //appendnew_next_sd_TVB8SPU5tAxAuaVp
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_TVB8SPU5tAxAuaVp');
+    }
+  }
+
+  sd_5sHfbHmm5SmBmvd6(bh) {
+    try {
+      const page = this.page;
+      console.log('response', page);
+      bh = this.sd_QbGmXwGLiufiFfEK(bh);
+      //appendnew_next_sd_5sHfbHmm5SmBmvd6
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_5sHfbHmm5SmBmvd6');
+    }
+  }
+
+  async sd_QbGmXwGLiufiFfEK(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/home/category');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
+      //appendnew_next_sd_QbGmXwGLiufiFfEK
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_QbGmXwGLiufiFfEK');
     }
   }
 

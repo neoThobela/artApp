@@ -51,5 +51,54 @@
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true
+    },
+    {
+        "id": "sd_t8PQJdO8AxPS6KYH",
+        "type": "PageCallService",
+        "z": "sd_GneklMwR3AaiHFr1",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_fSGlHyApcayt5tky",
+            "type": "tab",
+            "createdDate": "2022-07-20T13:20:26.916Z",
+            "label": "connectToDB",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_wWLt0L5xLxnb37WB",
+            "flowName": "getAllArtists"
+        },
+        "inputVariables": [
+            {
+                "key": "artist",
+                "map": true,
+                "valueType": "this.page",
+                "value": "arr"
+            }
+        ],
+        "outputMapping": [],
+        "serviceImportPath": "app/sd-services/connectToDB",
+        "startName": "getAllArtists",
+        "inputParams": [
+            "this.page.arr"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_t8PQJdO8AxPS6KYH",
+        "category": "General",
+        "x": 325,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true
     }
 ]

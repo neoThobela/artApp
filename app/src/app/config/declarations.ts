@@ -15,6 +15,10 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-loginComponent
+import { loginComponent } from '../components/home/login.component';
+//CORE_REFERENCE_IMPORT-categoryDialogeComponent
+import { categoryDialogeComponent } from '../components/home/categoryDialoge.component';
 //CORE_REFERENCE_IMPORT-dialogeArtInfoComponent
 import { dialogeArtInfoComponent } from '../components/home/dialogeArtInfo.component';
 //CORE_REFERENCE_IMPORT-artworkComponent
@@ -61,6 +65,10 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-loginComponent
+  loginComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-categoryDialogeComponent
+  categoryDialogeComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-dialogeArtInfoComponent
   dialogeArtInfoComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-artworkComponent
@@ -105,11 +113,12 @@ export const appRoutes = [
     component: homeComponent,
     children: [
       { path: 'display', component: displaypaeComponent },
-      { path: 'category', component: cateoryComponent },
+      { path: 'category/:searchString', component: cateoryComponent },
       { path: 'about', component: aboutUsComponent },
       { path: 'artwork', component: artworkComponent },
     ],
   },
+  { path: 'login', component: loginComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

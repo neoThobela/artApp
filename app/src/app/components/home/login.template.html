@@ -1,0 +1,30 @@
+<div fxLayout="column wrap" style="margin-top:4em;" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="row wrap" class="width80 loginHeight" fxLayoutAlign="center center" [fxShow]="true">
+    <div fxLayout="column wrap" fxFlex="50" fxLayoutAlign="start stretch" [fxShow]="true"><img [src]="&apos;https://i.pinimg.com/564x/62/1e/97/621e9744cfa71d05483510962c791f3a.jpg&apos;" style="height:80vh" class="borderRadius"></div>
+    <div fxLayout="column wrap" fxFlex="50" fxLayoutAlign="center center" [fxShow]="true">
+      <h1>
+        ART GALLARY APP</h1>
+      <div fxLayout="row wrap" style="margin-bottom:-35px;width:60%;" class="yellowlines" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+      <div fxLayout="row wrap" class="width80" fxLayoutAlign="start stretch" [fxShow]="true">
+        <p style="font-size:3em" class="Monoton">
+          LOGIN</p>
+      </div>
+      <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+        <form>
+          <mat-form-field style="width: 95%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput placeholder="Userame" [required]="false">
+
+          </mat-form-field>
+          <mat-form-field style="width: 95%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput placeholder="Password" [required]="false">
+
+          </mat-form-field><button mat-raised-button style="width: 95%;" class="btn">Login</button>
+          <div fxLayout="row wrap" class="margintop1em fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+            <div>
+              Don&apos;t have an account? <a href="#" class="yellowText">Register</a></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

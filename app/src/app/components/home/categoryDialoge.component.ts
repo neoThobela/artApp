@@ -16,13 +16,13 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog'; //_splitter_
 //append_imports_end
 
 @Component({
-  selector: 'bh-dialogeArtInfo',
-  templateUrl: './dialogeArtInfo.template.html',
+  selector: 'bh-categoryDialoge',
+  templateUrl: './categoryDialoge.template.html',
   providers: [
     //appendnew_element_providers
   ],
 })
-export class dialogeArtInfoComponent {
+export class categoryDialogeComponent {
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -39,7 +39,7 @@ export class dialogeArtInfoComponent {
       .get(SDPageCommonService)
       .constructFlowObject(this);
     {
-      this.sd_rJR1L9BGisavMuGt(bh);
+      this.sd_NKajlHI6jF2FthD6(bh);
     }
   }
 
@@ -51,49 +51,49 @@ export class dialogeArtInfoComponent {
     //append_listeners
   }
 
-  sd_rJR1L9BGisavMuGt(bh) {
+  sd_NKajlHI6jF2FthD6(bh) {
     try {
-      bh = this.sd_yz7SH8jM6r0Bf8HV(bh);
-      //appendnew_next_sd_rJR1L9BGisavMuGt
+      bh = this.sd_VOgMjAEDLsD0xTT8(bh);
+      //appendnew_next_sd_NKajlHI6jF2FthD6
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_rJR1L9BGisavMuGt');
+      return this.errorHandler(bh, e, 'sd_NKajlHI6jF2FthD6');
     }
   }
 
-  //appendnew_flow_dialogeArtInfoComponent_start
+  //appendnew_flow_categoryDialogeComponent_start
 
-  sd_yz7SH8jM6r0Bf8HV(bh) {
+  sd_VOgMjAEDLsD0xTT8(bh) {
     try {
       this.page.data = undefined;
-      bh = this.sd_4hcGUYz8iOIaRB26(bh);
-      //appendnew_next_sd_yz7SH8jM6r0Bf8HV
+      bh = this.sd_6mTReCSQRoCHzWhH(bh);
+      //appendnew_next_sd_VOgMjAEDLsD0xTT8
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_yz7SH8jM6r0Bf8HV');
+      return this.errorHandler(bh, e, 'sd_VOgMjAEDLsD0xTT8');
     }
   }
 
-  sd_4hcGUYz8iOIaRB26(bh) {
+  sd_6mTReCSQRoCHzWhH(bh) {
     try {
       this.page.data = this.__page_injector__.get(MAT_DIALOG_DATA);
 
-      bh = this.sd_Ry5Sr4zqJsYNOtns(bh);
-      //appendnew_next_sd_4hcGUYz8iOIaRB26
+      bh = this.sd_srm80xZh5FRCtZ0y(bh);
+      //appendnew_next_sd_6mTReCSQRoCHzWhH
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_4hcGUYz8iOIaRB26');
+      return this.errorHandler(bh, e, 'sd_6mTReCSQRoCHzWhH');
     }
   }
 
-  sd_Ry5Sr4zqJsYNOtns(bh) {
+  sd_srm80xZh5FRCtZ0y(bh) {
     try {
       const page = this.page;
       console.log(page.data.artwork);
-      //appendnew_next_sd_Ry5Sr4zqJsYNOtns
+      //appendnew_next_sd_srm80xZh5FRCtZ0y
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_Ry5Sr4zqJsYNOtns');
+      return this.errorHandler(bh, e, 'sd_srm80xZh5FRCtZ0y');
     }
   }
 
@@ -119,5 +119,5 @@ export class dialogeArtInfoComponent {
       throw e;
     }
   }
-  //appendnew_flow_dialogeArtInfoComponent_Catch
+  //appendnew_flow_categoryDialogeComponent_Catch
 }

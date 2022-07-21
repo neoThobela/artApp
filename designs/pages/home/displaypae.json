@@ -19,8 +19,8 @@
         "name": "",
         "functionName": "sd_RKoFE1xyxOHPHjVP",
         "category": "Lifecycle Events",
-        "x": 30,
-        "y": 30,
+        "x": 45,
+        "y": 40,
         "wires": [
             [
                 "sd_z9wGYVVpDzrC0kyZ"
@@ -58,8 +58,8 @@
         ],
         "functionName": "sd_z9wGYVVpDzrC0kyZ",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 185,
+        "y": 40,
         "wires": [
             [
                 "sd_29RWlEm8s11shTfl"
@@ -112,97 +112,15 @@
         "functionName": "findCategory",
         "category": "General",
         "x": 45,
-        "y": 160,
+        "y": 140,
         "wires": [
             [
-                "sd_pU7T7pQHVATzMtvr"
+                "sd_tQYINEmFP9jjaYpe"
             ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "displaypaeComponent"
-    },
-    {
-        "id": "sd_pU7T7pQHVATzMtvr",
-        "type": "PageCallService",
-        "z": "sd_WR6iyBIOiJbrUCez",
-        "viewType": "pages",
-        "nodeType": "flow",
-        "name": "",
-        "outputs": 1,
-        "isValidNode": true,
-        "noerr": 0,
-        "service": {
-            "id": "sd_fSGlHyApcayt5tky",
-            "type": "tab",
-            "createdDate": "2022-07-20T13:20:26.916Z",
-            "label": "connectToDB",
-            "disabled": false,
-            "info": "",
-            "functionSeq": 0
-        },
-        "flow": {
-            "flowId": "sd_yAnCQFNnDv9epwv0",
-            "flowName": "getCategory"
-        },
-        "inputVariables": [
-            {
-                "key": "category",
-                "map": true,
-                "valueType": "bh.input",
-                "value": "textToSearch"
-            }
-        ],
-        "outputMapping": [
-            {
-                "mapVarType": "local",
-                "key": "client_result",
-                "valueType": "this.page",
-                "value": "data",
-                "mapVarName": "client_result",
-                "localVar": "this.page.data"
-            }
-        ],
-        "serviceImportPath": "app/sd-services/connectToDB",
-        "startName": "getCategory",
-        "inputParams": [
-            "bh.input.textToSearch"
-        ],
-        "accept_bh": false,
-        "accept_csd": true,
-        "functionName": "sd_pU7T7pQHVATzMtvr",
-        "category": "General",
-        "x": 225,
-        "y": 160,
-        "wires": [
-            [
-                "sd_haTYTt13An6X61Sy"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "generated": true
-    },
-    {
-        "id": "sd_haTYTt13An6X61Sy",
-        "type": "Script",
-        "z": "sd_WR6iyBIOiJbrUCez",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "console.log('response',page)",
-        "functionName": "sd_haTYTt13An6X61Sy",
-        "category": "Function",
-        "x": 425,
-        "y": 160,
-        "wires": [
-            [
-                "sd_SSYkbQIk6gYHuRYU"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "generated": true
     },
     {
         "id": "sd_SSYkbQIk6gYHuRYU",
@@ -211,11 +129,20 @@
         "viewType": "client-pages",
         "nodeType": "flow",
         "name": "",
-        "path": "/home/category",
+        "path": "/home/category/:searchString",
+        "pathparams": [
+            {
+                "paramKey": "searchString",
+                "paramValue": {
+                    "type": "bh.input",
+                    "value": "textToSearch"
+                }
+            }
+        ],
         "functionName": "sd_SSYkbQIk6gYHuRYU",
         "category": "Navigation",
-        "x": 540,
-        "y": 180,
+        "x": 665,
+        "y": 120,
         "wires": [
             []
         ],
@@ -245,8 +172,8 @@
         "flow_type": "sync",
         "functionName": "getArtsits",
         "category": "General",
-        "x": 116,
-        "y": 319.8125,
+        "x": 85,
+        "y": 340,
         "wires": [
             [
                 "sd_oHjBpUwDqpb8cnYe"
@@ -297,8 +224,8 @@
         "accept_csd": true,
         "functionName": "sd_oHjBpUwDqpb8cnYe",
         "category": "General",
-        "x": 296,
-        "y": 319.8125,
+        "x": 165,
+        "y": 340,
         "wires": [
             [
                 "sd_XswfYwdTbtXTb1jR"
@@ -318,8 +245,8 @@
         "script": "console.log('response',page)",
         "functionName": "sd_XswfYwdTbtXTb1jR",
         "category": "Function",
-        "x": 496,
-        "y": 319.8125,
+        "x": 285,
+        "y": 340,
         "wires": [
             [
                 "sd_ZAG28HL0hfZp3dP2"
@@ -339,10 +266,145 @@
         "path": "/home/artwork",
         "functionName": "sd_ZAG28HL0hfZp3dP2",
         "category": "Navigation",
-        "x": 611,
-        "y": 339.8125,
+        "x": 425,
+        "y": 340,
         "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_tQYINEmFP9jjaYpe",
+        "type": "PageSwitch",
+        "z": "sd_WR6iyBIOiJbrUCez",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "textToSearch",
+        "propertyType": "bh.input",
+        "propertyGv": "bh.input.textToSearch",
+        "rules": [
+            {
+                "t": "empty"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_tQYINEmFP9jjaYpe",
+        "category": "Function",
+        "x": 205,
+        "y": 140,
+        "wires": [
+            [
+                "sd_q13TuxAzpkjKETVJ"
+            ],
+            [
+                "sd_vRlAVbVTlEP443fJ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_q13TuxAzpkjKETVJ",
+        "type": "SnackBar",
+        "z": "sd_WR6iyBIOiJbrUCez",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "unavailable request"
+        },
+        "action": {
+            "type": "str",
+            "value": ""
+        },
+        "duration": {
+            "type": "num",
+            "value": ""
+        },
+        "horizontalPosition": "center",
+        "verticalPosition": "bottom",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_q13TuxAzpkjKETVJ",
+        "category": "General",
+        "x": 385,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_vRlAVbVTlEP443fJ",
+        "type": "PageCallService",
+        "z": "sd_WR6iyBIOiJbrUCez",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_fSGlHyApcayt5tky",
+            "type": "tab",
+            "createdDate": "2022-07-20T13:20:26.916Z",
+            "label": "connectToDB",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_yAnCQFNnDv9epwv0",
+            "flowName": "getCategory"
+        },
+        "inputVariables": [
+            {
+                "key": "category",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "textToSearch"
+            }
+        ],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "client_result",
+                "valueType": "bh.input",
+                "value": "artistsByCategory",
+                "mapVarName": "client_result",
+                "localVar": "bh.input.artistsByCategory"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/connectToDB",
+        "startName": "getCategory",
+        "inputParams": [
+            "bh.input.textToSearch"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_vRlAVbVTlEP443fJ",
+        "category": "General",
+        "x": 465,
+        "y": 120,
+        "wires": [
+            [
+                "sd_SSYkbQIk6gYHuRYU"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

@@ -1,8 +1,19 @@
-<div fxLayout="column wrap" class="width80" fxLayoutAlign="center center" [fxShow]="true">
-  <div fxLayout="row wrap" style="margin-top:5em" class="width80" fxLayoutAlign="center center" [fxShow]="true">
-    <div fxLayout="column wrap" fxFlex="24" fxLayoutGap="2em" fxLayoutAlign="center center" [fxShow]="true" *ngFor="let item of page.arr"><img [src]="item.artwork" style="margin-top:0.5em" class="roundImg">
+<div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="row wrap" style="margin-top:5em" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+    <div fxLayout="column wrap" fxFlex="24" fxLayoutGap="5px" fxLayoutAlign="center center" [fxShow]="true" *ngFor="let item of page.arr" (click)="showArtInfo(page.data)"><img [src]="item.artwork" style="margin-top:0.5em" class="roundImg">
+      <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+        <h2>
+          Title: {{item.title}}</h2>
+        <h2>
+          {{item.year}}
+        </h2>
+      </div>
+      <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <p>
+          By: {{item.artistName}}</p>
+      </div>
       <p>
-        {{item.artistName}}
+        {{item.cateory}}
       </p>
     </div>
   </div>

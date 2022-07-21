@@ -19,8 +19,8 @@
         "name": "",
         "functionName": "sd_aZo2RKbC8mwxlyOG",
         "category": "Lifecycle Events",
-        "x": 30,
-        "y": 30,
+        "x": 65,
+        "y": 40,
         "wires": [
             [
                 "sd_1haIXsXHricLW2nS"
@@ -52,17 +52,24 @@
                 "textIp": "arr",
                 "typedIpValue": {
                     "type": "literal",
-                    "value": "[]"
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "category",
+                "typedIpValue": {
+                    "type": "str",
+                    "value": ""
                 }
             }
         ],
         "functionName": "sd_1haIXsXHricLW2nS",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 165,
+        "y": 40,
         "wires": [
             [
-                "sd_gqIXgBLg1NFYlFaB"
+                "sd_qrrQV9S1IpyGvWQh"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -70,16 +77,116 @@
         "generated": true
     },
     {
-        "id": "sd_C9ci01m0fDGhTWZM",
+        "id": "sd_DQeKgrRV6yNKx4ti",
         "type": "Script",
         "z": "sd_VZaS5qLGMHz8zBUH",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "\nconsole.log(page.arr)",
-        "functionName": "sd_C9ci01m0fDGhTWZM",
+        "script": "page.category = page.router.url.substring(page.router.url.lastIndexOf('/') + 1).replace('%20', ' ');\nconsole.log(page.category)",
+        "functionName": "sd_DQeKgrRV6yNKx4ti",
         "category": "Function",
-        "x": 385,
+        "x": 405,
+        "y": 40,
+        "wires": [
+            [
+                "sd_1HsRAtlbsYibaN8A"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_qrrQV9S1IpyGvWQh",
+        "type": "UseDependency",
+        "z": "sd_VZaS5qLGMHz8zBUH",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "Router",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "router"
+                },
+                "injectable": true
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/router",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_qrrQV9S1IpyGvWQh",
+        "category": "Function",
+        "x": 285,
+        "y": 40,
+        "wires": [
+            [
+                "sd_DQeKgrRV6yNKx4ti"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_1HsRAtlbsYibaN8A",
+        "type": "PageCallService",
+        "z": "sd_VZaS5qLGMHz8zBUH",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_fSGlHyApcayt5tky",
+            "type": "tab",
+            "createdDate": "2022-07-20T13:20:26.916Z",
+            "label": "connectToDB",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_yAnCQFNnDv9epwv0",
+            "flowName": "getCategory"
+        },
+        "inputVariables": [
+            {
+                "key": "category",
+                "map": true,
+                "valueType": "this.page",
+                "value": "category"
+            }
+        ],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "client_result",
+                "valueType": "this.page",
+                "value": "arr",
+                "mapVarName": "client_result",
+                "localVar": "this.page.arr"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/connectToDB",
+        "startName": "getCategory",
+        "inputParams": [
+            "this.page.category"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_1HsRAtlbsYibaN8A",
+        "category": "General",
+        "x": 505,
         "y": 40,
         "wires": [
             []
@@ -89,59 +196,189 @@
         "generated": true
     },
     {
-        "id": "sd_gqIXgBLg1NFYlFaB",
-        "type": "PageServiceVariables",
+        "id": "sd_EOY9Dr49d561BDCF",
+        "type": "PageStart",
         "z": "sd_VZaS5qLGMHz8zBUH",
         "viewType": "pages",
-        "nodeType": "flow",
-        "name": "",
-        "inputs": 1,
+        "nodeType": "start",
+        "name": "showArtInfo",
         "outputs": 1,
-        "operation": "get",
-        "globalVariables": [
+        "inputVariables": [
             {
-                "textIp": "artistsByCategory",
-                "typedIpValue": {
-                    "type": "this.page",
-                    "value": "arr"
-                }
+                "key": "art",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
             }
         ],
-        "functionName": "sd_gqIXgBLg1NFYlFaB",
-        "service": {
-            "id": "sd_fSGlHyApcayt5tky",
-            "type": "tab",
-            "createdDate": "2022-07-20T13:20:26.916Z",
-            "label": "connectToDB",
-            "disabled": false,
-            "info": "",
-            "functionSeq": 0,
-            "generateNext": true,
-            "serviceName": "connectToDB",
-            "relativeParentPath": "",
-            "_def": {
-                "defaults": {
-                    "label": {
-                        "value": ""
-                    },
-                    "disabled": {
-                        "value": false
-                    },
-                    "info": {
-                        "value": ""
-                    }
-                }
-            }
-        },
-        "serviceImportPath": "app/sd-services/connectToDB",
-        "category": "Function",
-        "x": 285,
-        "y": 40,
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "showArtInfo",
+        "category": "General",
+        "x": 294,
+        "y": 173.8125,
         "wires": [
             [
-                "sd_C9ci01m0fDGhTWZM"
+                "sd_3X3YKdDNXBvobAZ0"
             ]
         ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "cateoryComponent"
+    },
+    {
+        "id": "sd_3X3YKdDNXBvobAZ0",
+        "type": "OpenDialog",
+        "z": "sd_VZaS5qLGMHz8zBUH",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 4,
+        "flow": {
+            "flowId": "sd_AIs5UmJ7tM5xr60e",
+            "label": "categoryDialoge"
+        },
+        "relativePath": "./categoryDialoge",
+        "data": "bh.input.art",
+        "ariaDescribedBy": "this.page",
+        "ariaLabel": "this.page",
+        "ariaLabelledBy": "this.page",
+        "autoFocus": "this.page",
+        "backdropClass": "this.page",
+        "closeOnNavigation": "this.page",
+        "direction": "this.page",
+        "disableClose": "this.page",
+        "hasBackdrop": "this.page",
+        "height": "this.page",
+        "maxHeight": "this.page",
+        "minHeight": "this.page",
+        "width": "this.page",
+        "maxWidth": "this.page",
+        "minWidth": "this.page",
+        "panelClass": "this.page",
+        "position": "this.page",
+        "restoreFocus": "this.page",
+        "role": "this.page",
+        "resultMapping": "this.page",
+        "functionName": "sd_3X3YKdDNXBvobAZ0",
+        "category": "Dialog",
+        "x": 414,
+        "y": 173.8125,
+        "wires": [
+            [],
+            [],
+            [],
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "data": {
+                "type": "bh.input",
+                "value": "art",
+                "constant": false
+            },
+            "ariaDescribedBy": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaLabel": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaLabelledBy": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "autoFocus": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "backdropClass": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "closeOnNavigation": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "direction": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "disableClose": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "hasBackdrop": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "height": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "maxHeight": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "minHeight": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "width": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "maxWidth": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "minWidth": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "panelClass": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "position": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "restoreFocus": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "role": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            }
+        },
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true

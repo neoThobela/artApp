@@ -12,6 +12,7 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
 import { connectToDB } from 'app/sd-services/connectToDB'; //_splitter_
 import { Router } from '@angular/router'; //_splitter_
 import { FormControl, Validators, FormBuilder } from '@angular/forms'; //_splitter_
@@ -71,7 +72,7 @@ export class displaypaeComponent {
         .constructFlowObject(this);
       bh.input = { textToSearch: textToSearch };
       bh.local = {};
-      bh = this.sd_pU7T7pQHVATzMtvr(bh);
+      bh = this.sd_tQYINEmFP9jjaYpe(bh);
       //appendnew_next_findCategory
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_jii6SjVAtzvgiPym');
@@ -117,7 +118,54 @@ export class displaypaeComponent {
     }
   }
 
-  async sd_pU7T7pQHVATzMtvr(bh) {
+  async sd_tQYINEmFP9jjaYpe(bh) {
+    try {
+      let otherwiseFlag = true;
+      if (
+        this.sdService.operators['empty'](
+          bh.input.textToSearch,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_q13TuxAzpkjKETVJ(bh);
+        otherwiseFlag = false;
+      }
+      if (
+        this.sdService.operators['else'](
+          otherwiseFlag,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_vRlAVbVTlEP443fJ(bh);
+        otherwiseFlag = false;
+      }
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_tQYINEmFP9jjaYpe');
+    }
+  }
+
+  sd_q13TuxAzpkjKETVJ(bh) {
+    try {
+      this.__page_injector__.get(MatSnackBar).open('unavailable request', '', {
+        duration: 1000,
+        direction: 'ltr',
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom',
+      });
+      //appendnew_next_sd_q13TuxAzpkjKETVJ
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_q13TuxAzpkjKETVJ');
+    }
+  }
+
+  async sd_vRlAVbVTlEP443fJ(bh) {
     try {
       const connectToDBInstance: connectToDB =
         this.__page_injector__.get(connectToDB);
@@ -125,35 +173,27 @@ export class displaypaeComponent {
       let outputVariables = await connectToDBInstance.getCategory(
         bh.input.textToSearch
       );
-      this.page.data = outputVariables.local.client_result;
+      bh.input.artistsByCategory = outputVariables.local.client_result;
 
-      bh = this.sd_haTYTt13An6X61Sy(bh);
-      //appendnew_next_sd_pU7T7pQHVATzMtvr
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_pU7T7pQHVATzMtvr');
-    }
-  }
-
-  sd_haTYTt13An6X61Sy(bh) {
-    try {
-      const page = this.page;
-      console.log('response', page);
       bh = this.sd_SSYkbQIk6gYHuRYU(bh);
-      //appendnew_next_sd_haTYTt13An6X61Sy
+      //appendnew_next_sd_vRlAVbVTlEP443fJ
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_haTYTt13An6X61Sy');
+      return await this.errorHandler(bh, e, 'sd_vRlAVbVTlEP443fJ');
     }
   }
 
   async sd_SSYkbQIk6gYHuRYU(bh) {
     try {
       const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/home/category');
+        this.sdService.getPathAndQParamsObj('/home/category/:searchString');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([
+          this.sdService.formatPathWithParams(path, {
+            searchString: bh.input.textToSearch,
+          }),
+        ]);
       //appendnew_next_sd_SSYkbQIk6gYHuRYU
       return bh;
     } catch (e) {

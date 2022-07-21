@@ -1,18 +1,19 @@
-<div fxLayout="row wrap" class="marginTop2em fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+<div fxLayout="row wrap" class="marginbottom1em marginTop2em fullWidth" fxLayoutAlign="center center" [fxShow]="true">
   <div fxLayout="column wrap" style="position:relative;" class="background" fxLayoutAlign="start stretch" [fxShow]="true">
-    <div fxLayout="column wrap" style="position:absolute;width:350px" class="yellowlines" fxLayoutAlign="start stretch" [fxShow]="true"></div>
     <div fxLayout="row wrap" class="whiteText" fxLayoutAlign="center center" [fxShow]="true">
       <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
         <h1 class="marginbottom fontSize4em">
           Art Gallery App</h1>
         <p class="centerText width80 whiteText">
-          Browse original paintings, fine art and photographs from talented artists around the world.</p>
+          Browse original paintings, fine art and photographs from talented artists around the world. An art Gallary application for art lovers, that showcases the art that we currently have in our gallary and its story.</p>
+        <p class="whiteText">
+        </p>
         <div fxLayout="row wrap" style="height:45vh" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
-          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
             <p class="fontSize2em">
-              Search</p>
-            <form>
-              <div fxLayout="row wrap" style="width:83%" fxLayoutAlign="center center" [fxShow]="true">
+              Search By Category</p>
+            <form class="fullWidth">
+              <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="center center" [fxShow]="true">
                 <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
                   <input matInput placeholder="Search artists, catergories or years" [required]="false" #search>
                   <mat-icon matSuffix (click)="findCategory(search.value)">search</mat-icon>

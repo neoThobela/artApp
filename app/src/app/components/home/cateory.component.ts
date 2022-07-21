@@ -12,7 +12,10 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 import { connectToDB } from 'app/sd-services/connectToDB'; //_splitter_
+import { MatDialog } from '@angular/material/dialog'; //_splitter_
+import { categoryDialogeComponent } from './categoryDialoge.component'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -61,13 +64,28 @@ export class cateoryComponent {
     }
   }
 
+  showArtInfo(art: any = undefined, ...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { art: art };
+      bh.local = {};
+      bh = this.sd_3X3YKdDNXBvobAZ0(bh);
+      //appendnew_next_showArtInfo
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_EOY9Dr49d561BDCF');
+    }
+  }
+
   //appendnew_flow_cateoryComponent_start
 
   sd_1haIXsXHricLW2nS(bh) {
     try {
       this.page.artType = undefined;
-      this.page.arr = [];
-      bh = this.sd_gqIXgBLg1NFYlFaB(bh);
+      this.page.arr = undefined;
+      this.page.category = undefined;
+      bh = this.sd_qrrQV9S1IpyGvWQh(bh);
       //appendnew_next_sd_1haIXsXHricLW2nS
       return bh;
     } catch (e) {
@@ -75,27 +93,60 @@ export class cateoryComponent {
     }
   }
 
-  sd_gqIXgBLg1NFYlFaB(bh) {
+  sd_qrrQV9S1IpyGvWQh(bh) {
     try {
-      const connectToDBInstance: connectToDB =
-        this.__page_injector__.get(connectToDB);
-      this.page.arr = connectToDBInstance['artistsByCategory'];
-      bh = this.sd_C9ci01m0fDGhTWZM(bh);
-      //appendnew_next_sd_gqIXgBLg1NFYlFaB
+      this.page.router = this.__page_injector__.get(Router);
+      bh = this.sd_DQeKgrRV6yNKx4ti(bh);
+      //appendnew_next_sd_qrrQV9S1IpyGvWQh
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_gqIXgBLg1NFYlFaB');
+      return this.errorHandler(bh, e, 'sd_qrrQV9S1IpyGvWQh');
     }
   }
 
-  sd_C9ci01m0fDGhTWZM(bh) {
+  sd_DQeKgrRV6yNKx4ti(bh) {
     try {
       const page = this.page;
-      console.log(page.arr);
-      //appendnew_next_sd_C9ci01m0fDGhTWZM
+      page.category = page.router.url
+        .substring(page.router.url.lastIndexOf('/') + 1)
+        .replace('%20', ' ');
+      console.log(page.category);
+      bh = this.sd_1HsRAtlbsYibaN8A(bh);
+      //appendnew_next_sd_DQeKgrRV6yNKx4ti
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_C9ci01m0fDGhTWZM');
+      return this.errorHandler(bh, e, 'sd_DQeKgrRV6yNKx4ti');
+    }
+  }
+
+  async sd_1HsRAtlbsYibaN8A(bh) {
+    try {
+      const connectToDBInstance: connectToDB =
+        this.__page_injector__.get(connectToDB);
+
+      let outputVariables = await connectToDBInstance.getCategory(
+        this.page.category
+      );
+      this.page.arr = outputVariables.local.client_result;
+
+      //appendnew_next_sd_1HsRAtlbsYibaN8A
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_1HsRAtlbsYibaN8A');
+    }
+  }
+
+  sd_3X3YKdDNXBvobAZ0(bh) {
+    try {
+      const categoryDialogeDialog = this.__page_injector__.get(MatDialog);
+      const categoryDialogeDialogRef = categoryDialogeDialog.open(
+        categoryDialogeComponent,
+        { data: bh.input.art }
+      );
+
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_3X3YKdDNXBvobAZ0');
     }
   }
 

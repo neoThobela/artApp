@@ -19,7 +19,7 @@
         "name": "",
         "functionName": "sd_105CJjDX91lOcCqr",
         "category": "Lifecycle Events",
-        "x": 25,
+        "x": 65,
         "y": 60,
         "wires": [
             [
@@ -72,7 +72,7 @@
         "script": "console.log(page.arr)",
         "functionName": "sd_w36c2SeTfcyhcV3k",
         "category": "Function",
-        "x": 485,
+        "x": 425,
         "y": 60,
         "wires": [
             []
@@ -128,7 +128,7 @@
         },
         "serviceImportPath": "app/sd-services/connectToDB",
         "category": "Function",
-        "x": 325,
+        "x": 305,
         "y": 60,
         "wires": [
             [
@@ -147,12 +147,21 @@
         "nodeType": "start",
         "name": "showArtInfo",
         "outputs": 1,
-        "inputVariables": [],
+        "inputVariables": [
+            {
+                "key": "art",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
         "localVariables": [],
         "flow_type": "sync",
         "functionName": "showArtInfo",
         "category": "General",
-        "x": 365,
+        "x": 65,
         "y": 180,
         "wires": [
             [
@@ -176,7 +185,7 @@
             "label": "dialogeArtInfo"
         },
         "relativePath": "./dialogeArtInfo",
-        "data": "this.page",
+        "data": "bh.input.art",
         "ariaDescribedBy": "this.page",
         "ariaLabel": "this.page",
         "ariaLabelledBy": "this.page",
@@ -199,7 +208,7 @@
         "resultMapping": "this.page",
         "functionName": "sd_WpUVUEIFtxhJAtT9",
         "category": "Dialog",
-        "x": 565,
+        "x": 185,
         "y": 180,
         "wires": [
             [],
@@ -209,8 +218,8 @@
         ],
         "__ssdTypeInputs__": {
             "data": {
-                "type": "this.page",
-                "value": "",
+                "type": "bh.input",
+                "value": "art",
                 "constant": false
             },
             "ariaDescribedBy": {

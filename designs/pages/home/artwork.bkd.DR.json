@@ -321,6 +321,21 @@
                             "_value": "let item of page.arr",
                             "_type": "kv",
                             "_attrDef": "c"
+                        },
+                        {
+                            "_key": "(click)",
+                            "_value": "showArtInfo(item)",
+                            "_type": "kv",
+                            "_attrDef": "c",
+                            "objValue": {
+                                "nodeID": "sd_aXitHtfyJQGCUNrC",
+                                "functionName": "showArtInfo",
+                                "activeTree": "pages",
+                                "z": "sd_Cu54QWQnD3m2CoTj",
+                                "input": [
+                                    "item"
+                                ]
+                            }
                         }
                     ],
                     "44315f99-a4b0-c2da-ac98-f43201f38895": {
@@ -391,19 +406,6 @@
                                 "_value": "",
                                 "_type": "kv",
                                 "_attrDef": "p"
-                            },
-                            {
-                                "_key": "(click)",
-                                "_value": "showArtInfo()",
-                                "_type": "kv",
-                                "_attrDef": "c",
-                                "objValue": {
-                                    "nodeID": "sd_aXitHtfyJQGCUNrC",
-                                    "functionName": "showArtInfo",
-                                    "activeTree": "pages",
-                                    "z": "sd_Cu54QWQnD3m2CoTj",
-                                    "input": []
-                                }
                             }
                         ]
                     },

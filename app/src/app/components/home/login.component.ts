@@ -12,17 +12,17 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
-import { MAT_DIALOG_DATA } from '@angular/material/dialog'; //_splitter_
+import { FormControl, Validators, FormBuilder } from '@angular/forms'; //_splitter_
 //append_imports_end
 
 @Component({
-  selector: 'bh-dialogeArtInfo',
-  templateUrl: './dialogeArtInfo.template.html',
+  selector: 'bh-login',
+  templateUrl: './login.template.html',
   providers: [
     //appendnew_element_providers
   ],
 })
-export class dialogeArtInfoComponent {
+export class loginComponent {
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -31,6 +31,7 @@ export class dialogeArtInfoComponent {
   ) {
     this.__page_injector__.get(SDPageCommonService).addPageDefaults(this.page);
     this.registerListeners();
+    this.page.dep.FormBuilder = this.__page_injector__.get(FormBuilder); //FormBuilder
     //appendnew_element_inject
   }
 
@@ -39,7 +40,7 @@ export class dialogeArtInfoComponent {
       .get(SDPageCommonService)
       .constructFlowObject(this);
     {
-      this.sd_rJR1L9BGisavMuGt(bh);
+      this.sd_Sx4QeTC3FvDYe9AY(bh);
     }
   }
 
@@ -51,49 +52,24 @@ export class dialogeArtInfoComponent {
     //append_listeners
   }
 
-  sd_rJR1L9BGisavMuGt(bh) {
+  sd_Sx4QeTC3FvDYe9AY(bh) {
     try {
-      bh = this.sd_yz7SH8jM6r0Bf8HV(bh);
-      //appendnew_next_sd_rJR1L9BGisavMuGt
+      bh = this.sd_Z2MZrMm1ovV7oywr(bh);
+      //appendnew_next_sd_Sx4QeTC3FvDYe9AY
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_rJR1L9BGisavMuGt');
+      return this.errorHandler(bh, e, 'sd_Sx4QeTC3FvDYe9AY');
     }
   }
 
-  //appendnew_flow_dialogeArtInfoComponent_start
+  //appendnew_flow_loginComponent_start
 
-  sd_yz7SH8jM6r0Bf8HV(bh) {
+  sd_Z2MZrMm1ovV7oywr(bh) {
     try {
-      this.page.data = undefined;
-      bh = this.sd_4hcGUYz8iOIaRB26(bh);
-      //appendnew_next_sd_yz7SH8jM6r0Bf8HV
+      //appendnew_next_sd_Z2MZrMm1ovV7oywr
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_yz7SH8jM6r0Bf8HV');
-    }
-  }
-
-  sd_4hcGUYz8iOIaRB26(bh) {
-    try {
-      this.page.data = this.__page_injector__.get(MAT_DIALOG_DATA);
-
-      bh = this.sd_Ry5Sr4zqJsYNOtns(bh);
-      //appendnew_next_sd_4hcGUYz8iOIaRB26
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_4hcGUYz8iOIaRB26');
-    }
-  }
-
-  sd_Ry5Sr4zqJsYNOtns(bh) {
-    try {
-      const page = this.page;
-      console.log(page.data.artwork);
-      //appendnew_next_sd_Ry5Sr4zqJsYNOtns
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_Ry5Sr4zqJsYNOtns');
+      return this.errorHandler(bh, e, 'sd_Z2MZrMm1ovV7oywr');
     }
   }
 
@@ -119,5 +95,5 @@ export class dialogeArtInfoComponent {
       throw e;
     }
   }
-  //appendnew_flow_dialogeArtInfoComponent_Catch
+  //appendnew_flow_loginComponent_Catch
 }

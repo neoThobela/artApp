@@ -63,12 +63,12 @@ export class artworkComponent {
     }
   }
 
-  showArtInfo(...others) {
+  showArtInfo(art: any = undefined, ...others) {
     try {
       var bh: any = this.__page_injector__
         .get(SDPageCommonService)
         .constructFlowObject(this);
-      bh.input = {};
+      bh.input = { art: art };
       bh.local = {};
       bh = this.sd_WpUVUEIFtxhJAtT9(bh);
       //appendnew_next_showArtInfo
@@ -119,7 +119,7 @@ export class artworkComponent {
       const dialogeArtInfoDialog = this.__page_injector__.get(MatDialog);
       const dialogeArtInfoDialogRef = dialogeArtInfoDialog.open(
         dialogeArtInfoComponent,
-        {}
+        { data: bh.input.art }
       );
 
       return bh;

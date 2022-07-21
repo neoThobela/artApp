@@ -1,39 +1,39 @@
 [
     {
-        "id": "sd_paB43yE3391tmHyp",
+        "id": "sd_AIs5UmJ7tM5xr60e",
         "type": "tab",
-        "createdDate": "2022-07-21T07:02:42.344Z",
-        "label": "dialogeArtInfo",
+        "createdDate": "2022-07-21T15:26:13.899Z",
+        "label": "categoryDialoge",
         "disabled": false,
         "info": "",
         "functionSeq": 0,
         "generateNext": true,
-        "serviceName": "dialogeArtInfoComponent"
+        "serviceName": "categoryDialogeComponent"
     },
     {
-        "id": "sd_rJR1L9BGisavMuGt",
+        "id": "sd_NKajlHI6jF2FthD6",
         "type": "OnInit",
-        "z": "sd_paB43yE3391tmHyp",
+        "z": "sd_AIs5UmJ7tM5xr60e",
         "viewType": "common",
         "nodeType": "start",
         "name": "",
-        "functionName": "sd_rJR1L9BGisavMuGt",
+        "functionName": "sd_NKajlHI6jF2FthD6",
         "category": "Lifecycle Events",
-        "x": 45,
-        "y": 40,
+        "x": 30,
+        "y": 30,
         "wires": [
             [
-                "sd_yz7SH8jM6r0Bf8HV"
+                "sd_VOgMjAEDLsD0xTT8"
             ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "dialogeArtInfoComponent"
+        "serviceName": "categoryDialogeComponent"
     },
     {
-        "id": "sd_yz7SH8jM6r0Bf8HV",
+        "id": "sd_VOgMjAEDLsD0xTT8",
         "type": "PageVariables",
-        "z": "sd_paB43yE3391tmHyp",
+        "z": "sd_AIs5UmJ7tM5xr60e",
         "viewType": "pages",
         "nodeType": "flow",
         "name": "",
@@ -44,18 +44,18 @@
             {
                 "textIp": "data",
                 "typedIpValue": {
-                    "type": "literal",
+                    "type": "this.page",
                     "value": ""
                 }
             }
         ],
-        "functionName": "sd_yz7SH8jM6r0Bf8HV",
+        "functionName": "sd_VOgMjAEDLsD0xTT8",
         "category": "Function",
         "x": 185,
         "y": 40,
         "wires": [
             [
-                "sd_4hcGUYz8iOIaRB26"
+                "sd_6mTReCSQRoCHzWhH"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -63,17 +63,17 @@
         "generated": true
     },
     {
-        "id": "sd_Ry5Sr4zqJsYNOtns",
+        "id": "sd_srm80xZh5FRCtZ0y",
         "type": "Script",
-        "z": "sd_paB43yE3391tmHyp",
+        "z": "sd_AIs5UmJ7tM5xr60e",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
         "script": "console.log(page.data.artwork)",
-        "functionName": "sd_Ry5Sr4zqJsYNOtns",
+        "functionName": "sd_srm80xZh5FRCtZ0y",
         "category": "Function",
-        "x": 425,
-        "y": 40,
+        "x": 485,
+        "y": 60,
         "wires": [
             []
         ],
@@ -82,20 +82,20 @@
         "generated": true
     },
     {
-        "id": "sd_4hcGUYz8iOIaRB26",
+        "id": "sd_6mTReCSQRoCHzWhH",
         "type": "GetDialogData",
-        "z": "sd_paB43yE3391tmHyp",
+        "z": "sd_AIs5UmJ7tM5xr60e",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
         "dialogDataMapping": "this.page.data",
-        "functionName": "sd_4hcGUYz8iOIaRB26",
+        "functionName": "sd_6mTReCSQRoCHzWhH",
         "category": "Dialog",
-        "x": 305,
+        "x": 285,
         "y": 40,
         "wires": [
             [
-                "sd_Ry5Sr4zqJsYNOtns"
+                "sd_srm80xZh5FRCtZ0y"
             ]
         ],
         "__ssdTypeInputs__": {

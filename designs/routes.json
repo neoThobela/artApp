@@ -9,7 +9,7 @@
                     "path": "display"
                 },
                 {
-                    "path": "category",
+                    "path": "category/:searchString",
                     "component": "cateoryComponent"
                 },
                 {
@@ -21,6 +21,10 @@
                     "path": "artwork"
                 }
             ]
+        },
+        {
+            "path": "login",
+            "component": "loginComponent"
         },
         {
             "path": "''",
