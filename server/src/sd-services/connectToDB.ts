@@ -201,6 +201,110 @@ export class connectToDB {
         this.generatedMiddlewares
       )
     );
+
+    if (!this.swaggerDocument['paths']['/post-data']) {
+      this.swaggerDocument['paths']['/post-data'] = {
+        post: {
+          summary: '',
+          description: '',
+          consumes: [],
+          produces: [],
+          parameters: [],
+          responses: {},
+        },
+      };
+    } else {
+      this.swaggerDocument['paths']['/post-data']['post'] = {
+        summary: '',
+        description: '',
+        consumes: [],
+        produces: [],
+        parameters: [],
+        responses: {},
+      };
+    }
+    this.app['post'](
+      `${this.serviceBasePath}/post-data`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          bh = await this.sd_FVeqRu0aHGUzYyFi(bh);
+          //appendnew_next_sd_ZXPigPLCF9YMY4jn
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_ZXPigPLCF9YMY4jn');
+        }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
+
+    if (!this.swaggerDocument['paths']['/login/{username}/&/{password}']) {
+      this.swaggerDocument['paths']['/login/{username}/&/{password}'] = {
+        get: {
+          summary: '',
+          description: '',
+          consumes: [],
+          produces: [],
+          parameters: [],
+          responses: {},
+        },
+      };
+    } else {
+      this.swaggerDocument['paths']['/login/{username}/&/{password}']['get'] = {
+        summary: '',
+        description: '',
+        consumes: [],
+        produces: [],
+        parameters: [],
+        responses: {},
+      };
+    }
+    this.app['get'](
+      `${this.serviceBasePath}/login/:username&:password`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          bh = await this.sd_aWiSNemwlZQarBhS(bh);
+          //appendnew_next_sd_j3S7H1eWawp80Kgc
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_j3S7H1eWawp80Kgc');
+        }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
     //appendnew_flow_connectToDB_HttpIn
   }
   //   service flows_connectToDB
@@ -286,6 +390,90 @@ export class connectToDB {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_SZBwnyLSBmuuUZdj');
+    }
+  }
+
+  async sd_FVeqRu0aHGUzYyFi(bh) {
+    try {
+      bh.local.collection = 'art';
+      bh.local.result = {};
+
+      console.log(bh.local);
+      bh = await this.sd_WbYmWaO5V1gfjbzC(bh);
+      //appendnew_next_sd_FVeqRu0aHGUzYyFi
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_FVeqRu0aHGUzYyFi');
+    }
+  }
+
+  async sd_WbYmWaO5V1gfjbzC(bh) {
+    try {
+      bh.local.result = await MongoPersistance.getInstance().insertOne(
+        'sd_JoUpTYPvdvSvR3fO',
+        bh.local.collection,
+        bh.input.body,
+        {}
+      );
+      await this.sd_cc82ZEi7yQrOM1cD(bh);
+      //appendnew_next_sd_WbYmWaO5V1gfjbzC
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_WbYmWaO5V1gfjbzC');
+    }
+  }
+
+  async sd_cc82ZEi7yQrOM1cD(bh) {
+    try {
+      bh.web.res.status(200).send(bh.local.result);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_cc82ZEi7yQrOM1cD');
+    }
+  }
+
+  async sd_aWiSNemwlZQarBhS(bh) {
+    try {
+      bh.local.collection = 'users';
+      bh.local.query = {
+        email: bh.input.params.username,
+        password: bh.input.params.password,
+      };
+      bh.local.result = {};
+
+      console.log(bh.local);
+      bh = await this.sd_6uRSnbVoa5QXP5Pj(bh);
+      //appendnew_next_sd_aWiSNemwlZQarBhS
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_aWiSNemwlZQarBhS');
+    }
+  }
+
+  async sd_6uRSnbVoa5QXP5Pj(bh) {
+    try {
+      bh.local.result = await MongoPersistance.getInstance().find(
+        'sd_JoUpTYPvdvSvR3fO',
+        bh.local.collection,
+        bh.local.query,
+        {}
+      );
+      await this.sd_WnZ5ucnbtn154Zgs(bh);
+      //appendnew_next_sd_6uRSnbVoa5QXP5Pj
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_6uRSnbVoa5QXP5Pj');
+    }
+  }
+
+  async sd_WnZ5ucnbtn154Zgs(bh) {
+    try {
+      bh.web.res.status(200).send(bh.local.result);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_WnZ5ucnbtn154Zgs');
     }
   }
 

@@ -12,13 +12,13 @@
       <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
         <form>
           <mat-form-field style="width: 95%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-            <input matInput placeholder="Userame" [required]="false">
+            <input matInput placeholder="Userame" [required]="false" #username>
 
           </mat-form-field>
           <mat-form-field style="width: 95%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-            <input matInput placeholder="Password" [required]="false">
+            <input matInput placeholder="Password" [required]="false" #password>
 
-          </mat-form-field><button mat-raised-button style="width: 95%;" class="btn">Login</button>
+          </mat-form-field><button mat-raised-button style="width: 95%;" class="btn" (click)="login(username.value,password.value)">Login</button>
           <div fxLayout="row wrap" class="margintop1em fullWidth" fxLayoutAlign="center center" [fxShow]="true">
             <div>
               Don&apos;t have an account? <a href="/register" class="yellowText">Register</a></div>

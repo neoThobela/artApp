@@ -23,6 +23,7 @@ declare const cordova: any;
 export class connectToDB {
   public artistsByCategory: any;
   public allArtists: any;
+  public user: any;
 
   constructor(
     private sdService: SDBaseService,
@@ -84,11 +85,64 @@ export class connectToDB {
         // formatting output variables
         {
           input: {},
-          local: {},
+          local: {
+            client_result: bh.local.client_result,
+          },
         }
       );
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_wWLt0L5xLxnb37WB');
+    }
+  }
+
+  async pOST(myForm: any = undefined, ...others) {
+    try {
+      var bh: any = {
+        input: {
+          myForm: myForm,
+        },
+        local: {},
+      };
+      bh = this.sdService.__constructDefault(bh);
+      bh = await this.sd_cczUAnqg4OdVfJtA(bh);
+      //appendnew_next_pOST
+      return (
+        // formatting output variables
+        {
+          input: {},
+          local: {},
+        }
+      );
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_oAQQhRBBg9AKWjcy');
+    }
+  }
+
+  async loginClient(username = '', password = '', ...others) {
+    try {
+      var bh: any = {
+        input: {
+          username: username,
+          password: password,
+        },
+        local: {
+          client_result: undefined,
+        },
+      };
+      bh = this.sdService.__constructDefault(bh);
+      bh = await this.sd_0peb57TbAKwOzshu(bh);
+      //appendnew_next_loginClient
+      return (
+        // formatting output variables
+        {
+          input: {},
+          local: {
+            client_result: bh.local.client_result,
+          },
+        }
+      );
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_rQbk3urIJnE5Xf9w');
     }
   }
 
@@ -177,6 +231,111 @@ export class connectToDB {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_WxzPmmFjxxRk5xHv');
+    }
+  }
+
+  async sd_cczUAnqg4OdVfJtA(bh) {
+    try {
+      console.log('client', bh);
+      bh.local.url = 'http://localhost:8081/api/post-data';
+      bh = await this.sd_PbCehRYeSVMecPyY(bh);
+      //appendnew_next_sd_cczUAnqg4OdVfJtA
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_cczUAnqg4OdVfJtA');
+    }
+  }
+
+  async sd_PbCehRYeSVMecPyY(bh) {
+    try {
+      let requestOptions = {
+        url: bh.local.url,
+        method: 'post',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: bh.input.myForm,
+      };
+      bh.local.client_result = await this.sdService.nHttpRequest(
+        requestOptions
+      );
+      bh = await this.sd_p0csbj6fGBQhAYTR(bh);
+      //appendnew_next_sd_PbCehRYeSVMecPyY
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_PbCehRYeSVMecPyY');
+    }
+  }
+
+  async sd_p0csbj6fGBQhAYTR(bh) {
+    try {
+      this.allArtists = bh.local.client_result;
+      //appendnew_next_sd_p0csbj6fGBQhAYTR
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_p0csbj6fGBQhAYTR');
+    }
+  }
+
+  async sd_0peb57TbAKwOzshu(bh) {
+    try {
+      console.log('client', bh);
+      bh.local.url =
+        'http://localhost:8081/api/login/' +
+        bh.input.username +
+        '&' +
+        bh.input.password;
+      bh = await this.sd_f4tGHJ2G2hOSqDhK(bh);
+      //appendnew_next_sd_0peb57TbAKwOzshu
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_0peb57TbAKwOzshu');
+    }
+  }
+
+  async sd_f4tGHJ2G2hOSqDhK(bh) {
+    try {
+      let requestOptions = {
+        url: bh.local.url,
+        method: 'get',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: undefined,
+      };
+      bh.local.client_result = await this.sdService.nHttpRequest(
+        requestOptions
+      );
+      bh = await this.sd_OF6928yxaXIWIFe3(bh);
+      //appendnew_next_sd_f4tGHJ2G2hOSqDhK
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_f4tGHJ2G2hOSqDhK');
+    }
+  }
+
+  async sd_OF6928yxaXIWIFe3(bh) {
+    try {
+      this.user = bh.local.client_result;
+      bh = await this.sd_f6EKoS2JyNgVXK7r(bh);
+      //appendnew_next_sd_OF6928yxaXIWIFe3
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_OF6928yxaXIWIFe3');
+    }
+  }
+
+  async sd_f6EKoS2JyNgVXK7r(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/home/display');
+      await this.router.navigate([
+        this.sdService.formatPathWithParams(path, undefined),
+      ]);
+      //appendnew_next_sd_f6EKoS2JyNgVXK7r
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_f6EKoS2JyNgVXK7r');
     }
   }
 

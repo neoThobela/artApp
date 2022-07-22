@@ -51,5 +51,132 @@
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true
+    },
+    {
+        "id": "sd_1Aiu5wMRvcTTnJy8",
+        "type": "PageStart",
+        "z": "sd_dxPFkZApTRExNkaK",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "login",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "username",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "password",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "login",
+        "category": "General",
+        "x": 45,
+        "y": 180,
+        "wires": [
+            [
+                "sd_sdsoQ8zMH4O1lBJ0"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "loginComponent"
+    },
+    {
+        "id": "sd_sdsoQ8zMH4O1lBJ0",
+        "type": "Script",
+        "z": "sd_dxPFkZApTRExNkaK",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "",
+        "functionName": "sd_sdsoQ8zMH4O1lBJ0",
+        "category": "Function",
+        "x": 220,
+        "y": 180,
+        "wires": [
+            [
+                "sd_700r9Sqgy8A1I9YG"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_700r9Sqgy8A1I9YG",
+        "type": "PageCallService",
+        "z": "sd_dxPFkZApTRExNkaK",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_fSGlHyApcayt5tky",
+            "type": "tab",
+            "createdDate": "2022-07-20T13:20:26.916Z",
+            "label": "connectToDB",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_rQbk3urIJnE5Xf9w",
+            "flowName": "loginClient"
+        },
+        "inputVariables": [
+            {
+                "key": "username",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "username"
+            },
+            {
+                "key": "password",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "password"
+            }
+        ],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "client_result",
+                "valueType": "bh",
+                "value": "",
+                "mapVarName": "client_result"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/connectToDB",
+        "startName": "loginClient",
+        "inputParams": [
+            "bh.input.username",
+            "bh.input.password"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_700r9Sqgy8A1I9YG",
+        "category": "General",
+        "x": 340,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
     }
 ]

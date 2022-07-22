@@ -1,0 +1,191 @@
+[
+    {
+        "id": "sd_VEIfS9iQyjmNmYgv",
+        "type": "tab",
+        "createdDate": "2022-07-22T06:34:09.553Z",
+        "label": "post",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "postComponent"
+    },
+    {
+        "id": "sd_dDWw9cjIMk7RAj4q",
+        "type": "OnInit",
+        "z": "sd_VEIfS9iQyjmNmYgv",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_dDWw9cjIMk7RAj4q",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 40,
+        "wires": [
+            [
+                "sd_OpK5EI2dXbwFk7y0"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "postComponent"
+    },
+    {
+        "id": "sd_OpK5EI2dXbwFk7y0",
+        "type": "PageVariables",
+        "z": "sd_VEIfS9iQyjmNmYgv",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "post",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_OpK5EI2dXbwFk7y0",
+        "category": "Function",
+        "x": 205,
+        "y": 40,
+        "wires": [
+            [
+                "sd_lweZzvu9TlSFT87P"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_lweZzvu9TlSFT87P",
+        "type": "Script",
+        "z": "sd_VEIfS9iQyjmNmYgv",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.post= {\n    title:'',\n    artistName:'',\n    cateory:'',\n    artwork:'',\n    year:'',\n    info:'',\n    pictureId:'',\n    price:''\n};",
+        "functionName": "sd_lweZzvu9TlSFT87P",
+        "category": "Function",
+        "x": 380,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_lj1yzI90YKIbQI6q",
+        "type": "PageStart",
+        "z": "sd_VEIfS9iQyjmNmYgv",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "post",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "form",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "post",
+        "category": "General",
+        "x": 100,
+        "y": 180,
+        "wires": [
+            [
+                "sd_qB8wM26sw8xQjFBA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "postComponent"
+    },
+    {
+        "id": "sd_qB8wM26sw8xQjFBA",
+        "type": "PageCallService",
+        "z": "sd_VEIfS9iQyjmNmYgv",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_fSGlHyApcayt5tky",
+            "type": "tab",
+            "createdDate": "2022-07-20T13:20:26.916Z",
+            "label": "connectToDB",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_oAQQhRBBg9AKWjcy",
+            "flowName": "pOST"
+        },
+        "inputVariables": [
+            {
+                "key": "myForm",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "form"
+            }
+        ],
+        "outputMapping": [],
+        "serviceImportPath": "app/sd-services/connectToDB",
+        "startName": "pOST",
+        "inputParams": [
+            "bh.input.form"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_qB8wM26sw8xQjFBA",
+        "category": "General",
+        "x": 365,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_A9sivYAILPKWPLut",
+        "type": "Log",
+        "z": "sd_VEIfS9iQyjmNmYgv",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "bh.input.form",
+        "functionName": "sd_A9sivYAILPKWPLut",
+        "category": "General",
+        "x": 220,
+        "y": 260,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "bh.input",
+                "value": "form",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true
+    }
+]

@@ -1,0 +1,59 @@
+<div fxLayout="column wrap" style="margin-top:4em;margin-bottom:4em" class="overfflow fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="end end" [fxShow]="true"><img imgSrc="/Web/images/neo.jpg" style="height:70vh;border-Radius:80px" width="400px"></div>
+  </div>
+  <div fxLayout="row wrap" class="margintop1em fullWidth overfflow" fxLayoutAlign="center center" [fxShow]="true">
+    <div fxLayout="column wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+      <div fxLayout="row wrap" class="width80" fxLayoutAlign="center center" [fxShow]="true">
+        <p style="font-size:3em" class="Monoton">
+          POST</p>
+      </div>
+      <div fxLayout="row wrap" class="width80" fxLayoutAlign="center center" [fxShow]="true">
+        <form #postForm="ngForm">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.post.title" name="title" type="text" placeholder="Title" [required]="true">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.post.artistName" name="artistName" type="text" placeholder="Artsist" [required]="true">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.post.price" name="price" placeholder="Price" [required]="true">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;">
+              <textarea matInput [(ngModel)]="page.post.info" name="info" placeholder="Description" [required]="true"></textarea>
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.post.year" name="year" placeholder="year" [required]="true">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.post.artwork" name="artwork" type="url" placeholder="Image URL" [required]="true">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.post.cateory" name="cateory" placeholder="Category" [required]="true">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button style=" width: 400px;" class="fullWidth btn" (click)="post(postForm.value)" [disableRipple]="true">Post</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

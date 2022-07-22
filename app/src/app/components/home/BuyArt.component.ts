@@ -95,6 +95,7 @@ export class BuyArtComponent {
       let outputVariables = await connectToDBInstance.getAllArtists(
         this.page.arr
       );
+      this.page.arr = outputVariables.local.client_result;
 
       bh = this.sd_B6pqESpYkuC2qYWg(bh);
       //appendnew_next_sd_Iqquz0kdr9JTCP5p

@@ -63,14 +63,14 @@ a{
 .width80{
     width:80%
 }
-bh-displaypae ,bh-cateory, bh-dialogeartinfo ,bh-login ,bh-register{
+bh-displaypae ,bh-cateory, bh-dialogeartinfo ,bh-login ,bh-register ,bh-post{
     width:100%;
 }
 .marginTop2em{
     margin-top:2em;
 }
 .shoppingBg{
-    background-image: url("https://i.pinimg.com/736x/8c/87/dc/8c87dc7606d791f4065cd140ceb7b676.jpg");
+    background-image:linear-gradient(180deg,rgba(14, 0, 0,0.567),rgba(14, 0, 0,0.65) ), url("https://i.pinimg.com/736x/f0/40/99/f04099a6c29a242991d699bec5c2a65f.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -82,6 +82,7 @@ bh-displaypae ,bh-cateory, bh-dialogeartinfo ,bh-login ,bh-register{
 // background-color:black;
  background-size: cover;
  background-repeat: no-repeat;
+ background-attachment: fixed;
  height:80vh;
  width:800px;
  opacity:2;
@@ -101,7 +102,7 @@ bh-displaypae ,bh-cateory, bh-dialogeartinfo ,bh-login ,bh-register{
 }
 .mat-form-field {
     
-    width: 61%;
+    width: 400px;
 }
 .fontSize4em{
     font-size: 4em;
@@ -142,7 +143,7 @@ bh-displaypae ,bh-cateory, bh-dialogeartinfo ,bh-login ,bh-register{
     padding: .5em 0 1em 0;
 }
 mat-form-field-appearance-outline .mat-form-field-flex {
-    width: 411px!important;
+    width: 300px!important;
 }
 .fontSize24{
     font-size: 24px;
@@ -158,6 +159,12 @@ mat-form-field-appearance-outline .mat-form-field-flex {
 .fontSize5em{
     font-size:5em;
 }
+.curser{
+    cursor: pointer;
+}
+.yellowTexthover:hover{
+    color:$yellow;
+}
 .mat-form-field-appearance-outline .mat-form-field-outline {
     color: $white;
     border: 1px solid;
@@ -166,7 +173,33 @@ mat-form-field-appearance-outline .mat-form-field-flex {
       margin-bottom: 1em;
   }
 .img:hover{
-    width:300px;
-    height: 300px;
+    // width:300px;
+    // height: 300px;
     border-radius: 0px!important;
+}
+
+@keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+.flash {
+  animation: flash .5s;
+
+    img { 
+	transition: all .2s ease-in-out; 
+    }
+    
+    img:hover { 
+    	transform: scale(1.2); 
+    }
+
 }

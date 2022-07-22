@@ -23,6 +23,10 @@
                 {
                     "path": "shop",
                     "component": "BuyArtComponent"
+                },
+                {
+                    "path": "post",
+                    "component": "postComponent"
                 }
             ]
         },

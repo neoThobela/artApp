@@ -38,8 +38,11 @@
         "bold600",
         "yellowlines",
         "fontSize5em",
+        "curser",
+        "yellowTexthover",
         "mat-form-field-outline",
         "marginbottom1em",
-        "img"
+        "img",
+        "flash"
     ]
 }

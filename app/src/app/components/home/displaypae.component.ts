@@ -70,6 +70,7 @@ export class displaypaeComponent {
       bh.input = { textToSearch: textToSearch };
       bh.local = {};
       bh = this.sd_vRlAVbVTlEP443fJ(bh);
+      this.sd_ftI3WIVpckrDOqbn(bh);
       //appendnew_next_findCategory
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_jii6SjVAtzvgiPym');
@@ -133,6 +134,7 @@ export class displaypaeComponent {
       bh.input.artistsByCategory = outputVariables.local.client_result;
 
       bh = this.sd_SSYkbQIk6gYHuRYU(bh);
+      this.sd_ftI3WIVpckrDOqbn(bh);
       //appendnew_next_sd_vRlAVbVTlEP443fJ
       return bh;
     } catch (e) {
@@ -151,6 +153,16 @@ export class displaypaeComponent {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_SSYkbQIk6gYHuRYU');
+    }
+  }
+
+  sd_ftI3WIVpckrDOqbn(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), bh);
+      //appendnew_next_sd_ftI3WIVpckrDOqbn
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ftI3WIVpckrDOqbn');
     }
   }
 

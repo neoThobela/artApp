@@ -7,14 +7,16 @@
               ART GALLERY</label></div>
           <div fxLayout="column wrap" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true">
             <div fxLayout="row wrap" class="bluebottom" fxLayoutAlign="space-between center" [fxShow]="true">
-              <div fxLayout="column wrap" class="primaryBlackText" fxLayoutAlign="start stretch" [fxShow]="true"><label routerLink="display" class="bluebottom">
+              <div fxLayout="column wrap" class="curser primaryBlackText" fxLayoutAlign="start stretch" [fxShow]="true"><label routerLink="display" class="curser bluebottom">
                   Home</label></div>
-              <div fxLayout="column wrap" class="primaryBlackText" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="about"><label class="bluebottom">
+              <div fxLayout="column wrap" class="curser primaryBlackText" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="about"><label class="curser bluebottom">
                   About Us</label></div>
-              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" (click)="getArtsits(allArtist)"><label (click)="getArtsits(allArtists)" class="bluebottom">
+              <div fxLayout="column wrap" class="curser" fxLayoutAlign="start stretch" [fxShow]="true" (click)="getArtsits(allArtist)"><label (click)="getArtsits(allArtists)" class="curser bluebottom">
                   Artwork</label></div>
-              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"></div>
-              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+              <div fxLayout="column wrap" class="curser" fxLayoutAlign="start stretch" [fxShow]="true"><label routerLink="shop" class="curser">
+                  Shop</label></div>
+              <div fxLayout="column wrap" class="curser" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="post"><label class="yellowTexthover curser Monoton bluebottom">
+                  POST</label></div>
             </div>
           </div>
         </div>

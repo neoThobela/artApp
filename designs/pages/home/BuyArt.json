@@ -113,7 +113,16 @@
                 "value": "arr"
             }
         ],
-        "outputMapping": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "client_result",
+                "valueType": "this.page",
+                "value": "arr",
+                "mapVarName": "client_result",
+                "localVar": "this.page.arr"
+            }
+        ],
         "serviceImportPath": "app/sd-services/connectToDB",
         "startName": "getAllArtists",
         "inputParams": [

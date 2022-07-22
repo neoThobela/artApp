@@ -142,7 +142,9 @@
                     },
                     {
                         "_key": "class",
-                        "_value": "",
+                        "_value": [
+                            "curser"
+                        ],
                         "_type": "dav",
                         "_attrDef": "p"
                     },
@@ -343,7 +345,7 @@
                         "designerReference": [
                             {
                                 "_key": "style",
-                                "_value": "",
+                                "_value": "margin:0px",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -544,7 +546,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "Title: {{item.title}}",
+                                    "_value": "{{item.title}}",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }

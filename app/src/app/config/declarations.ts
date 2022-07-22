@@ -15,6 +15,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-postComponent
+import { postComponent } from '../components/home/post.component';
 //CORE_REFERENCE_IMPORT-BuyArtComponent
 import { BuyArtComponent } from '../components/home/BuyArt.component';
 //CORE_REFERENCE_IMPORT-registerComponent
@@ -69,6 +71,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-postComponent
+  postComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-BuyArtComponent
   BuyArtComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-registerComponent
@@ -125,6 +129,7 @@ export const appRoutes = [
       { path: 'about', component: aboutUsComponent },
       { path: 'artwork', component: artworkComponent },
       { path: 'shop', component: BuyArtComponent },
+      { path: 'post', component: postComponent },
     ],
   },
   { path: 'login', component: loginComponent },

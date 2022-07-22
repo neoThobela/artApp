@@ -1,0 +1,22 @@
+{
+    "2baa7610-71ef-b74e-bb9d-4a70c97183d9": {
+        "dataModelId": "2baa7610-71ef-b74e-bb9d-4a70c97183d9",
+        "name": "login",
+        "description": "login Schema",
+        "dataSource": "neutrinos-rt",
+        "fields": [
+            {
+                "name": "username",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "password",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            }
+        ]
+    }
+}

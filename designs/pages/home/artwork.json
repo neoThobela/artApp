@@ -47,6 +47,13 @@
                     "type": "this.page",
                     "value": ""
                 }
+            },
+            {
+                "textIp": "allArtists",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
             }
         ],
         "functionName": "sd_ey1AEYbLHYwIcMTh",
@@ -72,8 +79,8 @@
         "script": "console.log(page.arr)",
         "functionName": "sd_w36c2SeTfcyhcV3k",
         "category": "Function",
-        "x": 425,
-        "y": 60,
+        "x": 585,
+        "y": 200,
         "wires": [
             []
         ],
@@ -128,8 +135,8 @@
         },
         "serviceImportPath": "app/sd-services/connectToDB",
         "category": "Function",
-        "x": 305,
-        "y": 60,
+        "x": 485,
+        "y": 120,
         "wires": [
             [
                 "sd_w36c2SeTfcyhcV3k"
@@ -326,5 +333,137 @@
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true
+    },
+    {
+        "id": "sd_FgSoVQ8oEJl37Z3y",
+        "type": "PageCallService",
+        "z": "sd_Cu54QWQnD3m2CoTj",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_fSGlHyApcayt5tky",
+            "type": "tab",
+            "createdDate": "2022-07-20T13:20:26.916Z",
+            "label": "connectToDB",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_wWLt0L5xLxnb37WB",
+            "flowName": "getAllArtists"
+        },
+        "inputVariables": [
+            {
+                "key": "artist",
+                "map": true,
+                "valueType": "this.page",
+                "value": "arr"
+            }
+        ],
+        "outputMapping": [],
+        "serviceImportPath": "app/sd-services/connectToDB",
+        "startName": "getAllArtists",
+        "inputParams": [
+            "this.page.arr"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_FgSoVQ8oEJl37Z3y",
+        "category": "General",
+        "x": 605,
+        "y": 100,
+        "wires": [
+            [
+                "sd_drykBe2Q00t3IchX"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true
+    },
+    {
+        "id": "sd_drykBe2Q00t3IchX",
+        "type": "Log",
+        "z": "sd_Cu54QWQnD3m2CoTj",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "this.page.arr",
+        "functionName": "sd_drykBe2Q00t3IchX",
+        "category": "General",
+        "x": 660,
+        "y": 100,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "this.page",
+                "value": "arr",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true
+    },
+    {
+        "id": "sd_BDmYSO3qfbqyfF3u",
+        "type": "PageCallService",
+        "z": "sd_Cu54QWQnD3m2CoTj",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_fSGlHyApcayt5tky",
+            "type": "tab",
+            "createdDate": "2022-07-20T13:20:26.916Z",
+            "label": "connectToDB",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_wWLt0L5xLxnb37WB",
+            "flowName": "getAllArtists"
+        },
+        "inputVariables": [
+            {
+                "key": "artist",
+                "map": true,
+                "valueType": "this.page",
+                "value": "arr"
+            }
+        ],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "client_result",
+                "valueType": "bh",
+                "value": "",
+                "mapVarName": "client_result"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/connectToDB",
+        "startName": "getAllArtists",
+        "inputParams": [
+            "this.page.arr"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_BDmYSO3qfbqyfF3u",
+        "category": "General",
+        "x": 345,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true
     }
 ]

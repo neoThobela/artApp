@@ -13,18 +13,17 @@ import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
 import { connectToDB } from 'app/sd-services/connectToDB'; //_splitter_
-import { MatDialog } from '@angular/material/dialog'; //_splitter_
-import { dialogeArtInfoComponent } from './dialogeArtInfo.component'; //_splitter_
+import { FormControl, Validators, FormBuilder } from '@angular/forms'; //_splitter_
 //append_imports_end
 
 @Component({
-  selector: 'bh-artwork',
-  templateUrl: './artwork.template.html',
+  selector: 'bh-post',
+  templateUrl: './post.template.html',
   providers: [
     //appendnew_element_providers
   ],
 })
-export class artworkComponent {
+export class postComponent {
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -33,6 +32,7 @@ export class artworkComponent {
   ) {
     this.__page_injector__.get(SDPageCommonService).addPageDefaults(this.page);
     this.registerListeners();
+    this.page.dep.FormBuilder = this.__page_injector__.get(FormBuilder); //FormBuilder
     //appendnew_element_inject
   }
 
@@ -41,7 +41,7 @@ export class artworkComponent {
       .get(SDPageCommonService)
       .constructFlowObject(this);
     {
-      this.sd_105CJjDX91lOcCqr(bh);
+      this.sd_dDWw9cjIMk7RAj4q(bh);
     }
   }
 
@@ -53,79 +53,74 @@ export class artworkComponent {
     //append_listeners
   }
 
-  sd_105CJjDX91lOcCqr(bh) {
+  sd_dDWw9cjIMk7RAj4q(bh) {
     try {
-      bh = this.sd_ey1AEYbLHYwIcMTh(bh);
-      //appendnew_next_sd_105CJjDX91lOcCqr
+      bh = this.sd_OpK5EI2dXbwFk7y0(bh);
+      //appendnew_next_sd_dDWw9cjIMk7RAj4q
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_105CJjDX91lOcCqr');
+      return this.errorHandler(bh, e, 'sd_dDWw9cjIMk7RAj4q');
     }
   }
 
-  showArtInfo(art: any = undefined, ...others) {
+  post(form: any = undefined, ...others) {
     try {
       var bh: any = this.__page_injector__
         .get(SDPageCommonService)
         .constructFlowObject(this);
-      bh.input = { art: art };
+      bh.input = { form: form };
       bh.local = {};
-      bh = this.sd_WpUVUEIFtxhJAtT9(bh);
-      //appendnew_next_showArtInfo
+      bh = this.sd_qB8wM26sw8xQjFBA(bh);
+      //appendnew_next_post
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_aXitHtfyJQGCUNrC');
+      return this.errorHandler(bh, e, 'sd_lj1yzI90YKIbQI6q');
     }
   }
 
-  //appendnew_flow_artworkComponent_start
+  //appendnew_flow_postComponent_start
 
-  sd_ey1AEYbLHYwIcMTh(bh) {
+  sd_OpK5EI2dXbwFk7y0(bh) {
     try {
-      this.page.arr = undefined;
-      this.page.allArtists = [];
-      bh = this.sd_Hc5AvG3dGmxNEmWP(bh);
-      //appendnew_next_sd_ey1AEYbLHYwIcMTh
+      this.page.post = undefined;
+      bh = this.sd_lweZzvu9TlSFT87P(bh);
+      //appendnew_next_sd_OpK5EI2dXbwFk7y0
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_ey1AEYbLHYwIcMTh');
+      return this.errorHandler(bh, e, 'sd_OpK5EI2dXbwFk7y0');
     }
   }
 
-  sd_Hc5AvG3dGmxNEmWP(bh) {
+  sd_lweZzvu9TlSFT87P(bh) {
+    try {
+      const page = this.page;
+      page.post = {
+        title: '',
+        artistName: '',
+        cateory: '',
+        artwork: '',
+        year: '',
+        info: '',
+        pictureId: '',
+        price: '',
+      };
+      //appendnew_next_sd_lweZzvu9TlSFT87P
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_lweZzvu9TlSFT87P');
+    }
+  }
+
+  async sd_qB8wM26sw8xQjFBA(bh) {
     try {
       const connectToDBInstance: connectToDB =
         this.__page_injector__.get(connectToDB);
-      this.page.arr = connectToDBInstance['allArtists'];
-      bh = this.sd_w36c2SeTfcyhcV3k(bh);
-      //appendnew_next_sd_Hc5AvG3dGmxNEmWP
+
+      let outputVariables = await connectToDBInstance.pOST(bh.input.form);
+
+      //appendnew_next_sd_qB8wM26sw8xQjFBA
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_Hc5AvG3dGmxNEmWP');
-    }
-  }
-
-  sd_w36c2SeTfcyhcV3k(bh) {
-    try {
-      const page = this.page;
-      console.log(page.arr);
-      //appendnew_next_sd_w36c2SeTfcyhcV3k
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_w36c2SeTfcyhcV3k');
-    }
-  }
-
-  sd_WpUVUEIFtxhJAtT9(bh) {
-    try {
-      const dialogeArtInfoDialog = this.__page_injector__.get(MatDialog);
-      const dialogeArtInfoDialogRef = dialogeArtInfoDialog.open(
-        dialogeArtInfoComponent,
-        { data: bh.input.art }
-      );
-
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_WpUVUEIFtxhJAtT9');
+      return await this.errorHandler(bh, e, 'sd_qB8wM26sw8xQjFBA');
     }
   }
 
@@ -151,5 +146,5 @@ export class artworkComponent {
       throw e;
     }
   }
-  //appendnew_flow_artworkComponent_Catch
+  //appendnew_flow_postComponent_Catch
 }

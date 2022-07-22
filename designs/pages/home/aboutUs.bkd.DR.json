@@ -2111,7 +2111,9 @@
                                 },
                                 {
                                     "_key": "class",
-                                    "_value": "",
+                                    "_value": [
+                                        "width80"
+                                    ],
                                     "_type": "dav",
                                     "_attrDef": "p"
                                 },
@@ -2166,20 +2168,22 @@
                                     },
                                     {
                                         "_key": "class",
-                                        "_value": "",
+                                        "_value": [
+                                            "fontSize4em"
+                                        ],
                                         "_type": "dav",
                                         "_attrDef": "p"
                                     },
                                     {
                                         "_key": "htmlElement",
-                                        "_value": "h1",
+                                        "_value": "p",
                                         "_type": "dav",
                                         "_attrDef": "p",
                                         "_useAsLabel": true
                                     },
                                     {
                                         "_key": "tagType",
-                                        "_value": "h1",
+                                        "_value": "p",
                                         "_type": "a",
                                         "_attrDef": "p",
                                         "_visibility": false

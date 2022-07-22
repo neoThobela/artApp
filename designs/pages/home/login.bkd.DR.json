@@ -324,7 +324,6 @@
                     "paletteKey": "Html5",
                     "parentEditorKey": "e02b9c20-fc93-8cb4-46cd-a1c08e747937",
                     "isAdvancedComponent": true,
-                    "isCommented": "false",
                     "commentid": null,
                     "designerReference": [
                         {
@@ -538,7 +537,6 @@
                 "91a2dab5-7789-0b5c-36b6-aee3843f7bc8": {
                     "paletteKey": "FlexLayoutRow",
                     "parentEditorKey": "e02b9c20-fc93-8cb4-46cd-a1c08e747937",
-                    "isCommented": "false",
                     "commentid": null,
                     "designerReference": [
                         {
@@ -603,7 +601,6 @@
                 "20ea5f09-29d1-9321-72df-ddfa2c1c6f98": {
                     "paletteKey": "FlexLayoutRow",
                     "parentEditorKey": "e02b9c20-fc93-8cb4-46cd-a1c08e747937",
-                    "isCommented": "false",
                     "commentid": null,
                     "designerReference": [
                         {
@@ -668,7 +665,6 @@
                         "paletteKey": "Html5",
                         "parentEditorKey": "20ea5f09-29d1-9321-72df-ddfa2c1c6f98",
                         "isAdvancedComponent": true,
-                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {
@@ -858,7 +854,6 @@
                             "paletteKey": "html-editor",
                             "parentEditorKey": "7eae941a-6792-8766-e676-6bb56e10bebd",
                             "isAdvancedChildComponent": true,
-                            "isCommented": "false",
                             "commentid": null,
                             "designerReference": [
                                 {
@@ -1167,6 +1162,12 @@
                                     "_type": "a",
                                     "_attrDef": "p",
                                     "_visibility": true
+                                },
+                                {
+                                    "_key": "#username",
+                                    "_value": "#username",
+                                    "_type": "a",
+                                    "_attrDef": "c"
                                 }
                             ]
                         },
@@ -1336,6 +1337,12 @@
                                     "_type": "a",
                                     "_attrDef": "p",
                                     "_visibility": true
+                                },
+                                {
+                                    "_key": "#password",
+                                    "_value": "#password",
+                                    "_type": "a",
+                                    "_attrDef": "c"
                                 }
                             ]
                         },
@@ -1373,9 +1380,19 @@
                                 },
                                 {
                                     "_key": "(click)",
-                                    "_value": "",
+                                    "_value": "login(username.value,password.value)",
                                     "_type": "kv",
-                                    "_attrDef": "p"
+                                    "_attrDef": "p",
+                                    "objValue": {
+                                        "nodeID": "sd_1Aiu5wMRvcTTnJy8",
+                                        "functionName": "login",
+                                        "activeTree": "pages",
+                                        "z": "sd_dxPFkZApTRExNkaK",
+                                        "input": [
+                                            "username.value",
+                                            "password.value"
+                                        ]
+                                    }
                                 },
                                 {
                                     "_key": "[disabled]",

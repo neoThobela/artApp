@@ -28,7 +28,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "homeComponent"
+        "serviceName": "homeComponent",
+        "generated": false
     },
     {
         "id": "sd_UZEj1ChhDxSM2kF0",
@@ -84,7 +85,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "homeComponent"
+        "serviceName": "homeComponent",
+        "generated": false
     },
     {
         "id": "sd_3db5doONxKJO4xwW",
@@ -117,7 +119,15 @@
                 "value": "searchAll"
             }
         ],
-        "outputMapping": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "client_result",
+                "valueType": "bh",
+                "value": "",
+                "mapVarName": "client_result"
+            }
+        ],
         "serviceImportPath": "app/sd-services/connectToDB",
         "startName": "getAllArtists",
         "inputParams": [
@@ -209,7 +219,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "homeComponent"
+        "serviceName": "homeComponent",
+        "generated": false
     },
     {
         "id": "sd_TVB8SPU5tAxAuaVp",
@@ -261,16 +272,14 @@
         "accept_csd": true,
         "functionName": "sd_TVB8SPU5tAxAuaVp",
         "category": "General",
-        "x": 336,
-        "y": 164.8125,
+        "x": 345,
+        "y": 160,
         "wires": [
-            [
-                "sd_5sHfbHmm5SmBmvd6"
-            ]
+            []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "generated": true
+        "generated": true,
+        "generateNext": false
     },
     {
         "id": "sd_5sHfbHmm5SmBmvd6",
@@ -290,8 +299,8 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "generated": true
+        "generateNext": true,
+        "generated": false
     },
     {
         "id": "sd_QbGmXwGLiufiFfEK",
@@ -316,7 +325,7 @@
             []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "generated": true
+        "generateNext": true,
+        "generated": false
     }
 ]
