@@ -470,6 +470,7 @@
                 "1e923024-7f51-115d-f1c5-2448cf7cc1d4": {
                     "paletteKey": "FlexLayoutRow",
                     "parentEditorKey": "9cf02119-cb0d-488e-0f8c-396f5bfc963e",
+                    "isCommented": "false",
                     "commentid": null,
                     "designerReference": [
                         {
@@ -501,7 +502,7 @@
                         },
                         {
                             "_key": "fxLayoutGap",
-                            "_value": "",
+                            "_value": "1em",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -530,9 +531,10 @@
                             "_attrDef": "p"
                         }
                     ],
-                    "c3063ff9-246f-8221-4190-50846359fe92": {
+                    "3f22bd29-0c3b-1cba-19ad-35c18dbc14e6": {
                         "paletteKey": "FlexLayoutCol",
                         "parentEditorKey": "1e923024-7f51-115d-f1c5-2448cf7cc1d4",
+                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {
@@ -591,30 +593,29 @@
                                 "_attrDef": "p"
                             },
                             {
+                                "_key": "(click)",
+                                "_value": "sd_mh9z0aKQWiNSYSgt()",
+                                "_type": "kv",
+                                "_attrDef": "c",
+                                "objValue": {
+                                    "nodeID": "sd_mh9z0aKQWiNSYSgt",
+                                    "functionName": "sd_mh9z0aKQWiNSYSgt",
+                                    "activeTree": "pages",
+                                    "z": "sd_Lnu5QhLz6KUCTxFA",
+                                    "input": []
+                                }
+                            },
+                            {
                                 "_key": "*ngFor",
                                 "_value": "let item of page.arr",
                                 "_type": "kv",
                                 "_attrDef": "c"
-                            },
-                            {
-                                "_key": "(click)",
-                                "_value": "showArtInfo(item)",
-                                "_type": "kv",
-                                "_attrDef": "c",
-                                "objValue": {
-                                    "nodeID": "sd_aXitHtfyJQGCUNrC",
-                                    "functionName": "showArtInfo",
-                                    "activeTree": "pages",
-                                    "z": "sd_Cu54QWQnD3m2CoTj",
-                                    "input": [
-                                        "item"
-                                    ]
-                                }
                             }
                         ],
-                        "056737dc-9081-d977-bcc0-2b849ef6d1ae": {
+                        "5da8bc09-f538-0f56-f990-076291f60fd7": {
                             "paletteKey": "NG-image",
-                            "parentEditorKey": "c3063ff9-246f-8221-4190-50846359fe92",
+                            "parentEditorKey": "3f22bd29-0c3b-1cba-19ad-35c18dbc14e6",
+                            "isCommented": "false",
                             "commentid": null,
                             "designerReference": [
                                 {
@@ -626,15 +627,14 @@
                                 },
                                 {
                                     "_key": "style",
-                                    "_value": "margin-top:0.5em",
+                                    "_value": "",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
                                 {
                                     "_key": "class",
                                     "_value": [
-                                        "img",
-                                        "roundImg"
+                                        "img"
                                     ],
                                     "_type": "dav",
                                     "_attrDef": "p"
@@ -665,7 +665,7 @@
                                 },
                                 {
                                     "_key": "width",
-                                    "_value": "",
+                                    "_value": "180px",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -683,10 +683,11 @@
                                 }
                             ]
                         },
-                        "50b5380f-b1c2-8462-1cd6-634be4646919": {
+                        "f21d48ae-4d46-841f-0491-766fb386dc3c": {
                             "paletteKey": "Html5",
-                            "parentEditorKey": "c3063ff9-246f-8221-4190-50846359fe92",
+                            "parentEditorKey": "3f22bd29-0c3b-1cba-19ad-35c18dbc14e6",
                             "isAdvancedComponent": true,
+                            "isCommented": "false",
                             "commentid": null,
                             "designerReference": [
                                 {
@@ -870,10 +871,11 @@
                                     "_visibility": false
                                 }
                             ],
-                            "664d644b-b213-841d-a7ab-2ad1b5a850b2": {
+                            "2ee5fa42-fc27-ca43-496f-23147015cab0": {
                                 "paletteKey": "html-editor",
-                                "parentEditorKey": "50b5380f-b1c2-8462-1cd6-634be4646919",
+                                "parentEditorKey": "f21d48ae-4d46-841f-0491-766fb386dc3c",
                                 "isAdvancedChildComponent": true,
+                                "isCommented": "false",
                                 "commentid": null,
                                 "designerReference": [
                                     {
@@ -890,7 +892,7 @@
                                     },
                                     {
                                         "_key": "html",
-                                        "_value": "{{item.artistName}}",
+                                        "_value": "{{item.price}}",
                                         "_type": "a",
                                         "_attrDef": "p"
                                     }

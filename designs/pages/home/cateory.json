@@ -90,7 +90,7 @@
         "y": 40,
         "wires": [
             [
-                "sd_1HsRAtlbsYibaN8A"
+                "sd_eZ8WIpK7w10hgVTX"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -186,14 +186,13 @@
         "accept_csd": true,
         "functionName": "sd_1HsRAtlbsYibaN8A",
         "category": "General",
-        "x": 505,
-        "y": 40,
+        "x": 545,
+        "y": 320,
         "wires": [
             []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "generated": true
+        "generateNext": true
     },
     {
         "id": "sd_EOY9Dr49d561BDCF",
@@ -201,7 +200,7 @@
         "z": "sd_VZaS5qLGMHz8zBUH",
         "viewType": "pages",
         "nodeType": "start",
-        "name": "showArtInfo",
+        "name": "showArt",
         "outputs": 1,
         "inputVariables": [
             {
@@ -215,7 +214,7 @@
         ],
         "localVariables": [],
         "flow_type": "sync",
-        "functionName": "showArtInfo",
+        "functionName": "showArt",
         "category": "General",
         "x": 294,
         "y": 173.8125,
@@ -379,6 +378,62 @@
                 "constant": false
             }
         },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_eZ8WIpK7w10hgVTX",
+        "type": "PageServiceVariables",
+        "z": "sd_VZaS5qLGMHz8zBUH",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "get",
+        "globalVariables": [
+            {
+                "textIp": "artistsByCategory",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "category"
+                }
+            }
+        ],
+        "functionName": "sd_eZ8WIpK7w10hgVTX",
+        "service": {
+            "id": "sd_fSGlHyApcayt5tky",
+            "type": "tab",
+            "createdDate": "2022-07-20T13:20:26.916Z",
+            "label": "connectToDB",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "generateNext": true,
+            "serviceName": "connectToDB",
+            "relativeParentPath": "",
+            "_def": {
+                "defaults": {
+                    "label": {
+                        "value": ""
+                    },
+                    "disabled": {
+                        "value": false
+                    },
+                    "info": {
+                        "value": ""
+                    }
+                }
+            }
+        },
+        "serviceImportPath": "app/sd-services/connectToDB",
+        "category": "Function",
+        "x": 505,
+        "y": 40,
+        "wires": [
+            []
+        ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true

@@ -28,7 +28,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "artistsComponent"
+        "serviceName": "artistsComponent",
+        "generated": false
     },
     {
         "id": "sd_7vgsKxSAvkQpW2r2",
@@ -99,6 +100,7 @@
             []
         ],
         "__n_excludedFromValidation__": {},
+        "generated": false,
         "generateNext": true
     }
 ]

@@ -12,7 +12,6 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
-import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
 import { connectToDB } from 'app/sd-services/connectToDB'; //_splitter_
 import { Router } from '@angular/router'; //_splitter_
 //append_imports_end
@@ -70,7 +69,7 @@ export class displaypaeComponent {
         .constructFlowObject(this);
       bh.input = { textToSearch: textToSearch };
       bh.local = {};
-      bh = this.sd_tQYINEmFP9jjaYpe(bh);
+      bh = this.sd_vRlAVbVTlEP443fJ(bh);
       //appendnew_next_findCategory
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_jii6SjVAtzvgiPym');
@@ -97,6 +96,7 @@ export class displaypaeComponent {
     try {
       this.page.option = undefined;
       this.page.data = {};
+      this.page.chosen = undefined;
       bh = this.sd_29RWlEm8s11shTfl(bh);
       //appendnew_next_sd_z9wGYVVpDzrC0kyZ
       return bh;
@@ -108,58 +108,17 @@ export class displaypaeComponent {
   sd_29RWlEm8s11shTfl(bh) {
     try {
       const page = this.page;
-      page.option = ['neo', 'mbali'];
+      page.option = [
+        'Oil Painting',
+        'Contemporary',
+        'Urban Art',
+        'Sculpture',
+        'Photoraphy',
+      ];
       //appendnew_next_sd_29RWlEm8s11shTfl
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_29RWlEm8s11shTfl');
-    }
-  }
-
-  async sd_tQYINEmFP9jjaYpe(bh) {
-    try {
-      let otherwiseFlag = true;
-      if (
-        this.sdService.operators['empty'](
-          bh.input.textToSearch,
-          undefined,
-          undefined,
-          undefined
-        )
-      ) {
-        bh = this.sd_q13TuxAzpkjKETVJ(bh);
-        otherwiseFlag = false;
-      }
-      if (
-        this.sdService.operators['else'](
-          otherwiseFlag,
-          undefined,
-          undefined,
-          undefined
-        )
-      ) {
-        bh = await this.sd_vRlAVbVTlEP443fJ(bh);
-        otherwiseFlag = false;
-      }
-
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_tQYINEmFP9jjaYpe');
-    }
-  }
-
-  sd_q13TuxAzpkjKETVJ(bh) {
-    try {
-      this.__page_injector__.get(MatSnackBar).open('unavailable request', '', {
-        duration: 1000,
-        direction: 'ltr',
-        horizontalPosition: 'center',
-        verticalPosition: 'bottom',
-      });
-      //appendnew_next_sd_q13TuxAzpkjKETVJ
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_q13TuxAzpkjKETVJ');
     }
   }
 
@@ -169,7 +128,7 @@ export class displaypaeComponent {
         this.__page_injector__.get(connectToDB);
 
       let outputVariables = await connectToDBInstance.getCategory(
-        bh.input.textToSearch
+        this.page.chosen
       );
       bh.input.artistsByCategory = outputVariables.local.client_result;
 
@@ -184,14 +143,10 @@ export class displaypaeComponent {
   async sd_SSYkbQIk6gYHuRYU(bh) {
     try {
       const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/home/category/:searchString');
+        this.sdService.getPathAndQParamsObj('/home/category');
       await this.__page_injector__
         .get(Router)
-        .navigate([
-          this.sdService.formatPathWithParams(path, {
-            searchString: bh.input.textToSearch,
-          }),
-        ]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
       //appendnew_next_sd_SSYkbQIk6gYHuRYU
       return bh;
     } catch (e) {

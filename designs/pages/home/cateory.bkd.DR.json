@@ -148,7 +148,7 @@
                     },
                     {
                         "_key": "fxFlex",
-                        "_value": "24",
+                        "_value": "22",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -184,22 +184,22 @@
                     },
                     {
                         "_key": "*ngFor",
-                        "_value": "let item of page.arr",
+                        "_value": "let item of page.category",
                         "_type": "kv",
                         "_attrDef": "c"
                     },
                     {
                         "_key": "(click)",
-                        "_value": "showArtInfo(page.data)",
+                        "_value": "showArt(item)",
                         "_type": "kv",
                         "_attrDef": "c",
                         "objValue": {
                             "nodeID": "sd_EOY9Dr49d561BDCF",
-                            "functionName": "showArtInfo",
+                            "functionName": "showArt",
                             "activeTree": "pages",
                             "z": "sd_VZaS5qLGMHz8zBUH",
                             "input": [
-                                "page.data"
+                                "item"
                             ]
                         }
                     }
@@ -294,7 +294,7 @@
                         },
                         {
                             "_key": "class",
-                            "_value": "",
+                            "_value": [],
                             "_type": "dav",
                             "_attrDef": "p"
                         },
@@ -349,7 +349,9 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": "",
+                                "_value": [
+                                    "fontSpecial"
+                                ],
                                 "_type": "dav",
                                 "_attrDef": "p"
                             },
@@ -548,11 +550,201 @@
                                 }
                             ]
                         }
-                    },
-                    "5077e3db-7c99-37f7-915a-d73b3691aa54": {
-                        "paletteKey": "Html5",
-                        "parentEditorKey": "2c79e99e-4119-3dcb-35e3-c5b1d11cdd03",
-                        "isAdvancedComponent": true,
+                    }
+                },
+                "5077e3db-7c99-37f7-915a-d73b3691aa54": {
+                    "paletteKey": "Html5",
+                    "parentEditorKey": "16ea5fc0-8e5c-5c5c-a267-24311bdb9eef",
+                    "isAdvancedComponent": true,
+                    "commentid": null,
+                    "designerReference": [
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": [
+                                "fontSpecial"
+                            ],
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "htmlElement",
+                            "_value": "h2",
+                            "_type": "dav",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "tagType",
+                            "_value": "h2",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "name",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "sandbox",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "src",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "srcdoc",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "width",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "[autoplay]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "[loop]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "data",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "audioSource",
+                            "_value": [],
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "videoSource",
+                            "_value": [],
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "audioDatasource",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "audioSrc",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "audioType",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "videoDatasource",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "videoSrc",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "videoType",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "(audioplay)",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "(videoplay)",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "(audiopause)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "(videopause)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "(audioended)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "(videoended)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        }
+                    ],
+                    "d0359cdd-dcfe-5b33-7dce-e92add33d2b4": {
+                        "paletteKey": "html-editor",
+                        "parentEditorKey": "5077e3db-7c99-37f7-915a-d73b3691aa54",
+                        "isAdvancedChildComponent": true,
                         "commentid": null,
                         "designerReference": [
                             {
@@ -568,200 +760,12 @@
                                 "_attrDef": "p"
                             },
                             {
-                                "_key": "htmlElement",
-                                "_value": "h2",
-                                "_type": "dav",
-                                "_attrDef": "p",
-                                "_useAsLabel": true
-                            },
-                            {
-                                "_key": "tagType",
-                                "_value": "h2",
+                                "_key": "html",
+                                "_value": "{{item.year}}",
                                 "_type": "a",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "name",
-                                "_value": "",
-                                "_type": "kv",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "sandbox",
-                                "_value": "",
-                                "_type": "kv",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "src",
-                                "_value": "",
-                                "_type": "kv",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "srcdoc",
-                                "_value": "",
-                                "_type": "kv",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "width",
-                                "_value": "",
-                                "_type": "kv",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "[autoplay]",
-                                "_value": "",
-                                "_type": "kv",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "[loop]",
-                                "_value": "",
-                                "_type": "kv",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "data",
-                                "_value": "",
-                                "_type": "kv",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "audioSource",
-                                "_value": [],
-                                "_type": "a",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "videoSource",
-                                "_value": [],
-                                "_type": "a",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "audioDatasource",
-                                "_value": "",
-                                "_type": "a",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "audioSrc",
-                                "_value": "",
-                                "_type": "a",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "audioType",
-                                "_value": "",
-                                "_type": "a",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "videoDatasource",
-                                "_value": "",
-                                "_type": "a",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "videoSrc",
-                                "_value": "",
-                                "_type": "a",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "videoType",
-                                "_value": "",
-                                "_type": "a",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "(audioplay)",
-                                "_value": "",
-                                "_type": "a",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "(videoplay)",
-                                "_value": "",
-                                "_type": "a",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "(audiopause)",
-                                "_value": "",
-                                "_type": "kv",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "(videopause)",
-                                "_value": "",
-                                "_type": "kv",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "(audioended)",
-                                "_value": "",
-                                "_type": "kv",
-                                "_attrDef": "p",
-                                "_visibility": false
-                            },
-                            {
-                                "_key": "(videoended)",
-                                "_value": "",
-                                "_type": "kv",
-                                "_attrDef": "p",
-                                "_visibility": false
+                                "_attrDef": "p"
                             }
-                        ],
-                        "d0359cdd-dcfe-5b33-7dce-e92add33d2b4": {
-                            "paletteKey": "html-editor",
-                            "parentEditorKey": "5077e3db-7c99-37f7-915a-d73b3691aa54",
-                            "isAdvancedChildComponent": true,
-                            "commentid": null,
-                            "designerReference": [
-                                {
-                                    "_key": "style",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "class",
-                                    "_value": "",
-                                    "_type": "dav",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "html",
-                                    "_value": "{{item.year}}",
-                                    "_type": "a",
-                                    "_attrDef": "p"
-                                }
-                            ]
-                        }
+                        ]
                     }
                 },
                 "9c9d9398-c95a-d758-68a8-e0d54030e2bc": {
@@ -784,7 +788,7 @@
                         },
                         {
                             "_key": "class",
-                            "_value": "",
+                            "_value": [],
                             "_type": "dav",
                             "_attrDef": "p"
                         },

@@ -1,6 +1,8 @@
 {
     "classes": [
         "Monoton",
+        "fontSpecial",
+        "yellowborder",
         "marginbottom",
         "width95",
         "mat-input-element",

@@ -9,7 +9,7 @@
                     "path": "display"
                 },
                 {
-                    "path": "category/:searchString",
+                    "path": "category",
                     "component": "cateoryComponent"
                 },
                 {

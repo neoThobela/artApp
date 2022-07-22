@@ -2,8 +2,7 @@
 
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "nDefaults.scss";
-@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat:wght@100;200;300;400;500;600;700&family=Permanent+Marker&family=Poppins:wght@100;200;300;400;500;600;700&display=swap'); 
- $yellow:#f7ab54;
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200&family=Poppins:wght@100;200;300;400;500;600;700&family=Special+Elite&display=swap'); $yellow:#f7ab54;
  $primaryBlack:#0f0e08;
  $primaryBlue:cornflowerblue;
  $white:white;
@@ -16,6 +15,15 @@ p, h1{
 }
 .Monoton{
     font-family: 'Monoton', cursive;
+}
+.fontSpecial{
+    font-family: 'Special Elite', cursive;
+}
+.yellowborder{
+    font-family: 'Special Elite', cursive;
+    border:3px solid $yellow;
+    height:50vh;
+    width:100px;
 }
 .marginbottom{
     margin-bottom: 0;

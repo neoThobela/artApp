@@ -13,7 +13,6 @@ import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
 import { connectToDB } from 'app/sd-services/connectToDB'; //_splitter_
-import { Router } from '@angular/router'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -62,17 +61,16 @@ export class BuyArtComponent {
     }
   }
 
-  getArtsits(searchAll = '', ...others) {
+  sd_mh9z0aKQWiNSYSgt(...others) {
     try {
       var bh: any = this.__page_injector__
         .get(SDPageCommonService)
         .constructFlowObject(this);
-      bh.input = { searchAll: searchAll };
+      bh.input = {};
       bh.local = {};
-      bh = this.sd_G2OqLOz6rkD7FiTH(bh);
-      //appendnew_next_getArtsits
+      //appendnew_next_sd_mh9z0aKQWiNSYSgt
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_qYHiJ2TeKEPRvMxY');
+      return this.errorHandler(bh, e, 'sd_mh9z0aKQWiNSYSgt');
     }
   }
 
@@ -81,7 +79,7 @@ export class BuyArtComponent {
   sd_JXfOKp464hTUFT5r(bh) {
     try {
       this.page.arr = undefined;
-      bh = this.sd_x6qamXtSNaIZ8F8O(bh);
+      bh = this.sd_Iqquz0kdr9JTCP5p(bh);
       //appendnew_next_sd_JXfOKp464hTUFT5r
       return bh;
     } catch (e) {
@@ -89,74 +87,43 @@ export class BuyArtComponent {
     }
   }
 
-  async sd_x6qamXtSNaIZ8F8O(bh) {
+  async sd_Iqquz0kdr9JTCP5p(bh) {
     try {
       const connectToDBInstance: connectToDB =
         this.__page_injector__.get(connectToDB);
 
       let outputVariables = await connectToDBInstance.getAllArtists(
-        bh.input.allArtists
+        this.page.arr
       );
 
-      bh = this.sd_MOUlx228dYTFByIT(bh);
-      //appendnew_next_sd_x6qamXtSNaIZ8F8O
+      bh = this.sd_B6pqESpYkuC2qYWg(bh);
+      //appendnew_next_sd_Iqquz0kdr9JTCP5p
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_x6qamXtSNaIZ8F8O');
+      return await this.errorHandler(bh, e, 'sd_Iqquz0kdr9JTCP5p');
     }
   }
 
-  sd_MOUlx228dYTFByIT(bh) {
-    try {
-      const page = this.page;
-      console.log(bh.input.artist);
-      //appendnew_next_sd_MOUlx228dYTFByIT
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_MOUlx228dYTFByIT');
-    }
-  }
-
-  async sd_G2OqLOz6rkD7FiTH(bh) {
+  sd_B6pqESpYkuC2qYWg(bh) {
     try {
       const connectToDBInstance: connectToDB =
         this.__page_injector__.get(connectToDB);
-
-      let outputVariables = await connectToDBInstance.getAllArtists(
-        bh.input.allArtists
-      );
-
-      bh = this.sd_PtQkN9RVDhoZH3Gr(bh);
-      //appendnew_next_sd_G2OqLOz6rkD7FiTH
+      this.page.arr = connectToDBInstance['allArtists'];
+      this.sd_zfqxYvTEhLOOCSzF(bh);
+      //appendnew_next_sd_B6pqESpYkuC2qYWg
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_G2OqLOz6rkD7FiTH');
+      return this.errorHandler(bh, e, 'sd_B6pqESpYkuC2qYWg');
     }
   }
 
-  sd_PtQkN9RVDhoZH3Gr(bh) {
+  sd_zfqxYvTEhLOOCSzF(bh) {
     try {
-      const page = this.page;
-      console.log('response', page);
-      bh = this.sd_sTtuO54QVO0ZyV6l(bh);
-      //appendnew_next_sd_PtQkN9RVDhoZH3Gr
+      console.log(new Date().toLocaleTimeString(), this.page.arr);
+      //appendnew_next_sd_zfqxYvTEhLOOCSzF
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_PtQkN9RVDhoZH3Gr');
-    }
-  }
-
-  async sd_sTtuO54QVO0ZyV6l(bh) {
-    try {
-      const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/home/artwork');
-      await this.__page_injector__
-        .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
-      //appendnew_next_sd_sTtuO54QVO0ZyV6l
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_sTtuO54QVO0ZyV6l');
+      return this.errorHandler(bh, e, 'sd_zfqxYvTEhLOOCSzF');
     }
   }
 

@@ -121,7 +121,7 @@ export const appRoutes = [
     component: homeComponent,
     children: [
       { path: 'display', component: displaypaeComponent },
-      { path: 'category/:searchString', component: cateoryComponent },
+      { path: 'category', component: cateoryComponent },
       { path: 'about', component: aboutUsComponent },
       { path: 'artwork', component: artworkComponent },
       { path: 'shop', component: BuyArtComponent },

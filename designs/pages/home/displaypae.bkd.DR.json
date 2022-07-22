@@ -109,13 +109,13 @@
                 },
                 {
                     "_key": "layoutAlign",
-                    "_value": "start",
+                    "_value": "center",
                     "_type": "a",
                     "_attrDef": "p"
                 },
                 {
                     "_key": "pLayoutAlign",
-                    "_value": "stretch",
+                    "_value": "center",
                     "_type": "a",
                     "_attrDef": "p"
                 },
@@ -129,8 +129,8 @@
             "65a03f3a-862f-c3e3-b9e4-3361e2c758df": {
                 "paletteKey": "FlexLayoutCol",
                 "parentEditorKey": "d7ade8fd-a1ff-6320-03a5-698514195a98",
-                "isCommented": "true",
-                "commentid": "1658410966692",
+                "isCommented": "false",
+                "commentid": null,
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -141,15 +141,13 @@
                     },
                     {
                         "_key": "style",
-                        "_value": "position:absolute;width:350px",
+                        "_value": "",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
                     {
                         "_key": "class",
-                        "_value": [
-                            "yellowlines"
-                        ],
+                        "_value": [],
                         "_type": "dav",
                         "_attrDef": "p"
                     },
@@ -330,6 +328,8 @@
                             {
                                 "_key": "class",
                                 "_value": [
+                                    "Monoton",
+                                    "fontSpecial",
                                     "marginbottom",
                                     "fontSize4em"
                                 ],
@@ -980,7 +980,7 @@
                             },
                             {
                                 "_key": "style",
-                                "_value": "height:45vh",
+                                "_value": "height:25vh",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -1107,6 +1107,7 @@
                                     {
                                         "_key": "class",
                                         "_value": [
+                                            "fontSpecial",
                                             "fontSize2em"
                                         ],
                                         "_type": "dav",
@@ -1447,14 +1448,14 @@
                                             },
                                             {
                                                 "_key": "placeholder",
-                                                "_value": "",
+                                                "_value": "search by categories",
                                                 "_type": "kv",
                                                 "_attrDef": "p",
                                                 "_useAsLabel": true
                                             },
                                             {
                                                 "_key": "datasource",
-                                                "_value": "",
+                                                "_value": "page.option",
                                                 "_type": "a",
                                                 "_attrDef": "p"
                                             },
@@ -1487,13 +1488,13 @@
                                             },
                                             {
                                                 "_key": "optionValue",
-                                                "_value": "",
+                                                "_value": "option",
                                                 "_type": "a",
                                                 "_attrDef": "p"
                                             },
                                             {
                                                 "_key": "optionView",
-                                                "_value": "",
+                                                "_value": "{{option}}",
                                                 "_type": "a",
                                                 "_attrDef": "p"
                                             },
@@ -1505,7 +1506,7 @@
                                             },
                                             {
                                                 "_key": "[(ngModel)]",
-                                                "_value": "",
+                                                "_value": "page.chosen",
                                                 "_type": "kv",
                                                 "_attrDef": "p"
                                             },
@@ -1560,9 +1561,19 @@
                                             },
                                             {
                                                 "_key": "(selectionChange)",
-                                                "_value": "",
+                                                "_value": "findCategory(option)",
                                                 "_type": "kv",
-                                                "_attrDef": "p"
+                                                "_attrDef": "p",
+                                                "_customAttributeFlag": "flowpicker",
+                                                "objValue": {
+                                                    "nodeID": "sd_jii6SjVAtzvgiPym",
+                                                    "functionName": "findCategory",
+                                                    "activeTree": "pages",
+                                                    "z": "sd_WR6iyBIOiJbrUCez",
+                                                    "input": [
+                                                        "option"
+                                                    ]
+                                                }
                                             },
                                             {
                                                 "_key": "selectCustomOption",
@@ -1609,24 +1620,15 @@
                                                 "_visibility": true
                                             },
                                             {
-                                                "_key": "(click)",
-                                                "_value": "findCategory(search.value)",
-                                                "_type": "kv",
-                                                "_attrDef": "c",
-                                                "objValue": {
-                                                    "nodeID": "sd_jii6SjVAtzvgiPym",
-                                                    "functionName": "findCategory",
-                                                    "activeTree": "pages",
-                                                    "z": "sd_WR6iyBIOiJbrUCez",
-                                                    "input": [
-                                                        "search.value"
-                                                    ]
-                                                }
-                                            },
-                                            {
                                                 "_key": "#search",
                                                 "_value": "#search",
                                                 "_type": "a",
+                                                "_attrDef": "c"
+                                            },
+                                            {
+                                                "_key": "name",
+                                                "_value": "choose",
+                                                "_type": "kv",
                                                 "_attrDef": "c"
                                             }
                                         ]

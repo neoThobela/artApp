@@ -64,7 +64,7 @@ export class cateoryComponent {
     }
   }
 
-  showArtInfo(art: any = undefined, ...others) {
+  showArt(art: any = undefined, ...others) {
     try {
       var bh: any = this.__page_injector__
         .get(SDPageCommonService)
@@ -72,7 +72,7 @@ export class cateoryComponent {
       bh.input = { art: art };
       bh.local = {};
       bh = this.sd_3X3YKdDNXBvobAZ0(bh);
-      //appendnew_next_showArtInfo
+      //appendnew_next_showArt
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_EOY9Dr49d561BDCF');
     }
@@ -111,7 +111,7 @@ export class cateoryComponent {
         .substring(page.router.url.lastIndexOf('/') + 1)
         .replace('%20', ' ');
       console.log(page.category);
-      bh = this.sd_1HsRAtlbsYibaN8A(bh);
+      bh = this.sd_eZ8WIpK7w10hgVTX(bh);
       //appendnew_next_sd_DQeKgrRV6yNKx4ti
       return bh;
     } catch (e) {
@@ -119,20 +119,15 @@ export class cateoryComponent {
     }
   }
 
-  async sd_1HsRAtlbsYibaN8A(bh) {
+  sd_eZ8WIpK7w10hgVTX(bh) {
     try {
       const connectToDBInstance: connectToDB =
         this.__page_injector__.get(connectToDB);
-
-      let outputVariables = await connectToDBInstance.getCategory(
-        this.page.category
-      );
-      this.page.arr = outputVariables.local.client_result;
-
-      //appendnew_next_sd_1HsRAtlbsYibaN8A
+      this.page.category = connectToDBInstance['artistsByCategory'];
+      //appendnew_next_sd_eZ8WIpK7w10hgVTX
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_1HsRAtlbsYibaN8A');
+      return this.errorHandler(bh, e, 'sd_eZ8WIpK7w10hgVTX');
     }
   }
 

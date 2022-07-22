@@ -5,10 +5,10 @@
         <div>
           hi</div>
       </div>
-      <div fxLayout="row wrap" style="margin-top:5em" class="width80" fxLayoutAlign="center center" [fxShow]="true">
-        <div fxLayout="column wrap" fxFlex="24" fxLayoutAlign="center center" [fxShow]="true" *ngFor="let item of page.arr" (click)="showArtInfo(item)"><img [src]="item.artwork" style="margin-top:0.5em" class="img roundImg">
+      <div fxLayout="row wrap" style="margin-top:5em" class="width80" fxLayoutGap="1em" fxLayoutAlign="center center" [fxShow]="true">
+        <div fxLayout="column wrap" fxFlex="24" fxLayoutAlign="center center" [fxShow]="true" (click)="sd_mh9z0aKQWiNSYSgt()" *ngFor="let item of page.arr"><img [src]="item.artwork" class="img" width="180px">
           <p>
-            {{item.artistName}}
+            {{item.price}}
           </p>
         </div>
       </div>
