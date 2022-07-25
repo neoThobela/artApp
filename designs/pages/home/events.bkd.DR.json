@@ -81,7 +81,9 @@
                 },
                 {
                     "_key": "class",
-                    "_value": [],
+                    "_value": [
+                        "marginTop2em"
+                    ],
                     "_type": "dav",
                     "_attrDef": "p"
                 },
@@ -137,8 +139,8 @@
                     {
                         "_key": "class",
                         "_value": [
-                            "fontSize4em",
-                            "Monoton"
+                            "fontSpecial",
+                            "fontSize4em"
                         ],
                         "_type": "dav",
                         "_attrDef": "p"
