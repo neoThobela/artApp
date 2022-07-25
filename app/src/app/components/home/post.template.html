@@ -13,45 +13,50 @@
           <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
             <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
               <input matInput [(ngModel)]="page.post.title" name="title" type="text" placeholder="Title" [required]="true">
-
+              <mat-error align="start" *ngIf="(postForm.controls.title?.dirty || postForm.controls.title?.touched || post.submitted) &amp;&amp; postForm.controls.title.errors?.required">Title is required</mat-error>
             </mat-form-field>
           </div>
           <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
             <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
               <input matInput [(ngModel)]="page.post.artistName" name="artistName" type="text" placeholder="Artsist" [required]="true">
-
+              <mat-error align="start" *ngIf="(postForm.controls.artistName?.dirty || postForm.controls.artistName?.touched || post.submitted) &amp;&amp; postForm.controls.artistName.errors?.required">Artists name is required</mat-error>
             </mat-form-field>
           </div>
           <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
             <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
               <input matInput [(ngModel)]="page.post.price" name="price" placeholder="Price" [required]="true">
-
+              <mat-error align="start" *ngIf="(postForm.controls.price?.dirty || postForm.controls.price?.touched || post.submitted) &amp;&amp; postForm.controls.price.errors?.required">Price is required</mat-error>
             </mat-form-field>
           </div>
           <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
             <mat-form-field [appearance]="&apos;legacy&apos;">
               <textarea matInput [(ngModel)]="page.post.info" name="info" placeholder="Description" [required]="true"></textarea>
             </mat-form-field>
+            <div *ngIf="(postForm.controls.info?.dirty || postForm.controls.info?.touched || postForm.submitted) &amp;&amp; postForm.controls.info.errors?.required">
+              <mat-error class="font14">
+                Description is required
+              </mat-error>
+            </div>
           </div>
           <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
             <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
               <input matInput [(ngModel)]="page.post.year" name="year" placeholder="year" [required]="true">
-
+              <mat-error align="start" *ngIf="(postForm.controls.year?.dirty || postForm.controls.year?.touched || post.submitted) &amp;&amp; postForm.controls.year.errors?.required">Year is required</mat-error>
             </mat-form-field>
           </div>
           <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
             <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
               <input matInput [(ngModel)]="page.post.artwork" name="artwork" type="url" placeholder="Image URL" [required]="true">
-
+              <mat-error align="start" *ngIf="(postForm.controls.artwork?.dirty || postForm.controls.artwork?.touched || post.submitted) &amp;&amp; postForm.controls.artwork.errors?.required">ImageURL is required</mat-error>
             </mat-form-field>
           </div>
           <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
             <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
               <input matInput [(ngModel)]="page.post.cateory" name="cateory" placeholder="Category" [required]="true">
-
+              <mat-error align="start" *ngIf="(postForm.controls.category?.dirty || postForm.controls.category?.touched || post.submitted) &amp;&amp; postForm.controls.category.errors?.required">Category is required</mat-error>
             </mat-form-field>
           </div>
-          <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button style=" width: 400px;" class="fullWidth btn" (click)="post(postForm.value)" [disableRipple]="true">Post</button></div>
+          <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button style=" width: 400px;" class="fullWidth btn" (click)="post(postForm.value)" [disabled]="postForm.invalid" [disableRipple]="true">Post</button></div>
         </form>
       </div>
     </div>

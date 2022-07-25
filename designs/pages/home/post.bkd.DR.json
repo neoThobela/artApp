@@ -1171,7 +1171,16 @@
                                     },
                                     {
                                         "_key": "matError",
-                                        "_value": [],
+                                        "_value": [
+                                            {
+                                                "input1": "(postForm.controls.title?.dirty || postForm.controls.title?.touched || post.submitted) && postForm.controls.title.errors?.required",
+                                                "input2": "Title is required",
+                                                "toggle": {
+                                                    "toggleData": [],
+                                                    "selected": "start"
+                                                }
+                                            }
+                                        ],
                                         "_type": "a",
                                         "_attrDef": "p",
                                         "_visibility": true
@@ -1402,7 +1411,16 @@
                                     },
                                     {
                                         "_key": "matError",
-                                        "_value": [],
+                                        "_value": [
+                                            {
+                                                "input1": "(postForm.controls.artistName?.dirty || postForm.controls.artistName?.touched || post.submitted) && postForm.controls.artistName.errors?.required",
+                                                "input2": "Artists name is required",
+                                                "toggle": {
+                                                    "toggleData": [],
+                                                    "selected": "start"
+                                                }
+                                            }
+                                        ],
                                         "_type": "a",
                                         "_attrDef": "p",
                                         "_visibility": true
@@ -1633,7 +1651,16 @@
                                     },
                                     {
                                         "_key": "matError",
-                                        "_value": [],
+                                        "_value": [
+                                            {
+                                                "input1": "(postForm.controls.price?.dirty || postForm.controls.price?.touched || post.submitted) && postForm.controls.price.errors?.required",
+                                                "input2": "Price is required",
+                                                "toggle": {
+                                                    "toggleData": [],
+                                                    "selected": "start"
+                                                }
+                                            }
+                                        ],
                                         "_type": "a",
                                         "_attrDef": "p",
                                         "_visibility": true
@@ -1831,6 +1858,226 @@
                                         "_attrDef": "p"
                                     }
                                 ]
+                            },
+                            "595cba38-b2e8-8b59-9fb7-53205c5b71e7": {
+                                "paletteKey": "Html5",
+                                "parentEditorKey": "9ca3638b-b85f-e7d3-a71b-c1c6e93cf132",
+                                "isAdvancedComponent": true,
+                                "commentid": null,
+                                "designerReference": [
+                                    {
+                                        "_key": "style",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p"
+                                    },
+                                    {
+                                        "_key": "class",
+                                        "_value": "",
+                                        "_type": "dav",
+                                        "_attrDef": "p"
+                                    },
+                                    {
+                                        "_key": "htmlElement",
+                                        "_value": "div",
+                                        "_type": "dav",
+                                        "_attrDef": "p",
+                                        "_useAsLabel": true
+                                    },
+                                    {
+                                        "_key": "tagType",
+                                        "_value": "",
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "name",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "sandbox",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "src",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "srcdoc",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "width",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "[autoplay]",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "[loop]",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "data",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "audioSource",
+                                        "_value": [],
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "videoSource",
+                                        "_value": [],
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "audioDatasource",
+                                        "_value": "",
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "audioSrc",
+                                        "_value": "",
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "audioType",
+                                        "_value": "",
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "videoDatasource",
+                                        "_value": "",
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "videoSrc",
+                                        "_value": "",
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "videoType",
+                                        "_value": "",
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "(audioplay)",
+                                        "_value": "",
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "(videoplay)",
+                                        "_value": "",
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "(audiopause)",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "(videopause)",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "(audioended)",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "(videoended)",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p",
+                                        "_visibility": false
+                                    },
+                                    {
+                                        "_key": "*ngIf",
+                                        "_value": "(postForm.controls.info?.dirty || postForm.controls.info?.touched || postForm.submitted) && postForm.controls.info.errors?.required",
+                                        "_type": "kv",
+                                        "_attrDef": "c"
+                                    }
+                                ],
+                                "d85e8397-9bf0-a0e8-eb72-41f3e53008dc": {
+                                    "paletteKey": "html-editor",
+                                    "parentEditorKey": "595cba38-b2e8-8b59-9fb7-53205c5b71e7",
+                                    "isAdvancedChildComponent": true,
+                                    "commentid": null,
+                                    "designerReference": [
+                                        {
+                                            "_key": "style",
+                                            "_value": "",
+                                            "_type": "kv",
+                                            "_attrDef": "p"
+                                        },
+                                        {
+                                            "_key": "class",
+                                            "_value": "",
+                                            "_type": "dav",
+                                            "_attrDef": "p"
+                                        },
+                                        {
+                                            "_key": "html",
+                                            "_value": "<mat-error class=\"font14\">\r\n\tDescription is required\r\n</mat-error>",
+                                            "_type": "a",
+                                            "_attrDef": "p"
+                                        }
+                                    ]
+                                }
                             }
                         },
                         "2f87437a-1ed8-c89f-a4a7-a9e630cc4da8": {
@@ -2000,7 +2247,16 @@
                                     },
                                     {
                                         "_key": "matError",
-                                        "_value": [],
+                                        "_value": [
+                                            {
+                                                "input1": "(postForm.controls.year?.dirty || postForm.controls.year?.touched || post.submitted) && postForm.controls.year.errors?.required",
+                                                "input2": "Year is required",
+                                                "toggle": {
+                                                    "toggleData": [],
+                                                    "selected": "start"
+                                                }
+                                            }
+                                        ],
                                         "_type": "a",
                                         "_attrDef": "p",
                                         "_visibility": true
@@ -2231,7 +2487,16 @@
                                     },
                                     {
                                         "_key": "matError",
-                                        "_value": [],
+                                        "_value": [
+                                            {
+                                                "input1": "(postForm.controls.artwork?.dirty || postForm.controls.artwork?.touched || post.submitted) && postForm.controls.artwork.errors?.required",
+                                                "input2": "ImageURL is required",
+                                                "toggle": {
+                                                    "toggleData": [],
+                                                    "selected": "start"
+                                                }
+                                            }
+                                        ],
                                         "_type": "a",
                                         "_attrDef": "p",
                                         "_visibility": true
@@ -2462,7 +2727,16 @@
                                     },
                                     {
                                         "_key": "matError",
-                                        "_value": [],
+                                        "_value": [
+                                            {
+                                                "input1": "(postForm.controls.category?.dirty || postForm.controls.category?.touched || post.submitted) && postForm.controls.category.errors?.required",
+                                                "input2": "Category is required",
+                                                "toggle": {
+                                                    "toggleData": [],
+                                                    "selected": "start"
+                                                }
+                                            }
+                                        ],
                                         "_type": "a",
                                         "_attrDef": "p",
                                         "_visibility": true
@@ -2639,7 +2913,7 @@
                                     },
                                     {
                                         "_key": "[disabled]",
-                                        "_value": "",
+                                        "_value": "postForm.invalid",
                                         "_type": "kv",
                                         "_attrDef": "p",
                                         "_customAttributeFlag": "customInput"

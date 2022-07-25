@@ -130,14 +130,12 @@ export class postComponent {
 
   sd_HLGoAjLF1F6IUVQd(bh) {
     try {
-      this.__page_injector__
-        .get(MatSnackBar)
-        .open("{message:'Post sent'}", '', {
-          duration: 1000,
-          direction: 'ltr',
-          horizontalPosition: 'center',
-          verticalPosition: 'bottom',
-        });
+      this.__page_injector__.get(MatSnackBar).open('POST SENT', '', {
+        duration: 5000,
+        direction: 'ltr',
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom',
+      });
       //appendnew_next_sd_HLGoAjLF1F6IUVQd
       return bh;
     } catch (e) {

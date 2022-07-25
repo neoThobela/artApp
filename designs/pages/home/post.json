@@ -69,7 +69,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.post= {\n    title:'',\n    artistName:'',\n    cateory:'',\n    artwork:'',\n    year:'',\n    info:'',\n    pictureId:'',\n    price:''\n};",
+        "script": "page.post= {\n    title:\"\",\n    artistName:'',\n    cateory:'',\n    artwork:'',\n    year:'',\n    info:'',\n    pictureId:'',\n    price:''\n};",
         "functionName": "sd_lweZzvu9TlSFT87P",
         "category": "Function",
         "x": 380,
@@ -199,7 +199,7 @@
         "name": "",
         "message": {
             "type": "str",
-            "value": "{message:'Post sent'}"
+            "value": "POST SENT"
         },
         "action": {
             "type": "str",
@@ -207,7 +207,7 @@
         },
         "duration": {
             "type": "num",
-            "value": ""
+            "value": "5000"
         },
         "horizontalPosition": "center",
         "verticalPosition": "bottom",

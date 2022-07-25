@@ -186,6 +186,74 @@
                         "_attrDef": "p"
                     }
                 ],
+                "f4fe4d26-13b0-6e8f-f709-217d76089405": {
+                    "paletteKey": "NG-image",
+                    "parentEditorKey": "63750228-222d-fbe0-2729-64dff0c0e578",
+                    "commentid": null,
+                    "designerReference": [
+                        {
+                            "_key": "componentLabel",
+                            "_value": "Image",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "imgSrc",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "alt",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[src]",
+                            "_value": "'https://i.pinimg.com/736x/8c/be/ce/8cbeceb4b9d55ec599a1b796de200e2f.jpg'",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "imgSecure",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "width",
+                            "_value": "50%",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "srcset",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "sizes",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        }
+                    ]
+                },
                 "6319d5fd-2db2-a7cf-bc43-6ab518e26672": {
                     "paletteKey": "FlexLayoutRow",
                     "parentEditorKey": "63750228-222d-fbe0-2729-64dff0c0e578",
@@ -335,7 +403,7 @@
                                 {
                                     "_key": "class",
                                     "_value": [
-                                        "width80"
+                                        "fullWidth"
                                     ],
                                     "_type": "dav",
                                     "_attrDef": "p"
@@ -385,13 +453,14 @@
                                 "designerReference": [
                                     {
                                         "_key": "style",
-                                        "_value": "font-size:3em",
+                                        "_value": "",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
                                     {
                                         "_key": "class",
                                         "_value": [
+                                            "font3em",
                                             "Monoton"
                                         ],
                                         "_type": "dav",
