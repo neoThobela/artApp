@@ -15,6 +15,12 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-postEventsComponent
+import { postEventsComponent } from '../components/home/postEvents.component';
+//CORE_REFERENCE_IMPORT-postButtonsComponent
+import { postButtonsComponent } from '../components/home/postButtons.component';
+//CORE_REFERENCE_IMPORT-eventsComponent
+import { eventsComponent } from '../components/home/events.component';
 //CORE_REFERENCE_IMPORT-postComponent
 import { postComponent } from '../components/home/post.component';
 //CORE_REFERENCE_IMPORT-BuyArtComponent
@@ -71,6 +77,12 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-postEventsComponent
+  postEventsComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-postButtonsComponent
+  postButtonsComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-eventsComponent
+  eventsComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-postComponent
   postComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-BuyArtComponent
@@ -129,7 +141,10 @@ export const appRoutes = [
       { path: 'about', component: aboutUsComponent },
       { path: 'artwork', component: artworkComponent },
       { path: 'shop', component: BuyArtComponent },
-      { path: 'post', component: postComponent },
+      { path: 'post/sales', component: postComponent },
+      { path: 'events', component: eventsComponent },
+      { path: 'post', component: postButtonsComponent },
+      { path: 'post/postevents', component: postEventsComponent },
     ],
   },
   { path: 'login', component: loginComponent },

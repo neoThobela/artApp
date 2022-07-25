@@ -12,6 +12,7 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import { NgxStarRatingModule } from 'ngx-star-rating'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -64,10 +65,20 @@ export class artistsComponent {
 
   sd_7vgsKxSAvkQpW2r2(bh) {
     try {
+      bh = this.sd_ygiJ8NbRnUCRXOXN(bh);
       //appendnew_next_sd_7vgsKxSAvkQpW2r2
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_7vgsKxSAvkQpW2r2');
+    }
+  }
+
+  sd_ygiJ8NbRnUCRXOXN(bh) {
+    try {
+      //appendnew_next_sd_ygiJ8NbRnUCRXOXN
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ygiJ8NbRnUCRXOXN');
     }
   }
 

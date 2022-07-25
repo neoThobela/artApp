@@ -1,0 +1,155 @@
+[
+    {
+        "id": "sd_JxSvVx3XTPpAclhp",
+        "type": "tab",
+        "createdDate": "2022-07-23T16:48:22.444Z",
+        "label": "events",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "eventsComponent"
+    },
+    {
+        "id": "sd_t7JqvqYBQ1jY3ouY",
+        "type": "OnInit",
+        "z": "sd_JxSvVx3XTPpAclhp",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_t7JqvqYBQ1jY3ouY",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_H5PnXfZdEzINvowk"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "eventsComponent"
+    },
+    {
+        "id": "sd_H5PnXfZdEzINvowk",
+        "type": "PageVariables",
+        "z": "sd_JxSvVx3XTPpAclhp",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "address",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "{}"
+                }
+            },
+            {
+                "textIp": "mapURL",
+                "typedIpValue": {
+                    "type": "str",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_H5PnXfZdEzINvowk",
+        "category": "Function",
+        "x": 185,
+        "y": 40,
+        "wires": [
+            [
+                "sd_T8PQs0cdECEDNWeE"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_1cLZuSQX2AjzHqEG",
+        "type": "PageStart",
+        "z": "sd_JxSvVx3XTPpAclhp",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "show location",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "showLocation",
+        "category": "General",
+        "x": 140,
+        "y": 220,
+        "wires": [
+            [
+                "sd_b0Ii2eB72AZKfp5C"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "eventsComponent"
+    },
+    {
+        "id": "sd_b0Ii2eB72AZKfp5C",
+        "type": "Script",
+        "z": "sd_JxSvVx3XTPpAclhp",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.address = {\n    street: \"Brookline\",\n    num: \"123\",\n    city: \"NewYork\"\n  };\n  page.mapsURL = `https://maps.google.com/maps?q=${page.address.street}%20${page.address.num}%20%${page.address.city}&t=&z=20&ie=UTF8&iwloc=&output=embed`;",
+        "functionName": "sd_b0Ii2eB72AZKfp5C",
+        "category": "Function",
+        "x": 260,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_T8PQs0cdECEDNWeE",
+        "type": "PageCallService",
+        "z": "sd_JxSvVx3XTPpAclhp",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_JxSvVx3XTPpAclhp",
+            "type": "tab",
+            "createdDate": "2022-07-23T16:48:22.444Z",
+            "label": "events",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_1cLZuSQX2AjzHqEG",
+            "flowName": "showLocation"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "./events",
+        "startName": "showLocation",
+        "inputParams": [],
+        "accept_csd": false,
+        "functionName": "sd_T8PQs0cdECEDNWeE",
+        "category": "General",
+        "x": 420,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    }
+]

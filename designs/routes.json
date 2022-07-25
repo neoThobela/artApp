@@ -25,8 +25,20 @@
                     "component": "BuyArtComponent"
                 },
                 {
-                    "path": "post",
+                    "path": "post/sales",
                     "component": "postComponent"
+                },
+                {
+                    "component": "eventsComponent",
+                    "path": "events"
+                },
+                {
+                    "component": "postButtonsComponent",
+                    "path": "post"
+                },
+                {
+                    "component": "postEventsComponent",
+                    "path": "post/postevents"
                 }
             ]
         },

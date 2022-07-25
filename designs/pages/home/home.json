@@ -28,8 +28,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "homeComponent",
-        "generated": false
+        "serviceName": "homeComponent"
     },
     {
         "id": "sd_UZEj1ChhDxSM2kF0",
@@ -85,8 +84,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "homeComponent",
-        "generated": false
+        "serviceName": "homeComponent"
     },
     {
         "id": "sd_3db5doONxKJO4xwW",
@@ -219,8 +217,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "homeComponent",
-        "generated": false
+        "serviceName": "homeComponent"
     },
     {
         "id": "sd_TVB8SPU5tAxAuaVp",
@@ -275,11 +272,13 @@
         "x": 345,
         "y": 160,
         "wires": [
-            []
+            [
+                "sd_5sHfbHmm5SmBmvd6"
+            ]
         ],
         "__n_excludedFromValidation__": {},
-        "generated": true,
-        "generateNext": false
+        "generateNext": false,
+        "generated": true
     },
     {
         "id": "sd_5sHfbHmm5SmBmvd6",
@@ -299,8 +298,8 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "generated": false
+        "generateNext": false,
+        "generated": true
     },
     {
         "id": "sd_QbGmXwGLiufiFfEK",
@@ -325,7 +324,7 @@
             []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "generated": false
+        "generateNext": false,
+        "generated": true
     }
 ]

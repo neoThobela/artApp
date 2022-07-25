@@ -44,6 +44,7 @@
 		"neutrinos-module": "0.0.60",
 		"neutrinos-oauth-client": "1.2.4-beta.0",
 		"ng2-charts": "2.4.0",
+		"ngx-star-rating": "2.1.0",
 		"rxjs": "6.6.3",
 		"signature_pad": "3.0.0-beta.4",
 		"tslib": "2.0.3",

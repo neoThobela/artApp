@@ -5,10 +5,12 @@
         <div fxLayout="row wrap" style="height:90px" class="width90" fxLayoutAlign="space-between center" [fxShow]="true">
           <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true"><label class="yellowlines bold600 fontSize24 primaryBlackText">
               ART GALLERY</label></div>
-          <div fxLayout="column wrap" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" fxFlex="35" fxLayoutAlign="start stretch" [fxShow]="true">
             <div fxLayout="row wrap" class="bluebottom" fxLayoutAlign="space-between center" [fxShow]="true">
               <div fxLayout="column wrap" class="curser primaryBlackText" fxLayoutAlign="start stretch" [fxShow]="true"><label routerLink="display" class="curser bluebottom">
                   Home</label></div>
+              <div fxLayout="column wrap" class="curser primaryBlackText" fxLayoutAlign="start stretch" [fxShow]="true"><label routerLink="events" class="curser bluebottom">
+                  Events</label></div>
               <div fxLayout="column wrap" class="curser primaryBlackText" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="about"><label class="curser bluebottom">
                   About Us</label></div>
               <div fxLayout="column wrap" class="curser" fxLayoutAlign="start stretch" [fxShow]="true" (click)="getArtsits(allArtist)"><label (click)="getArtsits(allArtists)" class="curser bluebottom">

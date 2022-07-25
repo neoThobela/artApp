@@ -1016,7 +1016,7 @@
                                 },
                                 {
                                     "_key": "placeholder",
-                                    "_value": "Userame",
+                                    "_value": "Username",
                                     "_type": "kv",
                                     "_attrDef": "p",
                                     "_useAsLabel": true
@@ -1234,7 +1234,7 @@
                                 },
                                 {
                                     "_key": "type",
-                                    "_value": "",
+                                    "_value": "password",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -1691,7 +1691,7 @@
                                         },
                                         {
                                             "_key": "html",
-                                            "_value": "Don't have an account? <a href=\"/register\" class=\"yellowText\">Register</a>",
+                                            "_value": "Admin access only <a href=\"/register\" class=\"yellowText\"></a>",
                                             "_type": "a",
                                             "_attrDef": "p"
                                         }

@@ -283,7 +283,7 @@
                         },
                         {
                             "_key": "fxLayoutGap",
-                            "_value": "",
+                            "_value": "10px",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -1062,7 +1062,7 @@
                                 },
                                 {
                                     "_key": "fxLayoutGap",
-                                    "_value": "",
+                                    "_value": "10px",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -1301,7 +1301,7 @@
                                         },
                                         {
                                             "_key": "html",
-                                            "_value": "Search By Category",
+                                            "_value": "Select A Category",
                                             "_type": "a",
                                             "_attrDef": "p"
                                         }
@@ -1446,7 +1446,7 @@
                                             },
                                             {
                                                 "_key": "placeholder",
-                                                "_value": "search by categories",
+                                                "_value": "Select A Category",
                                                 "_type": "kv",
                                                 "_attrDef": "p",
                                                 "_useAsLabel": true
