@@ -136,7 +136,9 @@ export class homeComponent {
         this.sdService.getPathAndQParamsObj('/home/artwork');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
       //appendnew_next_sd_1S59GCj3MXydRn15
       return bh;
     } catch (e) {

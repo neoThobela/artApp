@@ -39,6 +39,10 @@
                 {
                     "component": "postEventsComponent",
                     "path": "post/postevents"
+                },
+                {
+                    "component": "artistsComponent",
+                    "path": "art"
                 }
             ]
         },

@@ -145,6 +145,7 @@ export const appRoutes = [
       { path: 'events', component: eventsComponent },
       { path: 'post', component: postButtonsComponent },
       { path: 'post/postevents', component: postEventsComponent },
+      { path: 'art', component: artistsComponent },
     ],
   },
   { path: 'login', component: loginComponent },

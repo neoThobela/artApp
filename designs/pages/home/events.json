@@ -19,8 +19,8 @@
         "name": "",
         "functionName": "sd_t7JqvqYBQ1jY3ouY",
         "category": "Lifecycle Events",
-        "x": 30,
-        "y": 30,
+        "x": 105,
+        "y": 100,
         "wires": [
             [
                 "sd_H5PnXfZdEzINvowk"
@@ -54,12 +54,19 @@
                     "type": "str",
                     "value": ""
                 }
+            },
+            {
+                "textIp": "events",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
             }
         ],
         "functionName": "sd_H5PnXfZdEzINvowk",
         "category": "Function",
-        "x": 185,
-        "y": 40,
+        "x": 225,
+        "y": 100,
         "wires": [
             [
                 "sd_T8PQs0cdECEDNWeE"
@@ -82,8 +89,8 @@
         "flow_type": "sync",
         "functionName": "showLocation",
         "category": "General",
-        "x": 140,
-        "y": 220,
+        "x": 105,
+        "y": 200,
         "wires": [
             [
                 "sd_b0Ii2eB72AZKfp5C"
@@ -100,11 +107,11 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.address = {\n    street: \"Brookline\",\n    num: \"123\",\n    city: \"NewYork\"\n  };\n  page.mapsURL = `https://maps.google.com/maps?q=${page.address.street}%20${page.address.num}%20%${page.address.city}&t=&z=20&ie=UTF8&iwloc=&output=embed`;",
+        "script": "// page.address = {\n//     street: \"Brookline\",\n//     num: \"123\",\n//     city: \"NewYork\"\n//   };\n//   page.mapsURL = `https://maps.google.com/maps?q=${page.address.street}%20${page.address.num}%20%${page.address.city}&t=&z=20&ie=UTF8&iwloc=&output=embed`;\n",
         "functionName": "sd_b0Ii2eB72AZKfp5C",
         "category": "Function",
-        "x": 260,
-        "y": 220,
+        "x": 225,
+        "y": 200,
         "wires": [
             []
         ],
@@ -143,10 +150,122 @@
         "accept_csd": false,
         "functionName": "sd_T8PQs0cdECEDNWeE",
         "category": "General",
-        "x": 420,
-        "y": 40,
+        "x": 345,
+        "y": 100,
+        "wires": [
+            [
+                "sd_V8fmy2oQGNI3ctBJ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_V8fmy2oQGNI3ctBJ",
+        "type": "PageCallService",
+        "z": "sd_JxSvVx3XTPpAclhp",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "get events",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_fSGlHyApcayt5tky",
+            "type": "tab",
+            "createdDate": "2022-07-20T13:20:26.916Z",
+            "label": "connectToDB",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_GyvxnvddVjOUkUGY",
+            "flowName": "getAllEvents"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "events",
+                "valueType": "this.page",
+                "value": "events",
+                "mapVarName": "events",
+                "localVar": "this.page.events"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/connectToDB",
+        "startName": "getAllEvents",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "getEvents",
+        "category": "General",
+        "x": 445,
+        "y": 100,
+        "wires": [
+            [
+                "sd_7clM157FlVIvV0nY"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_ugNriIHmhQooU2wC",
+        "type": "Script",
+        "z": "sd_JxSvVx3XTPpAclhp",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// page.events.forEach(item => item['videoUrl'] = `https://www.youtube.com/embed/PuDB4KwGhHA/${item['video' ]}`)\npage.events.forEach(item => item['videoUrl'] =page.dom.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/PuDB4KwGhHA/${item['video' ]}`))",
+        "functionName": "sd_ugNriIHmhQooU2wC",
+        "category": "Function",
+        "x": 705,
+        "y": 100,
         "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_7clM157FlVIvV0nY",
+        "type": "UseDependency",
+        "z": "sd_JxSvVx3XTPpAclhp",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "DomSanitizer",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "dom"
+                },
+                "injectable": true
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/platform-browser",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_7clM157FlVIvV0nY",
+        "category": "Function",
+        "x": 545,
+        "y": 100,
+        "wires": [
+            [
+                "sd_ugNriIHmhQooU2wC"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

@@ -2184,7 +2184,6 @@
                                 "61c16f47-ce9a-9ca0-6501-467983db98eb": {
                                     "paletteKey": "FlexLayoutCol",
                                     "parentEditorKey": "5cdf9b33-3681-72cc-b257-b13a5b87c991",
-                                    "isCommented": "false",
                                     "commentid": null,
                                     "designerReference": [
                                         {
@@ -2255,7 +2254,6 @@
                                         "paletteKey": "Html5",
                                         "parentEditorKey": "61c16f47-ce9a-9ca0-6501-467983db98eb",
                                         "isAdvancedComponent": true,
-                                        "isCommented": "false",
                                         "commentid": null,
                                         "designerReference": [
                                             {
@@ -2448,7 +2446,6 @@
                                             "paletteKey": "html-editor",
                                             "parentEditorKey": "6bf72b36-1e6d-f22f-d49d-94ae942f7c78",
                                             "isAdvancedChildComponent": true,
-                                            "isCommented": "false",
                                             "commentid": null,
                                             "designerReference": [
                                                 {
@@ -2568,7 +2565,7 @@
                                 },
                                 {
                                     "_key": "fxFlex",
-                                    "_value": "",
+                                    "_value": "100",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -2586,13 +2583,13 @@
                                 },
                                 {
                                     "_key": "layoutAlign",
-                                    "_value": "center",
+                                    "_value": "start",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 },
                                 {
                                     "_key": "pLayoutAlign",
-                                    "_value": "center",
+                                    "_value": "stretch",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 },

@@ -1,9 +1,6 @@
 <div fxLayout="column wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
-  <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true"></div>
   <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
     <div fxLayout="column wrap" style="margin-top:4em;margin-bottom:4em" class="overfflow fullWidth" fxLayoutAlign="center center" [fxShow]="true">
-      <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true"><iframe name="art" sandbox="allow-scripts allow-popups allow-same-origin" src="https://youtu.be/lHePKNTRmdI" width="550px" style="height:55vh;" class="noScroll">
-        </iframe></div>
       <div fxLayout="row wrap" class="margintop1em fullWidth overfflow" fxLayoutAlign="center center" [fxShow]="true">
         <div fxLayout="column wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
           <div fxLayout="row wrap" class="width80" fxLayoutAlign="center center" [fxShow]="true">
@@ -11,45 +8,80 @@
               POST EVENT</p>
           </div>
           <div fxLayout="row wrap" class="width80" fxLayoutAlign="center center" [fxShow]="true">
-            <form>
+            <form #eventForm="ngForm">
               <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
                 <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                  <input matInput name="title" type="text" placeholder="Event" [required]="true">
-
+                  <input matInput [(ngModel)]="page.dm.event.eventName" name="eventName" type="text" placeholder="Event Name" [required]="true">
+                  <mat-error align="start" *ngIf="(eventForm.controls.eventName?.dirty || eventForm.controls.eventName?.touched || eventForm.submitted) &amp;&amp; eventForm.controls.eventName.errors?.required">Event Name is required</mat-error>
                 </mat-form-field>
               </div>
               <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
                 <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                  <input matInput name="price" placeholder="Price" [required]="true">
-
+                  <input matInput [(ngModel)]="page.dm.event.videoUrl" name="videoUrl" placeholder="Event Youtube Video Url" [required]="true">
+                  <mat-error align="start" *ngIf="(eventForm.controls.videoUrl?.dirty || eventForm.controls.videoUrl?.touched || eventForm.submitted) &amp;&amp; eventForm.controls.videoUrl.errors?.required">Video Url is required</mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput [(ngModel)]="page.dm.event.imageUrl" name="imageUrl" placeholder="Event Image URL" [required]="true">
+                  <mat-error align="start" *ngIf="(eventForm.controls.imageUrl?.dirty || eventForm.controls.imageUrl?.touched || eventForm.submitted) &amp;&amp; eventForm.controls.imageUrl.errors?.required">Image URL is required</mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput [(ngModel)]="page.dm.event.entryFee" name="entryFee" type="number" placeholder="Entry Fee" [required]="true">
+                  <mat-error align="start" *ngIf="(eventForm.controls.entryFee?.dirty || eventForm.controls.entryFee?.touched || eventForm.submitted) &amp;&amp; eventForm.controls.entryFee.errors?.required">Entry Fee is required</mat-error> <span matPrefix>R </span>
                 </mat-form-field>
               </div>
               <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
                 <mat-form-field [appearance]="&apos;legacy&apos;">
-                  <textarea matInput name="info" placeholder="Description" [required]="true"></textarea>
+                  <textarea matInput [(ngModel)]="page.dm.event.description" name="description" placeholder="Description" [required]="true"></textarea>
+                </mat-form-field>
+                <div *ngIf="(eventForm.controls.description?.dirty || eventForm.controls.description?.touched || eventForm.submitted) &amp;&amp; eventForm.controls.description.errors?.required">
+                  <mat-error>
+                    Description is required
+                  </mat-error>
+                </div>
+              </div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput [(ngModel)]="page.dm.event.street" name="street" placeholder="Street Address" [required]="true">
+                  <mat-error align="start" *ngIf="(eventForm.controls.street?.dirty || eventForm.controls.street?.touched || eventForm.submitted) &amp;&amp; eventForm.controls.street.errors?.required">Street name is reqiured</mat-error>
                 </mat-form-field>
               </div>
               <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
                 <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                  <input matInput name="year" placeholder="Place" [required]="true">
-
+                  <input matInput [(ngModel)]="page.dm.event.suburb" name="suburb" placeholder="Suburb" [required]="true">
+                  <mat-error align="start" *ngIf="(eventForm.controls.suburb?.dirty || eventForm.controls.suburb?.touched || eventForm.submitted) &amp;&amp; eventForm.controls.suburb.errors?.required">Suburb is required</mat-error>
                 </mat-form-field>
               </div>
               <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
                 <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                  <input matInput name="artwork" type="time" placeholder="Time" [required]="true">
-
+                  <input matInput [(ngModel)]="page.dm.event.city" name="city" placeholder="City/Town" [required]="true">
+                  <mat-error align="start" *ngIf="(eventForm.controls.city?.dirty || eventForm.controls.city?.touched || eventForm.submitted) &amp;&amp; eventForm.controls.city.errors?.required">City is required</mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput [(ngModel)]="page.dm.event.code" name="code" type="number" placeholder="code" [required]="true">
+                  <mat-error align="start" *ngIf="(eventForm.controls.code?.dirty || eventForm.controls.code?.touched || eventForm.submitted) &amp;&amp; eventForm.controls.code.errors?.required">Code is required</mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput [(ngModel)]="page.dm.event.time" name="time" type="time" placeholder="Time" [required]="true">
+                  <mat-error align="start" *ngIf="(eventForm.controls.time?.dirty || eventForm.controls.time?.touched || eventForm.submitted) &amp;&amp; eventForm.controls.time.errors?.required">Time is required</mat-error>
                 </mat-form-field>
               </div>
               <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
                 <mat-form-field [appearance]="&apos;legacy&apos;">
-                  <input matInput placeholder="Date " [matDatepicker]="picker" [required]="false" [disabled]="false">
+                  <input matInput placeholder="Date " [matDatepicker]="picker" [(ngModel)]="page.dm.event.date" name="date" [min]="page.minDate" [required]="true" [disabled]="false">
                   <mat-datepicker-toggle matSuffix [for]="picker" disabled="false"></mat-datepicker-toggle>
                   <mat-datepicker #picker [disabled]="false"></mat-datepicker>
-
+                  <mat-error align="start" *ngIf="(eventForm.controls.date?.dirty || eventForm.controls.date?.touched || eventForm.submitted) &amp;&amp; eventForm.controls.date.errors?.required">Date is required</mat-error>
                 </mat-form-field>
               </div>
-              <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button style=" width: 400px;" class="fullWidth btn" (click)="post(postForm.value)" [disableRipple]="true">Post</button></div>
+              <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button style=" width: 400px;" class="fullWidth btn" (click)="postEvent(eventForm)" [disabled]="eventForm.invalid" [disableRipple]="true">Post</button></div>
             </form>
           </div>
         </div>

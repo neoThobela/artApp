@@ -2,10 +2,13 @@
 
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "nDefaults.scss";
-@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200&family=Poppins:wght@100;200;300;400;500;600;700&family=Special+Elite&display=swap'); $yellow:#f7ab54;
- $primaryBlack:#0f0e08;
- $primaryBlue:cornflowerblue;
- $white:white;
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200&family=Poppins:wght@100;200;300;400;500;600;700&family=Special+Elite&display=swap'); 
+
+
+$yellow:#f7ab54;
+$primaryBlack:#0f0e08;
+$primaryBlue:cornflowerblue;
+$white:white;
 
 *{
     font-family: 'Poppins', sans-serif;
@@ -35,6 +38,9 @@ a{
 }
 .width95{
     width: 95%;
+}
+.mat-form-field-prefix {
+    padding-right: 5px;
 }
 .mat-input-element {
     caret-color: $yellow;
@@ -188,7 +194,7 @@ mat-form-field-appearance-outline .mat-form-field-flex {
 .curser{
     cursor: pointer;
 }
-.yellowTexthover:hover{
+.yellowText, .yellowTexthover:hover{
     color:$yellow;
 }
 .mat-form-field-appearance-outline .mat-form-field-outline {

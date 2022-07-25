@@ -1,19 +1,51 @@
-<div fxLayout="column wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
-  <div fxLayout="row wrap" class="marginTop2em fullWidth" fxLayoutAlign="center center" [fxShow]="true">
-    <div fxLayout="column wrap" class="flash fullWidth" fxLayoutAlign="center center" [fxShow]="true">
-      <div fxLayout="row wrap" class="zebrabackground fullWidth" fxLayoutAlign="center center" [fxShow]="true">
-        <div class="whiteText fontSize4em Monoton">
-          Events</div>
-      </div>
-      <div fxLayout="row wrap" style="margin-top:5em" class="fullWidth" fxLayoutGap="1em" fxLayoutAlign="center center" [fxShow]="true">
-        <div fxLayout="column wrap" fxLayoutGap="5px" fxLayoutAlign="center center" [fxShow]="true"><img [src]="&apos;https://i.pinimg.com/564x/62/c3/9e/62c39eeb5e836125bddab22acbd89669.jpg&apos;" class="img" width="180px">
-          <p class="fontSpecial fontSize5em">
-            Join Us</p>
-        </div>
-      </div>
-      <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-        <div height="300" src="page.mapsURL | safe" width="100%">
-          <iframe [src]="page.mapURl | safe" width="600" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<div fxLayout="column wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true">
+    <div class="fontSize4em Monoton">
+      Events</div>
+  </div>
+  <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+    <div fxLayout="column wrap" fxFlex="90" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true" *ngIf="page.events.length &gt; 0">
+        <div fxLayout="column wrap" fxFlex="32" fxLayoutAlign="center center" [fxShow]="true" *ngFor="let event of page.events">
+          <mat-card class="fullWidth">
+            <mat-card-title>{{event.eventName}}</mat-card-title>
+
+            <img mat-card-image [src]="event.imageUrl">
+
+            <mat-card-content>
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p>
+                  {{event.description}}
+                </p>
+              </div>
+              <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+                <p>
+                  <b>Entrance Fee: </b> R{{event.entryFee}}
+                </p>
+              </div>
+              <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <p>
+                    <b>Date: </b> {{event.date | date:&apos;mediumDate&apos;}}
+                  </p>
+                </div>
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <p>
+                    <b>Time: </b> {{event.time}}
+                  </p>
+                </div>
+              </div>
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div>
+                  <!-- <iframe width="727" height="409" src="https://www.youtube.com/embed/{{event.videoUrl}}" title="Ngizilalhlela Kuwe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                  <iframe width="100%" height="200" [src]="event.videoUrl" [title]="event.eventName" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <!-- <iframe width="100%" height="200" [src]="'https://www.youtube.com/embed/PuDB4KwGhHA'" [title]="event.eventName" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                </div>
+              </div>
+            </mat-card-content>
+
+            <mat-card-actions></mat-card-actions>
+          </mat-card>
         </div>
       </div>
     </div>

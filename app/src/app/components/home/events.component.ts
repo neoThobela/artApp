@@ -8,10 +8,14 @@ import {
   Input,
   Output,
   EventEmitter,
+  SimpleChanges,
+  OnChanges,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import { connectToDB } from 'app/sd-services/connectToDB'; //_splitter_
+import { DomSanitizer } from '@angular/platform-browser'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -80,6 +84,7 @@ export class eventsComponent {
     try {
       this.page.address = {};
       this.page.mapURL = undefined;
+      this.page.events = [];
       bh = this.sd_T8PQs0cdECEDNWeE(bh);
       //appendnew_next_sd_H5PnXfZdEzINvowk
       return bh;
@@ -92,6 +97,7 @@ export class eventsComponent {
     try {
       let outputVariables = this.showLocation();
 
+      bh = this.getEvents(bh);
       //appendnew_next_sd_T8PQs0cdECEDNWeE
       return bh;
     } catch (e) {
@@ -99,15 +105,58 @@ export class eventsComponent {
     }
   }
 
+  async getEvents(bh) {
+    try {
+      const connectToDBInstance: connectToDB =
+        this.__page_injector__.get(connectToDB);
+
+      let outputVariables = await connectToDBInstance.getAllEvents();
+      this.page.events = outputVariables.local.events;
+
+      bh = this.sd_7clM157FlVIvV0nY(bh);
+      //appendnew_next_getEvents
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_V8fmy2oQGNI3ctBJ');
+    }
+  }
+
+  sd_7clM157FlVIvV0nY(bh) {
+    try {
+      this.page.dom = this.__page_injector__.get(DomSanitizer);
+      bh = this.sd_ugNriIHmhQooU2wC(bh);
+      //appendnew_next_sd_7clM157FlVIvV0nY
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_7clM157FlVIvV0nY');
+    }
+  }
+
+  sd_ugNriIHmhQooU2wC(bh) {
+    try {
+      const page = this.page; // page.events.forEach(item => item['videoUrl'] = `https://www.youtube.com/embed/PuDB4KwGhHA/${item['video' ]}`)
+      page.events.forEach(
+        (item) =>
+          (item['videoUrl'] = page.dom.bypassSecurityTrustResourceUrl(
+            `https://www.youtube.com/embed/PuDB4KwGhHA/${item['video']}`
+          ))
+      );
+      //appendnew_next_sd_ugNriIHmhQooU2wC
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ugNriIHmhQooU2wC');
+    }
+  }
+
   sd_b0Ii2eB72AZKfp5C(bh) {
     try {
-      const page = this.page;
-      page.address = {
-        street: 'Brookline',
-        num: '123',
-        city: 'NewYork',
-      };
-      page.mapsURL = `https://maps.google.com/maps?q=${page.address.street}%20${page.address.num}%20%${page.address.city}&t=&z=20&ie=UTF8&iwloc=&output=embed`;
+      const page = this.page; // page.address = {
+      //     street: "Brookline",
+      //     num: "123",
+      //     city: "NewYork"
+      //   };
+      //   page.mapsURL = `https://maps.google.com/maps?q=${page.address.street}%20${page.address.num}%20%${page.address.city}&t=&z=20&ie=UTF8&iwloc=&output=embed`;
+
       //appendnew_next_sd_b0Ii2eB72AZKfp5C
       return bh;
     } catch (e) {

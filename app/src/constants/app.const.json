@@ -1,5 +1,6 @@
 {
     "dataSource": {
-        "login": "neutrinos-rt"
+        "login": "neutrinos-rt",
+        "event": "neutrinos-rt"
     }
 }

@@ -158,7 +158,9 @@
         "x": 365,
         "y": 180,
         "wires": [
-            []
+            [
+                "sd_HLGoAjLF1F6IUVQd"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -187,5 +189,42 @@
         },
         "__n_excludedFromValidation__": {},
         "generateNext": true
+    },
+    {
+        "id": "sd_HLGoAjLF1F6IUVQd",
+        "type": "SnackBar",
+        "z": "sd_VEIfS9iQyjmNmYgv",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "{message:'Post sent'}"
+        },
+        "action": {
+            "type": "str",
+            "value": ""
+        },
+        "duration": {
+            "type": "num",
+            "value": ""
+        },
+        "horizontalPosition": "center",
+        "verticalPosition": "bottom",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_HLGoAjLF1F6IUVQd",
+        "category": "General",
+        "x": 520,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
     }
 ]

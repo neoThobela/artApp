@@ -8,6 +8,8 @@ import {
   Input,
   Output,
   EventEmitter,
+  SimpleChanges,
+  OnChanges,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
@@ -77,6 +79,25 @@ export class artworkComponent {
     }
   }
 
+  rateArt(
+    rate: any = undefined,
+    ind = 0,
+    itemIndex: any = undefined,
+    ...others
+  ) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { rate: rate, ind: ind, itemIndex: itemIndex };
+      bh.local = {};
+      bh = this.sd_Ro6iepRQlEkBUWUI(bh);
+      //appendnew_next_rateArt
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_BHXpZj2BAXx4uWLf');
+    }
+  }
+
   //appendnew_flow_artworkComponent_start
 
   sd_ey1AEYbLHYwIcMTh(bh) {
@@ -126,6 +147,25 @@ export class artworkComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_WpUVUEIFtxhJAtT9');
+    }
+  }
+
+  sd_Ro6iepRQlEkBUWUI(bh) {
+    try {
+      const page = this.page; // reset the rates
+      for (let i = 0; i < page.arr[bh.input.itemIndex]['rate'].length; i++) {
+        page.arr[bh.input.itemIndex]['rate'][i]['rate'] = false;
+        page.arr[bh.input.itemIndex]['rate'][i]['icon'] = 'star_border';
+      }
+      // Update rates
+      for (let i = 0; i < bh.input.ind + 1; i++) {
+        page.arr[bh.input.itemIndex]['rate'][i]['rate'] = true;
+        page.arr[bh.input.itemIndex]['rate'][i]['icon'] = 'star';
+      }
+      //appendnew_next_sd_Ro6iepRQlEkBUWUI
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Ro6iepRQlEkBUWUI');
     }
   }
 

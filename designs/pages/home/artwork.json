@@ -67,7 +67,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
-        "generated": true
+        "generated": true,
+        "serviceName": "artworkComponent"
     },
     {
         "id": "sd_w36c2SeTfcyhcV3k",
@@ -465,5 +466,73 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true
+    },
+    {
+        "id": "sd_BHXpZj2BAXx4uWLf",
+        "type": "PageStart",
+        "z": "sd_Cu54QWQnD3m2CoTj",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "rateArt",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "rate",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "ind",
+                "defaultValue": {
+                    "type": "num",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "itemIndex",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "rateArt",
+        "category": "General",
+        "x": 65,
+        "y": 320,
+        "wires": [
+            [
+                "sd_Ro6iepRQlEkBUWUI"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "artworkComponent"
+    },
+    {
+        "id": "sd_Ro6iepRQlEkBUWUI",
+        "type": "Script",
+        "z": "sd_Cu54QWQnD3m2CoTj",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// reset the rates\nfor(let i = 0; i < page.arr[bh.input.itemIndex]['rate'].length; i++){\n    page.arr[bh.input.itemIndex]['rate'][i]['rate'] = false;\n    page.arr[bh.input.itemIndex]['rate'][i]['icon'] = 'star_border';\n}\n// Update rates\nfor(let i = 0; i < bh.input.ind + 1; i++){\n    page.arr[bh.input.itemIndex]['rate'][i]['rate'] = true;\n    page.arr[bh.input.itemIndex]['rate'][i]['icon'] = 'star';\n}",
+        "functionName": "sd_Ro6iepRQlEkBUWUI",
+        "category": "Function",
+        "x": 165,
+        "y": 320,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
     }
 ]

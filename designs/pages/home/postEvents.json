@@ -7,6 +7,161 @@
         "disabled": false,
         "info": "",
         "functionSeq": 0,
-        "generateNext": true
+        "generateNext": true,
+        "serviceName": "postEventsComponent"
+    },
+    {
+        "id": "sd_pV5fnWrj0wwVNbks",
+        "type": "OnInit",
+        "z": "sd_i76z259sWzpRGGDJ",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_pV5fnWrj0wwVNbks",
+        "category": "Lifecycle Events",
+        "x": 120,
+        "y": 100,
+        "wires": [
+            [
+                "sd_addLD964bF0eZ07s"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "postEventsComponent"
+    },
+    {
+        "id": "sd_addLD964bF0eZ07s",
+        "type": "PageVariables",
+        "z": "sd_i76z259sWzpRGGDJ",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "minDate",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "new Date()"
+                }
+            }
+        ],
+        "functionName": "sd_addLD964bF0eZ07s",
+        "category": "Function",
+        "x": 240,
+        "y": 100,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_73JiYz1jsPrvUqLl",
+        "type": "Script",
+        "z": "sd_i76z259sWzpRGGDJ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let vUrlId = page.dm.event.videoUrl.split('=').pop() ?\n    page.dm.event.videoUrl.split('=').pop() :\n    page.dm.event.videoUrl.split('/').pop();\npage.dm.event.videoUrl = vUrlId;\n",
+        "functionName": "sd_73JiYz1jsPrvUqLl",
+        "category": "Function",
+        "x": 245,
+        "y": 280,
+        "wires": [
+            [
+                "sd_KM4HXUKjDJyot8PW"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_84JUKEACobhcoepO",
+        "type": "PageStart",
+        "z": "sd_i76z259sWzpRGGDJ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "post event",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "form",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "postEvent",
+        "category": "General",
+        "x": 125,
+        "y": 280,
+        "wires": [
+            [
+                "sd_73JiYz1jsPrvUqLl"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "postEventsComponent"
+    },
+    {
+        "id": "sd_KM4HXUKjDJyot8PW",
+        "type": "PageCallService",
+        "z": "sd_i76z259sWzpRGGDJ",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_fSGlHyApcayt5tky",
+            "type": "tab",
+            "createdDate": "2022-07-20T13:20:26.916Z",
+            "label": "connectToDB",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_FpiNuNXNrYr17VXo",
+            "flowName": "pOSTEvents"
+        },
+        "inputVariables": [
+            {
+                "key": "event",
+                "map": true,
+                "valueType": "this.page",
+                "value": "dm.event"
+            }
+        ],
+        "outputMapping": [],
+        "serviceImportPath": "app/sd-services/connectToDB",
+        "startName": "pOSTEvents",
+        "inputParams": [
+            "this.page.dm.event"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_KM4HXUKjDJyot8PW",
+        "category": "General",
+        "x": 365,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
     }
 ]

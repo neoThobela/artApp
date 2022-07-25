@@ -146,6 +146,54 @@ export class connectToDB {
     }
   }
 
+  async pOSTEvents(event: any = undefined, ...others) {
+    try {
+      var bh: any = {
+        input: {
+          event: event,
+        },
+        local: {},
+      };
+      bh = this.sdService.__constructDefault(bh);
+      bh = await this.sd_iUhwqoRvNlDPSZgg(bh);
+      //appendnew_next_pOSTEvents
+      return (
+        // formatting output variables
+        {
+          input: {},
+          local: {},
+        }
+      );
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_FpiNuNXNrYr17VXo');
+    }
+  }
+
+  async getAllEvents(...others) {
+    try {
+      var bh: any = {
+        input: {},
+        local: {
+          events: undefined,
+        },
+      };
+      bh = this.sdService.__constructDefault(bh);
+      bh = await this.sd_IjRs44KcSZQO3Yar(bh);
+      //appendnew_next_getAllEvents
+      return (
+        // formatting output variables
+        {
+          input: {},
+          local: {
+            events: bh.local.events,
+          },
+        }
+      );
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_GyvxnvddVjOUkUGY');
+    }
+  }
+
   //appendnew_flow_connectToDB_start
 
   async sd_bmya1kh9KTqdey9i(bh) {
@@ -329,13 +377,92 @@ export class connectToDB {
     try {
       const { paramObj: qprm, path: path } =
         this.sdService.getPathAndQParamsObj('/home/display');
-      await this.router.navigate([
-        this.sdService.formatPathWithParams(path, undefined),
-      ]);
+      await this.router.navigate(
+        [this.sdService.formatPathWithParams(path, undefined)],
+        {
+          queryParams: Object.assign(qprm, ''),
+        }
+      );
       //appendnew_next_sd_f6EKoS2JyNgVXK7r
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_f6EKoS2JyNgVXK7r');
+    }
+  }
+
+  async sd_iUhwqoRvNlDPSZgg(bh) {
+    try {
+      console.log('client', bh);
+      bh.local.url = 'http://localhost:8081/api/post-event';
+      bh.input.body = bh.input.event;
+      bh = await this.sd_mJcsAhYzEN47ipDh(bh);
+      //appendnew_next_sd_iUhwqoRvNlDPSZgg
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_iUhwqoRvNlDPSZgg');
+    }
+  }
+
+  async sd_mJcsAhYzEN47ipDh(bh) {
+    try {
+      let requestOptions = {
+        url: bh.local.url,
+        method: 'post',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: bh.input.body,
+      };
+      bh.local.result = await this.sdService.nHttpRequest(requestOptions);
+      bh = await this.sd_9ToCEl7SWZg2kmwp(bh);
+      //appendnew_next_sd_mJcsAhYzEN47ipDh
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_mJcsAhYzEN47ipDh');
+    }
+  }
+
+  async sd_9ToCEl7SWZg2kmwp(bh) {
+    try {
+      this.matSnackBar.open(bh.local.result.message, 'Ok', {
+        duration: 3000,
+        direction: 'ltr',
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom',
+      });
+      //appendnew_next_sd_9ToCEl7SWZg2kmwp
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_9ToCEl7SWZg2kmwp');
+    }
+  }
+
+  async sd_IjRs44KcSZQO3Yar(bh) {
+    try {
+      bh.local.url = 'http://localhost:8081/api/get-all-events';
+      bh = await this.sd_ZAYbXAnkrEdZ9V94(bh);
+      //appendnew_next_sd_IjRs44KcSZQO3Yar
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_IjRs44KcSZQO3Yar');
+    }
+  }
+
+  async sd_ZAYbXAnkrEdZ9V94(bh) {
+    try {
+      let requestOptions = {
+        url: bh.local.url,
+        method: 'get',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: undefined,
+      };
+      bh.local.events = await this.sdService.nHttpRequest(requestOptions);
+      //appendnew_next_sd_ZAYbXAnkrEdZ9V94
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_ZAYbXAnkrEdZ9V94');
     }
   }
 

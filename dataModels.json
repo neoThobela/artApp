@@ -18,5 +18,79 @@
                 "type": "string"
             }
         ]
+    },
+    "a72a876c-58fc-368b-a7f7-0a0d20fccd6e": {
+        "dataModelId": "a72a876c-58fc-368b-a7f7-0a0d20fccd6e",
+        "name": "event",
+        "description": "Event blueprint",
+        "dataSource": "neutrinos-rt",
+        "fields": [
+            {
+                "name": "eventName",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "videoUrl",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "imageUrl",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "entryFee",
+                "fieldType": 1,
+                "isArray": false,
+                "type": "number"
+            },
+            {
+                "name": "description",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "street",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "suburb",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "city",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "code",
+                "fieldType": 1,
+                "isArray": false,
+                "type": "number"
+            },
+            {
+                "name": "time",
+                "fieldType": 2,
+                "isArray": false,
+                "type": "string"
+            },
+            {
+                "name": "date",
+                "fieldType": 3,
+                "isArray": false,
+                "type": "Date"
+            }
+        ]
     }
 }

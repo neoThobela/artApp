@@ -19,8 +19,8 @@
         "name": "",
         "functionName": "sd_2SVflhMtizgk2h0N",
         "category": "Lifecycle Events",
-        "x": 30,
-        "y": 30,
+        "x": 45,
+        "y": 60,
         "wires": [
             [
                 "sd_7vgsKxSAvkQpW2r2"
@@ -40,11 +40,33 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
+        "globalVariables": [
+            {
+                "textIp": "rating3",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "form",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "rating",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
+            }
+        ],
         "functionName": "sd_7vgsKxSAvkQpW2r2",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 165,
+        "y": 60,
         "wires": [
             [
                 "sd_ygiJ8NbRnUCRXOXN"
@@ -85,7 +107,15 @@
                 "value": "arr"
             }
         ],
-        "outputMapping": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "client_result",
+                "valueType": "bh",
+                "value": "",
+                "mapVarName": "client_result"
+            }
+        ],
         "serviceImportPath": "app/sd-services/connectToDB",
         "startName": "getAllArtists",
         "inputParams": [
@@ -95,8 +125,8 @@
         "accept_csd": true,
         "functionName": "sd_t8PQJdO8AxPS6KYH",
         "category": "General",
-        "x": 505,
-        "y": 80,
+        "x": 345,
+        "y": 240,
         "wires": [
             []
         ],
@@ -131,10 +161,141 @@
         "serviceDesignerType": "pages",
         "functionName": "sd_ygiJ8NbRnUCRXOXN",
         "category": "Function",
-        "x": 265,
-        "y": 40,
+        "x": 285,
+        "y": 60,
+        "wires": [
+            [
+                "sd_fHCzXenQL5WRE6SA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_CmbqSJ43WDrRO0hX",
+        "type": "Script",
+        "z": "sd_GneklMwR3AaiHFr1",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.rating3 = 0;\n    page.form = page.fb.group({\n      rating: ['', Validators.required],\n    })\n  \n\n\n",
+        "functionName": "sd_CmbqSJ43WDrRO0hX",
+        "category": "Function",
+        "x": 645,
+        "y": 60,
         "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_fHCzXenQL5WRE6SA",
+        "type": "UseDependency",
+        "z": "sd_GneklMwR3AaiHFr1",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "NgxStarRatingModule",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            }
+        ],
+        "import_all": false,
+        "library": "ngx-star-rating",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_fHCzXenQL5WRE6SA",
+        "category": "Function",
+        "x": 405,
+        "y": 60,
+        "wires": [
+            [
+                "sd_GTUERVfTdX34Gy3I"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_GTUERVfTdX34Gy3I",
+        "type": "UseDependency",
+        "z": "sd_GneklMwR3AaiHFr1",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "ReactiveFormsModule",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            },
+            {
+                "textIp": "FormsModule",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            },
+            {
+                "textIp": "FormBuilder",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "fb"
+                },
+                "injectable": true
+            },
+            {
+                "textIp": "FormGroup",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            },
+            {
+                "textIp": "Validators",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/forms",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_GTUERVfTdX34Gy3I",
+        "category": "Function",
+        "x": 525,
+        "y": 60,
+        "wires": [
+            [
+                "sd_CmbqSJ43WDrRO0hX"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
