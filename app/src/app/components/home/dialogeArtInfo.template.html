@@ -1,17 +1,26 @@
-<div fxLayout="row wrap" style="width:450px;height:100%" fxLayoutAlign="start stretch" [fxShow]="true">
-  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img [src]="page.data.artwork" style="width:150px;height:150px"></div>
-    <p class="fullWidth fontSize24">
-      {{page.data.artistName}}
-    </p>
-    <p class="fullWidth">
-      {{page.data.cateory}}
-    </p>
-    <p class="fullWidth">
-      {{page.data.info}}
-    </p>
-    <p>
-      {{page.data.year}}
-    </p>
+<div fxLayout="row wrap" class="dialogeArtInf" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
+    <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true"><img [src]="page.data.artwork" style="width:150px;height:150px"></div>
+    <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+      <p class="fullWidth fontSize24">
+        {{page.data.artistName}}
+      </p>
+    </div>
+    <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start center" [fxShow]="true">
+      <p>
+        {{page.data.year}}
+      </p>
+    </div>
+    <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+      <p class="fullWidth">
+        {{page.data.cateory}}
+      </p>
+    </div>
+    <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+      <p class="fullWidth">
+        {{page.data.info}}
+      </p>
+    </div>
+    <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="blackBtn" (click)="back()">Back</button></div>
   </div>
 </div>

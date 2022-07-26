@@ -409,6 +409,58 @@ export class connectToDB {
         this.generatedMiddlewares
       )
     );
+
+    if (!this.swaggerDocument['paths']['/rate-art']) {
+      this.swaggerDocument['paths']['/rate-art'] = {
+        put: {
+          summary: '',
+          description: '',
+          consumes: [],
+          produces: [],
+          parameters: [],
+          responses: {},
+        },
+      };
+    } else {
+      this.swaggerDocument['paths']['/rate-art']['put'] = {
+        summary: '',
+        description: '',
+        consumes: [],
+        produces: [],
+        parameters: [],
+        responses: {},
+      };
+    }
+    this.app['put'](
+      `${this.serviceBasePath}/rate-art`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          bh = await this.sd_tuJvqbryFSjphjWH(bh);
+          //appendnew_next_sd_ADuicT24eyMEiDQL
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_ADuicT24eyMEiDQL');
+        }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
     //appendnew_flow_connectToDB_HttpIn
   }
   //   service flows_connectToDB
@@ -500,14 +552,60 @@ export class connectToDB {
   async sd_FVeqRu0aHGUzYyFi(bh) {
     try {
       bh.local.collection = 'art';
-      bh.local.result = {};
-
-      console.log(bh.local);
-      bh = await this.sd_WbYmWaO5V1gfjbzC(bh);
+      bh.query = { artistName: bh.input.body['artistName'] };
+      bh = await this.sd_YQ0JehCQtdiRoWWp(bh);
       //appendnew_next_sd_FVeqRu0aHGUzYyFi
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_FVeqRu0aHGUzYyFi');
+    }
+  }
+
+  async sd_YQ0JehCQtdiRoWWp(bh) {
+    try {
+      bh.foundArt = await MongoPersistance.getInstance().find(
+        'sd_JoUpTYPvdvSvR3fO',
+        bh.local.collection,
+        bh.query,
+        {}
+      );
+      bh = await this.sd_nl5KmrRgbUiopKTr(bh);
+      //appendnew_next_sd_YQ0JehCQtdiRoWWp
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_YQ0JehCQtdiRoWWp');
+    }
+  }
+
+  async sd_nl5KmrRgbUiopKTr(bh) {
+    try {
+      let otherwiseFlag = true;
+      if (
+        this.sdService.operators['lt'](
+          bh.foundArt.length,
+          1,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_WbYmWaO5V1gfjbzC(bh);
+        otherwiseFlag = false;
+      }
+      if (
+        this.sdService.operators['else'](
+          otherwiseFlag,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_8jcrbzHTvbUD4Iv8(bh);
+        otherwiseFlag = false;
+      }
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_nl5KmrRgbUiopKTr');
     }
   }
 
@@ -534,6 +632,16 @@ export class connectToDB {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_cc82ZEi7yQrOM1cD');
+    }
+  }
+
+  async sd_8jcrbzHTvbUD4Iv8(bh) {
+    try {
+      bh.web.res.status(300).send({ message: 'Artist Name already exists' });
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_8jcrbzHTvbUD4Iv8');
     }
   }
 
@@ -652,6 +760,48 @@ export class connectToDB {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_SQvf7qqQxfO8IUPA');
+    }
+  }
+
+  async sd_tuJvqbryFSjphjWH(bh) {
+    try {
+      bh.collection = 'art';
+      bh.filter = { artistName: bh.input.body['artistName'] };
+
+      delete bh.input.body['_id'];
+      bh.input.body = { $set: { rate: bh.input.body['rate'] } };
+      bh = await this.sd_CwAjNTeGI2m4JTDU(bh);
+      //appendnew_next_sd_tuJvqbryFSjphjWH
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_tuJvqbryFSjphjWH');
+    }
+  }
+
+  async sd_CwAjNTeGI2m4JTDU(bh) {
+    try {
+      bh.local.result = await MongoPersistance.getInstance().findOneAndUpdate(
+        'sd_JoUpTYPvdvSvR3fO',
+        bh.collection,
+        bh.filter,
+        bh.input.body,
+        {}
+      );
+      await this.sd_3QItPJRZqLlVUREG(bh);
+      //appendnew_next_sd_CwAjNTeGI2m4JTDU
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_CwAjNTeGI2m4JTDU');
+    }
+  }
+
+  async sd_3QItPJRZqLlVUREG(bh) {
+    try {
+      bh.web.res.status(200).send({ message: 'Art updated successfully' });
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_3QItPJRZqLlVUREG');
     }
   }
 

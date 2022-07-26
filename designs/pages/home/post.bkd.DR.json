@@ -200,13 +200,16 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "height:70vh;border-Radius:80px",
+                            "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
                         {
                             "_key": "class",
-                            "_value": [],
+                            "_value": [
+                                "borderRadius20",
+                                "height386px"
+                            ],
                             "_type": "dav",
                             "_attrDef": "p"
                         },

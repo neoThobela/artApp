@@ -23,7 +23,8 @@
         "y": 40,
         "wires": [
             [
-                "sd_yz7SH8jM6r0Bf8HV"
+                "sd_yz7SH8jM6r0Bf8HV",
+                "sd_yJKnIXkjEABpguFr"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -105,6 +106,94 @@
                 "constant": false
             }
         },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_yJKnIXkjEABpguFr",
+        "type": "UseDependency",
+        "z": "sd_paB43yE3391tmHyp",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "MatDialogModule",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            },
+            {
+                "textIp": "MatDialogRef",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "dialogRef"
+                },
+                "injectable": true
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/material/dialog",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_yJKnIXkjEABpguFr",
+        "category": "Function",
+        "x": 205,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_uAMCRnCUFzmwVIsn",
+        "type": "PageStart",
+        "z": "sd_paB43yE3391tmHyp",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "back",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "back",
+        "category": "General",
+        "x": 85,
+        "y": 300,
+        "wires": [
+            [
+                "sd_Mf6byvq1LjnC6Sok"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "dialogeArtInfoComponent"
+    },
+    {
+        "id": "sd_Mf6byvq1LjnC6Sok",
+        "type": "Script",
+        "z": "sd_paB43yE3391tmHyp",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.dialogRef.close();",
+        "functionName": "sd_Mf6byvq1LjnC6Sok",
+        "category": "Function",
+        "x": 220,
+        "y": 320,
+        "wires": [
+            []
+        ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true

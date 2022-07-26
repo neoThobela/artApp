@@ -206,7 +206,9 @@
                         },
                         {
                             "_key": "class",
-                            "_value": "",
+                            "_value": [
+                                "borderRadius20"
+                            ],
                             "_type": "dav",
                             "_attrDef": "p"
                         },

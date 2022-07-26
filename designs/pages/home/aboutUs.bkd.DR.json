@@ -145,6 +145,7 @@
                     {
                         "_key": "class",
                         "_value": [
+                            "margintop1em",
                             "fullWidth"
                         ],
                         "_type": "dav",
@@ -187,77 +188,6 @@
                         "_attrDef": "p"
                     }
                 ],
-                "09a3f455-70b0-14d6-1fe1-c0d5414a838a": {
-                    "paletteKey": "NG-image",
-                    "parentEditorKey": "381a14a8-dad6-0199-0b61-940b1f9c5489",
-                    "commentid": null,
-                    "designerReference": [
-                        {
-                            "_key": "componentLabel",
-                            "_value": "Image",
-                            "_type": "kv",
-                            "_attrDef": "p",
-                            "_useAsLabel": true
-                        },
-                        {
-                            "_key": "style",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "class",
-                            "_value": [
-                                "height500px",
-                                "fullWidth"
-                            ],
-                            "_type": "dav",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "imgSrc",
-                            "_value": "/Web/images/more.jpg",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "alt",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "[src]",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "imgSecure",
-                            "_value": "",
-                            "_type": "a",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "width",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "srcset",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "sizes",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        }
-                    ]
-                },
                 "c0fceb84-5bc3-1625-4b66-4797fc109dc5": {
                     "paletteKey": "FlexLayoutRow",
                     "parentEditorKey": "381a14a8-dad6-0199-0b61-940b1f9c5489",
@@ -816,6 +746,78 @@
                             }
                         }
                     }
+                },
+                "09a3f455-70b0-14d6-1fe1-c0d5414a838a": {
+                    "paletteKey": "NG-image",
+                    "parentEditorKey": "381a14a8-dad6-0199-0b61-940b1f9c5489",
+                    "isCommented": "false",
+                    "commentid": null,
+                    "designerReference": [
+                        {
+                            "_key": "componentLabel",
+                            "_value": "Image",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": [
+                                "height500px",
+                                "fullWidth"
+                            ],
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "imgSrc",
+                            "_value": "/Web/images/more.jpg",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "alt",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[src]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "imgSecure",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "width",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "srcset",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "sizes",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        }
+                    ]
                 },
                 "2879f0ee-387a-5c5c-fab7-63c37b648003": {
                     "paletteKey": "FlexLayoutRow",

@@ -17,6 +17,7 @@ import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.ser
 import { connectToDB } from 'app/sd-services/connectToDB'; //_splitter_
 import { MatDialog } from '@angular/material/dialog'; //_splitter_
 import { dialogeArtInfoComponent } from './dialogeArtInfo.component'; //_splitter_
+import { FormControl, Validators, FormBuilder } from '@angular/forms'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -35,6 +36,7 @@ export class artworkComponent {
   ) {
     this.__page_injector__.get(SDPageCommonService).addPageDefaults(this.page);
     this.registerListeners();
+    this.page.dep.FormBuilder = this.__page_injector__.get(FormBuilder); //FormBuilder
     //appendnew_element_inject
   }
 
@@ -98,12 +100,27 @@ export class artworkComponent {
     }
   }
 
+  filterArtsits(searchString = '', ...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { searchString: searchString };
+      bh.local = {};
+      bh = this.sd_RYcYabq2sHvyeHHt(bh);
+      //appendnew_next_filterArtsits
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_TrFvdOsVETlLPaSC');
+    }
+  }
+
   //appendnew_flow_artworkComponent_start
 
   sd_ey1AEYbLHYwIcMTh(bh) {
     try {
-      this.page.arr = undefined;
+      this.page.arr = [];
       this.page.allArtists = [];
+      this.page.data = [];
       bh = this.sd_jMresiAMJWqmOT81(bh);
       //appendnew_next_sd_ey1AEYbLHYwIcMTh
       return bh;
@@ -133,7 +150,7 @@ export class artworkComponent {
   sd_ZKmbjNwZZBl0od59(bh) {
     try {
       const page = this.page;
-      console.log('response', page.arr);
+      page.arr.forEach((item) => page.data.push(item));
       //appendnew_next_sd_ZKmbjNwZZBl0od59
       return bh;
     } catch (e) {
@@ -170,8 +187,7 @@ export class artworkComponent {
       }
 
       // Update rates
-
-      this.sd_cdAKkPmI1RgGSA57(bh);
+      bh = this.sd_tdqn0ZcKdPBQ6dtc(bh);
       //appendnew_next_sd_Ro6iepRQlEkBUWUI
       return bh;
     } catch (e) {
@@ -179,16 +195,32 @@ export class artworkComponent {
     }
   }
 
-  sd_cdAKkPmI1RgGSA57(bh) {
+  async sd_tdqn0ZcKdPBQ6dtc(bh) {
     try {
-      console.log(
-        new Date().toLocaleTimeString(),
-        this.page.arr[bh.input.itemIndex]['rate']
+      const connectToDBInstance: connectToDB =
+        this.__page_injector__.get(connectToDB);
+
+      let outputVariables = await connectToDBInstance.rateArt(
+        this.page.arr[bh.input.itemIndex]
       );
-      //appendnew_next_sd_cdAKkPmI1RgGSA57
+
+      //appendnew_next_sd_tdqn0ZcKdPBQ6dtc
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_cdAKkPmI1RgGSA57');
+      return await this.errorHandler(bh, e, 'sd_tdqn0ZcKdPBQ6dtc');
+    }
+  }
+
+  sd_RYcYabq2sHvyeHHt(bh) {
+    try {
+      const page = this.page;
+      page.arr = page.data.filter((item) =>
+        item.artistName.includes(bh.input.searchString)
+      );
+      //appendnew_next_sd_RYcYabq2sHvyeHHt
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_RYcYabq2sHvyeHHt');
     }
   }
 

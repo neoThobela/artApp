@@ -57,7 +57,17 @@ a{
 .height296{
         height: 296px;
 }
-   
+.marginbottom10px{
+    margin-bottom:10px;
+}
+.dialogeArtInf{
+    width:450px;
+    height:100%
+}
+.height386px
+   {
+       height: 386px;
+   }
 .mat-form-field-prefix {
     padding-right: 5px;
 }
@@ -204,9 +214,15 @@ body{
 .borderRadius20{
     border-radius: 20%;
 }
-.bluebottom:focus{
-    border-bottom:$primaryBlue solid 2px;
+.bluebottom{
+    // border-bottom:$primaryBlue solid 2px;
     font-weight: bold;
+}
+.width30{
+    width:30%;
+}
+.width50{
+    width:45%;
 }
 .about:hover{
     border-bottom:$primaryBlue solid 2px;

@@ -1,5 +1,5 @@
 <div fxLayout="column wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
-  <div fxLayout="row wrap" class="marginTop2em" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="row wrap" class="margin-bottom2em marginTop2em" fxLayoutAlign="center center" [fxShow]="true">
     <div class="fontSpecial fontSize4em">
       Events</div>
   </div>
@@ -21,32 +21,46 @@
                         {{event.description}}
                       </h1>
                     </div>
-                    <div fxLayout="row wrap" class="fullWidth margintop1em" fxLayoutAlign="space-between center" [fxShow]="true">
-                      <p class="fontSize1em">
-                        <b class="Monoton">Entrance Fee: </b> R{{event.entryFee}}
+                    <div fxLayout="row wrap" class="fullWidth margintop1em" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <p class="width50 fontSize1em">
+                        <b>Entrance Fee: </b>
+                      </p>
+                      <p class="width50">
+                        R{{event.entryFee}}</p>
+                    </div>
+                    <div fxLayout="row wrap" class="fontSize1em fullWidth margintop1em" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <p class="width50">
+                        <b>Time: </b>
+                      </p>
+                      <p class="width50">
+                        {{event.time}}
                       </p>
                     </div>
-                    <div fxLayout="row wrap" class="fontSize1em fullWidth margintop1em" fxLayoutAlign="space-between center" [fxShow]="true">
-                      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-                        <p>
-                          <b class="Monoton">Time: </b> {{event.time}}
-                        </p>
-                      </div>
+                    <div fxLayout="row wrap" class="margintop1em fullWidth" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true">
+                      <p class="width50 fontSize1em">
+                        <b>Description: </b>
+                      </p>
+                      <p class="width50">
+                        {{event.description}}
+                      </p>
                     </div>
-                    <p class="fontSize1em fullWidth margintop1em">
-                      <b class="Monoton">Description: </b> {{event.description}}
-                    </p>
-                    <div fxLayout="row wrap" class="fullWidth margintop1em" fxLayoutAlign="space-between center" [fxShow]="true">
-                      <div fxLayout="column wrap" class="fontSize1em" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
-                        <div>
-                          <p><b class="Monoton">Entrence Fee: </b> R{{event.entryFee}}</p>
-                        </div>
-                        <div>
-                          <p><b class="Monoton">Address: </b> {{event.street}}</p>
-                          <p> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; {{event.suburb}}</p>
-                          <p> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; {{event.city}}</p>
-                          <p> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; {{event.code}}</p>
-                        </div>
+                    <div fxLayout="row wrap" class="margintop1em fullWidth" fxLayoutGap="0.5em" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <p class="width50">
+                        <b>Date: </b>
+                      </p>
+                      <p class="width50">
+                        {{event.date | date }}
+                      </p>
+                    </div>
+                    <div fxLayout="row wrap" class="fullWidth margintop1em" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <p class="width50">
+                        <b>Address: </b>
+                      </p>
+                      <div class="width50">
+                        <p>{{event.street}}</p>
+                        <p> {{event.suburb}}</p>
+                        <p> {{event.city}}</p>
+                        <p> {{event.code}}</p>
                       </div>
                     </div>
                   </div>

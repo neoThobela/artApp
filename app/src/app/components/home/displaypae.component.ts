@@ -8,6 +8,8 @@ import {
   Input,
   Output,
   EventEmitter,
+  SimpleChanges,
+  OnChanges,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
@@ -148,7 +150,9 @@ export class displaypaeComponent {
         this.sdService.getPathAndQParamsObj('/home/category');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
       //appendnew_next_sd_SSYkbQIk6gYHuRYU
       return bh;
     } catch (e) {
@@ -201,7 +205,9 @@ export class displaypaeComponent {
         this.sdService.getPathAndQParamsObj('/home/artwork');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
       //appendnew_next_sd_ZAG28HL0hfZp3dP2
       return bh;
     } catch (e) {

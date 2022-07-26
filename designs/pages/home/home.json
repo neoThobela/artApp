@@ -19,8 +19,8 @@
         "name": "",
         "functionName": "sd_mZXO4ZdTUbhGHV9w",
         "category": "Lifecycle Events",
-        "x": 30,
-        "y": 30,
+        "x": 85,
+        "y": 60,
         "wires": [
             [
                 "sd_UZEj1ChhDxSM2kF0"
@@ -40,17 +40,35 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
+        "globalVariables": [
+            {
+                "textIp": "toolbar",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "selectedIndex",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "0"
+                }
+            }
+        ],
         "functionName": "sd_UZEj1ChhDxSM2kF0",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 205,
+        "y": 60,
         "wires": [
-            []
+            [
+                "sd_w2M8fGf1qwgzo7o8"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
-        "generated": true
+        "generated": true,
+        "serviceName": "homeComponent"
     },
     {
         "id": "sd_4onYLNkEYs9pDJ5a",
@@ -135,7 +153,7 @@
         "accept_csd": true,
         "functionName": "sd_TVB8SPU5tAxAuaVp",
         "category": "General",
-        "x": 345,
+        "x": 285,
         "y": 160,
         "wires": [
             [
@@ -156,8 +174,8 @@
         "script": "console.log('response',page)",
         "functionName": "sd_5sHfbHmm5SmBmvd6",
         "category": "Function",
-        "x": 536,
-        "y": 164.8125,
+        "x": 425,
+        "y": 160,
         "wires": [
             [
                 "sd_QbGmXwGLiufiFfEK"
@@ -184,11 +202,108 @@
         "resultMapping": "",
         "functionName": "sd_QbGmXwGLiufiFfEK",
         "category": "Navigation",
-        "x": 656,
-        "y": 164.8125,
+        "x": 565,
+        "y": 160,
         "wires": [
             []
         ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_w2M8fGf1qwgzo7o8",
+        "type": "Script",
+        "z": "sd_U1FaiBaVYSMQ8kH1",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.toolbar =[\n{\"title\":\"Home\", \"route\":\"/home/display\"},\n{\"title\":\"Events\", \"route\":\"/home/events\"},\n{\"title\":\"About Us\", \"route\":\"/home/about\"},\n{\"title\":\"Artwork\", \"route\":\"/home/artwork\"},\n{\"title\":\"Shop\", \"route\":\"/home/shop\"}\n]\n",
+        "functionName": "sd_w2M8fGf1qwgzo7o8",
+        "category": "Function",
+        "x": 345,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_zvtyScfl6nbmTfLX",
+        "type": "PageStart",
+        "z": "sd_U1FaiBaVYSMQ8kH1",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "toolbar",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "index",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "toolbar",
+        "category": "General",
+        "x": 85,
+        "y": 280,
+        "wires": [
+            [
+                "sd_txan80rphXCiSp6q",
+                "sd_IHmzTnGXUHdHMc1N"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_txan80rphXCiSp6q",
+        "type": "Script",
+        "z": "sd_U1FaiBaVYSMQ8kH1",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.selectedIndex = bh.input.index\n",
+        "functionName": "sd_txan80rphXCiSp6q",
+        "category": "Function",
+        "x": 245,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_IHmzTnGXUHdHMc1N",
+        "type": "Log",
+        "z": "sd_U1FaiBaVYSMQ8kH1",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "bh.input.index",
+        "functionName": "sd_IHmzTnGXUHdHMc1N",
+        "category": "General",
+        "x": 180,
+        "y": 320,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "bh.input",
+                "value": "index",
+                "constant": false
+            }
+        },
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true

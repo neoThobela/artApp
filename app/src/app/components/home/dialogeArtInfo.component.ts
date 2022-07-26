@@ -8,11 +8,17 @@ import {
   Input,
   Output,
   EventEmitter,
+  SimpleChanges,
+  OnChanges,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
-import { MAT_DIALOG_DATA } from '@angular/material/dialog'; //_splitter_
+import {
+  MAT_DIALOG_DATA,
+  MatDialogModule,
+  MatDialogRef,
+} from '@angular/material/dialog'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -54,10 +60,25 @@ export class dialogeArtInfoComponent {
   sd_rJR1L9BGisavMuGt(bh) {
     try {
       bh = this.sd_yz7SH8jM6r0Bf8HV(bh);
+      bh = this.sd_yJKnIXkjEABpguFr(bh);
       //appendnew_next_sd_rJR1L9BGisavMuGt
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_rJR1L9BGisavMuGt');
+    }
+  }
+
+  back(...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_Mf6byvq1LjnC6Sok(bh);
+      //appendnew_next_back
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_uAMCRnCUFzmwVIsn');
     }
   }
 
@@ -94,6 +115,27 @@ export class dialogeArtInfoComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_Ry5Sr4zqJsYNOtns');
+    }
+  }
+
+  sd_yJKnIXkjEABpguFr(bh) {
+    try {
+      this.page.dialogRef = this.__page_injector__.get(MatDialogRef);
+      //appendnew_next_sd_yJKnIXkjEABpguFr
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_yJKnIXkjEABpguFr');
+    }
+  }
+
+  sd_Mf6byvq1LjnC6Sok(bh) {
+    try {
+      const page = this.page;
+      page.dialogRef.close();
+      //appendnew_next_sd_Mf6byvq1LjnC6Sok
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Mf6byvq1LjnC6Sok');
     }
   }
 

@@ -312,7 +312,8 @@
         "wires": [],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
-        "generated": true
+        "generated": true,
+        "serviceName": "connectToDB"
     },
     {
         "id": "sd_2Nc2Ry3c4qtmI6ke",
@@ -503,8 +504,8 @@
         },
         "functionName": "sd_cc82ZEi7yQrOM1cD",
         "category": "HTTP",
-        "x": 423,
-        "y": 370.8125,
+        "x": 645,
+        "y": 340,
         "wires": [],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -547,8 +548,8 @@
         "pipeline": "",
         "functionName": "sd_WbYmWaO5V1gfjbzC",
         "category": "Storage",
-        "x": 343,
-        "y": 370.8125,
+        "x": 545,
+        "y": 340,
         "wires": [
             [
                 "sd_cc82ZEi7yQrOM1cD"
@@ -593,14 +594,14 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.local.collection = 'art';\nbh.local.result = {}\n\nconsole.log(bh.local)",
+        "script": "bh.local.collection = 'art';\nbh.query = {'artistName': bh.input.body['artistName']};",
         "functionName": "sd_FVeqRu0aHGUzYyFi",
         "category": "Function",
         "x": 243,
         "y": 370.8125,
         "wires": [
             [
-                "sd_WbYmWaO5V1gfjbzC"
+                "sd_YQ0JehCQtdiRoWWp"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -1033,6 +1034,7 @@
                 }
             }
         },
+        "uploadFileOptions": {},
         "editableListData": {
             "responses": [],
             "params": [],
@@ -1087,6 +1089,7 @@
             "obj": "bh.local.events",
             "send": "bh.local.events"
         },
+        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "editableListData": {
@@ -1194,6 +1197,380 @@
                 "sd_eOFPLs3ByRXPRKBf"
             ]
         ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_ADuicT24eyMEiDQL",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_bpnyOX6cbRmRVkRN",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/rate-art",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "put",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "httpOptions": {
+            "/rate-art": {
+                "put": {
+                    "summary": "",
+                    "description": "",
+                    "consumes": [],
+                    "produces": [],
+                    "parameters": [],
+                    "responses": {}
+                }
+            }
+        },
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "category": "HTTP",
+        "x": 125,
+        "y": 860,
+        "wires": [
+            [
+                "sd_tuJvqbryFSjphjWH"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "connectToDB",
+        "functionName": "sd_ADuicT24eyMEiDQL"
+    },
+    {
+        "id": "sd_3QItPJRZqLlVUREG",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_bpnyOX6cbRmRVkRN",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "literal",
+            "value": "{message: \"Art updated successfully\"}",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "responseMapping": {
+            "status": 200,
+            "obj": "{message: \"Art updated successfully\"}",
+            "send": "{message: \"Art updated successfully\"}"
+        },
+        "inputs": 1,
+        "outputs": 0,
+        "editableListData": {
+            "headers": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_3QItPJRZqLlVUREG",
+        "category": "HTTP",
+        "x": 445,
+        "y": 860,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_CwAjNTeGI2m4JTDU",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_bpnyOX6cbRmRVkRN",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_JoUpTYPvdvSvR3fO",
+        "collection": "bh.collection",
+        "options": "",
+        "resultMapping": "bh.local.result",
+        "operation": "findOneAndUpdate",
+        "argumentArray": [
+            "filter",
+            "update"
+        ],
+        "aggregate": "",
+        "operations": "",
+        "query": "bh.filter",
+        "fieldOrSpec": "",
+        "filter": "bh.filter",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "bh.input.body",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "bh.input.body",
+        "newName": "",
+        "doc": "bh.input.body",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_CwAjNTeGI2m4JTDU",
+        "category": "Storage",
+        "x": 345,
+        "y": 860,
+        "wires": [
+            [
+                "sd_3QItPJRZqLlVUREG"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "bh",
+                "value": "collection",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "result",
+                "constant": false
+            },
+            "query": {
+                "type": "bh",
+                "value": "filter",
+                "constant": false
+            },
+            "document": {
+                "type": "bh.input",
+                "value": "body",
+                "constant": false
+            },
+            "filter": {
+                "type": "bh",
+                "value": "filter",
+                "constant": false
+            },
+            "update": {
+                "type": "bh.input",
+                "value": "body",
+                "constant": false
+            },
+            "doc": {
+                "type": "bh.input",
+                "value": "body",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_tuJvqbryFSjphjWH",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_bpnyOX6cbRmRVkRN",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.collection = 'art';\nbh.filter = {'artistName': bh.input.body['artistName']};\n\ndelete bh.input.body['_id'];\nbh.input.body = { $set: { \"rate\": bh.input.body['rate'] } }",
+        "functionName": "sd_tuJvqbryFSjphjWH",
+        "category": "Function",
+        "x": 245,
+        "y": 860,
+        "wires": [
+            [
+                "sd_CwAjNTeGI2m4JTDU"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_YQ0JehCQtdiRoWWp",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_bpnyOX6cbRmRVkRN",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_JoUpTYPvdvSvR3fO",
+        "collection": "bh.local.collection",
+        "options": "",
+        "resultMapping": "bh.foundArt",
+        "operation": "find",
+        "argumentArray": [
+            "query"
+        ],
+        "aggregate": "",
+        "operations": "",
+        "query": "bh.query",
+        "fieldOrSpec": "",
+        "filter": "",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "bh.input.body",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_YQ0JehCQtdiRoWWp",
+        "category": "Storage",
+        "x": 345,
+        "y": 380,
+        "wires": [
+            [
+                "sd_nl5KmrRgbUiopKTr"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "bh.local",
+                "value": "collection",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh",
+                "value": "foundArt",
+                "constant": false
+            },
+            "query": {
+                "type": "bh",
+                "value": "query",
+                "constant": false
+            },
+            "document": {
+                "type": "bh.input",
+                "value": "body",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_nl5KmrRgbUiopKTr",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_bpnyOX6cbRmRVkRN",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "foundArt.length",
+        "propertyType": "bh",
+        "propertyGv": "bh.foundArt.length",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "1",
+                "vt": "num",
+                "gv": "1"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_nl5KmrRgbUiopKTr",
+        "category": "Function",
+        "x": 445,
+        "y": 380,
+        "wires": [
+            [
+                "sd_WbYmWaO5V1gfjbzC"
+            ],
+            [
+                "sd_8jcrbzHTvbUD4Iv8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_8jcrbzHTvbUD4Iv8",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_bpnyOX6cbRmRVkRN",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "literal",
+            "value": "{message: 'Artist Name already exists'}",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 300,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "responseMapping": {
+            "status": 300,
+            "obj": "{message: 'Artist Name already exists'}",
+            "send": "{message: 'Artist Name already exists'}"
+        },
+        "inputs": 1,
+        "outputs": 0,
+        "editableListData": {
+            "headers": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_8jcrbzHTvbUD4Iv8",
+        "category": "HTTP",
+        "x": 545,
+        "y": 420,
+        "wires": [],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true

@@ -194,6 +194,29 @@ export class connectToDB {
     }
   }
 
+  async rateArt(art: any = undefined, ...others) {
+    try {
+      var bh: any = {
+        input: {
+          art: art,
+        },
+        local: {},
+      };
+      bh = this.sdService.__constructDefault(bh);
+      bh = await this.sd_NoVIpWsl1u7TGCKR(bh);
+      //appendnew_next_rateArt
+      return (
+        // formatting output variables
+        {
+          input: {},
+          local: {},
+        }
+      );
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_VX0XWlym1mvEim7t');
+    }
+  }
+
   //appendnew_flow_connectToDB_start
 
   async sd_bmya1kh9KTqdey9i(bh) {
@@ -241,7 +264,6 @@ export class connectToDB {
 
   async sd_adRrqUGfQF3vHhJq(bh) {
     try {
-      console.log('client', bh);
       bh.local.url = 'http://localhost:8081/api/get-all-artist';
       bh = await this.sd_Z4NxSGEOg73XGxlQ(bh);
       //appendnew_next_sd_adRrqUGfQF3vHhJq
@@ -463,6 +485,36 @@ export class connectToDB {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_ZAYbXAnkrEdZ9V94');
+    }
+  }
+
+  async sd_NoVIpWsl1u7TGCKR(bh) {
+    try {
+      bh.local.url = 'http://localhost:8081/api/rate-art';
+      bh.input.body = bh.input.art;
+      bh = await this.sd_20A0rHCTdiBjKXqb(bh);
+      //appendnew_next_sd_NoVIpWsl1u7TGCKR
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_NoVIpWsl1u7TGCKR');
+    }
+  }
+
+  async sd_20A0rHCTdiBjKXqb(bh) {
+    try {
+      let requestOptions = {
+        url: bh.local.url,
+        method: 'put',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: bh.input.body,
+      };
+      bh.local.result = await this.sdService.nHttpRequest(requestOptions);
+      //appendnew_next_sd_20A0rHCTdiBjKXqb
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_20A0rHCTdiBjKXqb');
     }
   }
 

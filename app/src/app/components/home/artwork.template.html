@@ -1,7 +1,18 @@
 <div fxLayout="row wrap" class="margin-bottom2em marginTop2em" fxLayoutAlign="center center" [fxShow]="true">
-  <div fxLayout="column wrap" class="fullWidth" fxFlex="80" fxLayoutGap="2em" fxLayoutAlign="center center" [fxShow]="true">
-    <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true">
-      <div fxLayout="column wrap" fxFlex="80" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/images/about.jpg" class="height350px width350px borderRadius20 fullWidth"></div>
+  <div fxLayout="column wrap" class="fullWidth" fxFlex="80" fxLayoutGap="1em" fxLayoutAlign="center center" [fxShow]="true">
+    <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+      <div fxLayout="column wrap" fxFlex="80" fxLayoutAlign="start stretch" [fxShow]="true">
+        <p class="centerText fontSize4em Monoton">
+          ARTWORK</p>
+        <form class="fullWidth">
+          <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="center center" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Search" [required]="false" #search (input)="filterArtsits(search.value)">
+              <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+          </div>
+        </form>
+      </div>
     </div>
     <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.arr?.length &lt;= 0">
       <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="center center" [fxShow]="true">
@@ -10,7 +21,7 @@
       </div>
     </div>
     <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="space-around center" [fxShow]="true" *ngIf="page.arr?.length &gt; 0">
-      <div fxLayout="column wrap" style="margin-bottom:10px;" fxFlex="32" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let item of page.arr; let i = index">
+      <div fxLayout="column wrap" class="marginbottom10px margintop1em" fxFlex="32" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let item of page.arr; let i = index">
         <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" (click)="showArtInfo(item)">
           <div fxLayout="column wrap" fxFlex="100" fxLayoutGap="1em" fxLayoutAlign="center center" [fxShow]="true"><img [src]="item.artwork" style="margin-top:0.5em" class="curser roundImg">
             <p>

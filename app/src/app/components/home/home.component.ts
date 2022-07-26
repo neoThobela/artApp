@@ -78,14 +78,50 @@ export class homeComponent {
     }
   }
 
+  toolbar(index: any = undefined, ...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { index: index };
+      bh.local = {};
+      bh = this.sd_txan80rphXCiSp6q(bh);
+      this.sd_IHmzTnGXUHdHMc1N(bh);
+      //appendnew_next_toolbar
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_zvtyScfl6nbmTfLX');
+    }
+  }
+
   //appendnew_flow_homeComponent_start
 
   sd_UZEj1ChhDxSM2kF0(bh) {
     try {
+      this.page.toolbar = undefined;
+      this.page.selectedIndex = 0;
+      bh = this.sd_w2M8fGf1qwgzo7o8(bh);
       //appendnew_next_sd_UZEj1ChhDxSM2kF0
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_UZEj1ChhDxSM2kF0');
+    }
+  }
+
+  sd_w2M8fGf1qwgzo7o8(bh) {
+    try {
+      const page = this.page;
+      page.toolbar = [
+        { title: 'Home', route: '/home/display' },
+        { title: 'Events', route: '/home/events' },
+        { title: 'About Us', route: '/home/about' },
+        { title: 'Artwork', route: '/home/artwork' },
+        { title: 'Shop', route: '/home/shop' },
+      ];
+
+      //appendnew_next_sd_w2M8fGf1qwgzo7o8
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_w2M8fGf1qwgzo7o8');
     }
   }
 
@@ -132,6 +168,28 @@ export class homeComponent {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_QbGmXwGLiufiFfEK');
+    }
+  }
+
+  sd_txan80rphXCiSp6q(bh) {
+    try {
+      const page = this.page;
+      page.selectedIndex = bh.input.index;
+
+      //appendnew_next_sd_txan80rphXCiSp6q
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_txan80rphXCiSp6q');
+    }
+  }
+
+  sd_IHmzTnGXUHdHMc1N(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), bh.input.index);
+      //appendnew_next_sd_IHmzTnGXUHdHMc1N
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_IHmzTnGXUHdHMc1N');
     }
   }
 

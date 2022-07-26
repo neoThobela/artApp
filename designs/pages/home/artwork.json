@@ -44,12 +44,19 @@
             {
                 "textIp": "arr",
                 "typedIpValue": {
-                    "type": "this.page",
-                    "value": ""
+                    "type": "literal",
+                    "value": "[]"
                 }
             },
             {
                 "textIp": "allArtists",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
+            },
+            {
+                "textIp": "data",
                 "typedIpValue": {
                     "type": "literal",
                     "value": "[]"
@@ -297,7 +304,7 @@
         "functionName": "rateArt",
         "category": "General",
         "x": 65,
-        "y": 320,
+        "y": 280,
         "wires": [
             [
                 "sd_Ro6iepRQlEkBUWUI"
@@ -314,41 +321,16 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "// reset the rates\n\nfor(let i = 0; i < page.arr[bh.input.itemIndex]['rate'].length; i++){\n    page.arr[bh.input.itemIndex]['rate'][i]['rate'] = false;\n    page.arr[bh.input.itemIndex]['rate'][i]['icon'] = 'star_border';\n}\n\nfor(let i = 0; i < bh.input.ind + 1; i++){\n    page.arr[bh.input.itemIndex]['rate'][i]['rate'] = true;\n    page.arr[bh.input.itemIndex]['rate'][i]['icon'] = 'star';\n}\n\n// Update rates\n",
+        "script": "// reset the rates\n\nfor(let i = 0; i < page.arr[bh.input.itemIndex]['rate'].length; i++){\n    page.arr[bh.input.itemIndex]['rate'][i]['rate'] = false;\n    page.arr[bh.input.itemIndex]['rate'][i]['icon'] = 'star_border';\n}\n\nfor(let i = 0; i < bh.input.ind + 1; i++){\n    page.arr[bh.input.itemIndex]['rate'][i]['rate'] = true;\n    page.arr[bh.input.itemIndex]['rate'][i]['icon'] = 'star';\n}\n\n// Update rates",
         "functionName": "sd_Ro6iepRQlEkBUWUI",
         "category": "Function",
-        "x": 205,
-        "y": 320,
+        "x": 185,
+        "y": 280,
         "wires": [
             [
-                "sd_cdAKkPmI1RgGSA57"
+                "sd_tdqn0ZcKdPBQ6dtc"
             ]
         ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "generated": true
-    },
-    {
-        "id": "sd_cdAKkPmI1RgGSA57",
-        "type": "Log",
-        "z": "sd_Cu54QWQnD3m2CoTj",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "outputs": 0,
-        "logObject": "this.page.arr[bh.input.itemIndex]['rate']",
-        "functionName": "sd_cdAKkPmI1RgGSA57",
-        "category": "General",
-        "x": 325,
-        "y": 320,
-        "wires": [],
-        "__ssdTypeInputs__": {
-            "logObject": {
-                "type": "this.page",
-                "value": "arr[bh.input.itemIndex]['rate']",
-                "constant": false
-            }
-        },
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true
@@ -421,11 +403,113 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log('response',page.arr)",
+        "script": "page.arr.forEach(item => page.data.push(item));",
         "functionName": "sd_ZKmbjNwZZBl0od59",
         "category": "Function",
         "x": 445,
         "y": 60,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_TrFvdOsVETlLPaSC",
+        "type": "PageStart",
+        "z": "sd_Cu54QWQnD3m2CoTj",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "filter artsits",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "searchString",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "filterArtsits",
+        "category": "General",
+        "x": 65,
+        "y": 380,
+        "wires": [
+            [
+                "sd_RYcYabq2sHvyeHHt"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "artworkComponent"
+    },
+    {
+        "id": "sd_RYcYabq2sHvyeHHt",
+        "type": "Script",
+        "z": "sd_Cu54QWQnD3m2CoTj",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.arr = page.data.filter((item) => item.artistName.includes(bh.input.searchString));",
+        "functionName": "sd_RYcYabq2sHvyeHHt",
+        "category": "Function",
+        "x": 185,
+        "y": 380,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_tdqn0ZcKdPBQ6dtc",
+        "type": "PageCallService",
+        "z": "sd_Cu54QWQnD3m2CoTj",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_fSGlHyApcayt5tky",
+            "type": "tab",
+            "createdDate": "2022-07-20T13:20:26.916Z",
+            "label": "connectToDB",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_VX0XWlym1mvEim7t",
+            "flowName": "rateArt"
+        },
+        "inputVariables": [
+            {
+                "key": "art",
+                "map": true,
+                "valueType": "this.page",
+                "value": "arr[bh.input.itemIndex]"
+            }
+        ],
+        "outputMapping": [],
+        "serviceImportPath": "app/sd-services/connectToDB",
+        "startName": "rateArt",
+        "inputParams": [
+            "this.page.arr[bh.input.itemIndex]"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_tdqn0ZcKdPBQ6dtc",
+        "category": "General",
+        "x": 300,
+        "y": 280,
         "wires": [
             []
         ],

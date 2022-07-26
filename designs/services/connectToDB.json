@@ -255,7 +255,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
-        "generated": true
+        "generated": true,
+        "serviceName": "connectToDB"
     },
     {
         "id": "sd_adRrqUGfQF3vHhJq",
@@ -264,7 +265,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log('client',bh)\nbh.local.url = 'http://localhost:8081/api/get-all-artist';",
+        "script": "bh.local.url = 'http://localhost:8081/api/get-all-artist';",
         "functionName": "sd_adRrqUGfQF3vHhJq",
         "category": "Function",
         "x": 245,
@@ -349,6 +350,7 @@
         "nodeType": "flow",
         "name": "",
         "method": "post",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.local.url",
         "urlMappingObj": {
@@ -356,8 +358,10 @@
             "mapVarValue": "url"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -373,9 +377,11 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_PbCehRYeSVMecPyY",
         "category": "HTTP",
@@ -665,6 +671,7 @@
         "nodeType": "flow",
         "name": "",
         "method": "post",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.local.url",
         "urlMappingObj": {
@@ -672,8 +679,10 @@
             "mapVarValue": "url"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -689,9 +698,11 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_mJcsAhYzEN47ipDh",
         "category": "HTTP",
@@ -747,7 +758,9 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -805,6 +818,7 @@
         "nodeType": "flow",
         "name": "",
         "method": "get",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.local.url",
         "urlMappingObj": {
@@ -812,11 +826,14 @@
             "mapVarValue": "url"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
+        "reqBody": "",
         "reqBodyObj": {
             "mapVarType": "bh",
             "mapVarValue": ""
@@ -828,9 +845,11 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_ZAYbXAnkrEdZ9V94",
         "category": "HTTP",
@@ -858,6 +877,107 @@
         "wires": [
             [
                 "sd_ZAYbXAnkrEdZ9V94"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_VX0XWlym1mvEim7t",
+        "type": "Start",
+        "z": "sd_fSGlHyApcayt5tky",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "rate art",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "art",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "rateArt",
+        "category": "General",
+        "x": 105,
+        "y": 880,
+        "wires": [
+            [
+                "sd_NoVIpWsl1u7TGCKR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "connectToDB"
+    },
+    {
+        "id": "sd_20A0rHCTdiBjKXqb",
+        "type": "HttpRequest",
+        "z": "sd_fSGlHyApcayt5tky",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "put",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.input.body",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_20A0rHCTdiBjKXqb",
+        "category": "HTTP",
+        "x": 325,
+        "y": 880,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_NoVIpWsl1u7TGCKR",
+        "type": "Script",
+        "z": "sd_fSGlHyApcayt5tky",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.url = 'http://localhost:8081/api/rate-art';\nbh.input.body = bh.input.art;",
+        "functionName": "sd_NoVIpWsl1u7TGCKR",
+        "category": "Function",
+        "x": 205,
+        "y": 880,
+        "wires": [
+            [
+                "sd_20A0rHCTdiBjKXqb"
             ]
         ],
         "__n_excludedFromValidation__": {},

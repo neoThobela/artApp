@@ -6,18 +6,10 @@
           <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true"><label class="yellowlines bold600 fontSize24 primaryBlackText">
               ART GALLERY</label></div>
           <div fxLayout="column wrap" fxFlex="80" fxLayoutAlign="start stretch" [fxShow]="true">
-            <div fxLayout="row wrap" class="bluebottom" fxLayoutGap="1em" fxLayoutAlign="end center" [fxShow]="true">
-              <div fxLayout="column wrap" class="curser primaryBlackText" fxLayoutAlign="start stretch" [fxShow]="true"><label routerLink="display" class="curser bluebottom">
-                  Home</label></div>
-              <div fxLayout="column wrap" class="curser primaryBlackText" fxLayoutAlign="start stretch" [fxShow]="true"><label routerLink="events" class="curser bluebottom">
-                  Events</label></div>
-              <div fxLayout="column wrap" class="curser primaryBlackText" fxLayoutAlign="start stretch" [fxShow]="true"><label routerLink="about" class="curser bluebottom">
-                  About Us</label></div>
-              <div fxLayout="column wrap" class="primaryBlackText curser" fxLayoutAlign="start stretch" [fxShow]="true"><label routerLink="/home/artwork" class="curser bluebottom">
-                  Artwork</label></div>
-              <div fxLayout="column wrap" class="primaryBlackText curser" fxLayoutAlign="start stretch" [fxShow]="true"><label routerLink="shop" class="bluebottom curser">
-                  Shop</label></div>
-              <div fxLayout="column wrap" class="primaryBlackText curser" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="post"><label class="yellowTexthover curser Monoton bluebottom">
+            <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="end center" [fxShow]="true">
+              <div fxLayout="column wrap" class="curser primaryBlackText" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let item of page.toolbar;let i =index" [ngClass]="{&apos;bluebottom&apos;:page.selectedIndex==i}" (click)="toolbar(i)"><label routerLink="{{item.route}}" class="curser">
+                  {{item.title}}</label></div>
+              <div fxLayout="column wrap" class="primaryBlackText curser" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="post"><label class="yellowTexthover curser Monoton">
                   POST</label></div>
             </div>
           </div>

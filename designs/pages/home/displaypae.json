@@ -138,6 +138,13 @@
         "nodeType": "flow",
         "name": "",
         "path": "/home/category",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
         "functionName": "sd_SSYkbQIk6gYHuRYU",
         "category": "Navigation",
         "x": 385,
@@ -213,7 +220,15 @@
                 "value": "searchAll"
             }
         ],
-        "outputMapping": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "client_result",
+                "valueType": "bh",
+                "value": "",
+                "mapVarName": "client_result"
+            }
+        ],
         "serviceImportPath": "app/sd-services/connectToDB",
         "startName": "getAllArtists",
         "inputParams": [
@@ -263,6 +278,13 @@
         "nodeType": "flow",
         "name": "",
         "path": "/home/artwork",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
         "functionName": "sd_ZAG28HL0hfZp3dP2",
         "category": "Navigation",
         "x": 425,
