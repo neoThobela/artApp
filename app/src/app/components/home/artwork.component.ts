@@ -104,7 +104,7 @@ export class artworkComponent {
     try {
       this.page.arr = undefined;
       this.page.allArtists = [];
-      bh = this.sd_Hc5AvG3dGmxNEmWP(bh);
+      bh = this.sd_jMresiAMJWqmOT81(bh);
       //appendnew_next_sd_ey1AEYbLHYwIcMTh
       return bh;
     } catch (e) {
@@ -112,27 +112,32 @@ export class artworkComponent {
     }
   }
 
-  sd_Hc5AvG3dGmxNEmWP(bh) {
+  async sd_jMresiAMJWqmOT81(bh) {
     try {
       const connectToDBInstance: connectToDB =
         this.__page_injector__.get(connectToDB);
-      this.page.arr = connectToDBInstance['allArtists'];
-      bh = this.sd_w36c2SeTfcyhcV3k(bh);
-      //appendnew_next_sd_Hc5AvG3dGmxNEmWP
+
+      let outputVariables = await connectToDBInstance.getAllArtists(
+        bh.input.searchAll
+      );
+      this.page.arr = outputVariables.local.client_result;
+
+      bh = this.sd_ZKmbjNwZZBl0od59(bh);
+      //appendnew_next_sd_jMresiAMJWqmOT81
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_Hc5AvG3dGmxNEmWP');
+      return await this.errorHandler(bh, e, 'sd_jMresiAMJWqmOT81');
     }
   }
 
-  sd_w36c2SeTfcyhcV3k(bh) {
+  sd_ZKmbjNwZZBl0od59(bh) {
     try {
       const page = this.page;
-      console.log(page.arr);
-      //appendnew_next_sd_w36c2SeTfcyhcV3k
+      console.log('response', page.arr);
+      //appendnew_next_sd_ZKmbjNwZZBl0od59
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_w36c2SeTfcyhcV3k');
+      return this.errorHandler(bh, e, 'sd_ZKmbjNwZZBl0od59');
     }
   }
 
@@ -153,19 +158,37 @@ export class artworkComponent {
   sd_Ro6iepRQlEkBUWUI(bh) {
     try {
       const page = this.page; // reset the rates
+
       for (let i = 0; i < page.arr[bh.input.itemIndex]['rate'].length; i++) {
         page.arr[bh.input.itemIndex]['rate'][i]['rate'] = false;
         page.arr[bh.input.itemIndex]['rate'][i]['icon'] = 'star_border';
       }
-      // Update rates
+
       for (let i = 0; i < bh.input.ind + 1; i++) {
         page.arr[bh.input.itemIndex]['rate'][i]['rate'] = true;
         page.arr[bh.input.itemIndex]['rate'][i]['icon'] = 'star';
       }
+
+      // Update rates
+
+      this.sd_cdAKkPmI1RgGSA57(bh);
       //appendnew_next_sd_Ro6iepRQlEkBUWUI
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_Ro6iepRQlEkBUWUI');
+    }
+  }
+
+  sd_cdAKkPmI1RgGSA57(bh) {
+    try {
+      console.log(
+        new Date().toLocaleTimeString(),
+        this.page.arr[bh.input.itemIndex]['rate']
+      );
+      //appendnew_next_sd_cdAKkPmI1RgGSA57
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_cdAKkPmI1RgGSA57');
     }
   }
 

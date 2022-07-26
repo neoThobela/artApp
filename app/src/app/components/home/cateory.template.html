@@ -1,4 +1,10 @@
 <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.category?.length &lt;= 0">
+    <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="center center" [fxShow]="true">
+      <h2>
+        No Data Found</h2>
+    </div>
+  </div>
   <div fxLayout="row wrap" style="margin-top:5em" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
     <div fxLayout="column wrap" class="curser" fxFlex="22" fxLayoutGap="5px" fxLayoutAlign="center center" [fxShow]="true" *ngFor="let item of page.category" (click)="showArt(item)"><img [src]="item.artwork" style="margin-top:0.5em" class="roundImg">
       <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">

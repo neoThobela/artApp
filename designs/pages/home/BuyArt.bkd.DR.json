@@ -19,6 +19,7 @@
             {
                 "_key": "class",
                 "_value": [
+                    "margin-bottom2em",
                     "fullWidth"
                 ],
                 "_type": "dav",
@@ -636,6 +637,7 @@
                                 {
                                     "_key": "class",
                                     "_value": [
+                                        "height150px",
                                         "img"
                                     ],
                                     "_type": "dav",

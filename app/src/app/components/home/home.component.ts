@@ -8,6 +8,8 @@ import {
   Input,
   Output,
   EventEmitter,
+  SimpleChanges,
+  OnChanges,
 } from '@angular/core'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
@@ -62,20 +64,6 @@ export class homeComponent {
     }
   }
 
-  getArtsits(searchAll = '', ...others) {
-    try {
-      var bh: any = this.__page_injector__
-        .get(SDPageCommonService)
-        .constructFlowObject(this);
-      bh.input = { searchAll: searchAll };
-      bh.local = {};
-      bh = this.sd_3db5doONxKJO4xwW(bh);
-      //appendnew_next_getArtsits
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_uLXJNBQ5d1MFajFA');
-    }
-  }
-
   findCategory(textToSearch = '', ...others) {
     try {
       var bh: any = this.__page_injector__
@@ -98,51 +86,6 @@ export class homeComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_UZEj1ChhDxSM2kF0');
-    }
-  }
-
-  async sd_3db5doONxKJO4xwW(bh) {
-    try {
-      const connectToDBInstance: connectToDB =
-        this.__page_injector__.get(connectToDB);
-
-      let outputVariables = await connectToDBInstance.getAllArtists(
-        bh.input.searchAll
-      );
-
-      bh = this.sd_6QFUuOFiTw72AMAC(bh);
-      //appendnew_next_sd_3db5doONxKJO4xwW
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_3db5doONxKJO4xwW');
-    }
-  }
-
-  sd_6QFUuOFiTw72AMAC(bh) {
-    try {
-      const page = this.page;
-      console.log('response', page);
-      bh = this.sd_1S59GCj3MXydRn15(bh);
-      //appendnew_next_sd_6QFUuOFiTw72AMAC
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_6QFUuOFiTw72AMAC');
-    }
-  }
-
-  async sd_1S59GCj3MXydRn15(bh) {
-    try {
-      const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/home/artwork');
-      await this.__page_injector__
-        .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
-          queryParams: Object.assign(qprm, ''),
-        });
-      //appendnew_next_sd_1S59GCj3MXydRn15
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_1S59GCj3MXydRn15');
     }
   }
 

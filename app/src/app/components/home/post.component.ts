@@ -16,6 +16,7 @@ import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
 import { connectToDB } from 'app/sd-services/connectToDB'; //_splitter_
 import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 import { FormControl, Validators, FormBuilder } from '@angular/forms'; //_splitter_
 //append_imports_end
 
@@ -73,7 +74,7 @@ export class postComponent {
         .constructFlowObject(this);
       bh.input = { form: form };
       bh.local = {};
-      bh = this.sd_qB8wM26sw8xQjFBA(bh);
+      bh = this.sd_KL728UlUCYDePWAJ(bh);
       //appendnew_next_post
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_lj1yzI90YKIbQI6q');
@@ -103,7 +104,6 @@ export class postComponent {
         artwork: '',
         year: '',
         info: '',
-        pictureId: '',
         price: '',
       };
       //appendnew_next_sd_lweZzvu9TlSFT87P
@@ -113,12 +113,31 @@ export class postComponent {
     }
   }
 
+  sd_KL728UlUCYDePWAJ(bh) {
+    try {
+      const page = this.page;
+      bh.input.body = bh.input.form;
+      bh.input.body['rate'] = [
+        { rate: false, icon: 'star_border' },
+        { rate: false, icon: 'star_border' },
+        { rate: false, icon: 'star_border' },
+        { rate: false, icon: 'star_border' },
+        { rate: false, icon: 'star_border' },
+      ];
+      bh = this.sd_qB8wM26sw8xQjFBA(bh);
+      //appendnew_next_sd_KL728UlUCYDePWAJ
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_KL728UlUCYDePWAJ');
+    }
+  }
+
   async sd_qB8wM26sw8xQjFBA(bh) {
     try {
       const connectToDBInstance: connectToDB =
         this.__page_injector__.get(connectToDB);
 
-      let outputVariables = await connectToDBInstance.pOST(bh.input.form);
+      let outputVariables = await connectToDBInstance.pOST(bh.input.body);
 
       bh = this.sd_HLGoAjLF1F6IUVQd(bh);
       //appendnew_next_sd_qB8wM26sw8xQjFBA
@@ -136,10 +155,25 @@ export class postComponent {
         horizontalPosition: 'center',
         verticalPosition: 'bottom',
       });
+      bh = this.sd_cfegCfAqTLnua4ON(bh);
       //appendnew_next_sd_HLGoAjLF1F6IUVQd
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_HLGoAjLF1F6IUVQd');
+    }
+  }
+
+  async sd_cfegCfAqTLnua4ON(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/home/artwork');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+      //appendnew_next_sd_cfegCfAqTLnua4ON
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_cfegCfAqTLnua4ON');
     }
   }
 

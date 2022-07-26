@@ -69,7 +69,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.post= {\n    title:\"\",\n    artistName:'',\n    cateory:'',\n    artwork:'',\n    year:'',\n    info:'',\n    pictureId:'',\n    price:''\n};",
+        "script": "page.post= {\n    title:\"\",\n    artistName:'',\n    cateory:'',\n    artwork:'',\n    year:'',\n    info:'',\n    price:''\n};",
         "functionName": "sd_lweZzvu9TlSFT87P",
         "category": "Function",
         "x": 380,
@@ -107,7 +107,7 @@
         "y": 180,
         "wires": [
             [
-                "sd_qB8wM26sw8xQjFBA"
+                "sd_KL728UlUCYDePWAJ"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -142,20 +142,20 @@
                 "key": "myForm",
                 "map": true,
                 "valueType": "bh.input",
-                "value": "form"
+                "value": "body"
             }
         ],
         "outputMapping": [],
         "serviceImportPath": "app/sd-services/connectToDB",
         "startName": "pOST",
         "inputParams": [
-            "bh.input.form"
+            "bh.input.body"
         ],
         "accept_bh": false,
         "accept_csd": true,
         "functionName": "sd_qB8wM26sw8xQjFBA",
         "category": "General",
-        "x": 365,
+        "x": 325,
         "y": 180,
         "wires": [
             [
@@ -165,30 +165,6 @@
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true
-    },
-    {
-        "id": "sd_A9sivYAILPKWPLut",
-        "type": "Log",
-        "z": "sd_VEIfS9iQyjmNmYgv",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "outputs": 0,
-        "logObject": "bh.input.form",
-        "functionName": "sd_A9sivYAILPKWPLut",
-        "category": "General",
-        "x": 220,
-        "y": 260,
-        "wires": [],
-        "__ssdTypeInputs__": {
-            "logObject": {
-                "type": "bh.input",
-                "value": "form",
-                "constant": false
-            }
-        },
-        "__n_excludedFromValidation__": {},
-        "generateNext": true
     },
     {
         "id": "sd_HLGoAjLF1F6IUVQd",
@@ -218,8 +194,50 @@
         "direction": "ltr",
         "functionName": "sd_HLGoAjLF1F6IUVQd",
         "category": "General",
-        "x": 520,
-        "y": 140,
+        "x": 465,
+        "y": 180,
+        "wires": [
+            [
+                "sd_cfegCfAqTLnua4ON"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_KL728UlUCYDePWAJ",
+        "type": "Script",
+        "z": "sd_VEIfS9iQyjmNmYgv",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.input.body = bh.input.form;\nbh.input.body['rate'] = [{rate: false, icon: 'star_border'}, {rate: false, icon: 'star_border'}, {rate: false, icon: 'star_border'}, {rate: false, icon: 'star_border'}, {rate: false, icon: 'star_border'}];",
+        "functionName": "sd_KL728UlUCYDePWAJ",
+        "category": "Function",
+        "x": 205,
+        "y": 180,
+        "wires": [
+            [
+                "sd_qB8wM26sw8xQjFBA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_cfegCfAqTLnua4ON",
+        "type": "Navigation",
+        "z": "sd_VEIfS9iQyjmNmYgv",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/home/artwork",
+        "functionName": "sd_cfegCfAqTLnua4ON",
+        "category": "Navigation",
+        "x": 585,
+        "y": 180,
         "wires": [
             []
         ],

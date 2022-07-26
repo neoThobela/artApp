@@ -158,6 +158,27 @@
         "x": 365,
         "y": 280,
         "wires": [
+            [
+                "sd_JcaJMiVzz21arLG8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_JcaJMiVzz21arLG8",
+        "type": "Navigation",
+        "z": "sd_i76z259sWzpRGGDJ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/home/events",
+        "functionName": "sd_JcaJMiVzz21arLG8",
+        "category": "Navigation",
+        "x": 520,
+        "y": 280,
+        "wires": [
             []
         ],
         "__n_excludedFromValidation__": {},

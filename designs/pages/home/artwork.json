@@ -62,90 +62,13 @@
         "y": 60,
         "wires": [
             [
-                "sd_Hc5AvG3dGmxNEmWP"
+                "sd_jMresiAMJWqmOT81"
             ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "generated": true,
         "serviceName": "artworkComponent"
-    },
-    {
-        "id": "sd_w36c2SeTfcyhcV3k",
-        "type": "Script",
-        "z": "sd_Cu54QWQnD3m2CoTj",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "console.log(page.arr)",
-        "functionName": "sd_w36c2SeTfcyhcV3k",
-        "category": "Function",
-        "x": 585,
-        "y": 200,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "generated": true
-    },
-    {
-        "id": "sd_Hc5AvG3dGmxNEmWP",
-        "type": "PageServiceVariables",
-        "z": "sd_Cu54QWQnD3m2CoTj",
-        "viewType": "pages",
-        "nodeType": "flow",
-        "name": "",
-        "inputs": 1,
-        "outputs": 1,
-        "operation": "get",
-        "globalVariables": [
-            {
-                "textIp": "allArtists",
-                "typedIpValue": {
-                    "type": "this.page",
-                    "value": "arr"
-                }
-            }
-        ],
-        "functionName": "sd_Hc5AvG3dGmxNEmWP",
-        "service": {
-            "id": "sd_fSGlHyApcayt5tky",
-            "type": "tab",
-            "createdDate": "2022-07-20T13:20:26.916Z",
-            "label": "connectToDB",
-            "disabled": false,
-            "info": "",
-            "functionSeq": 0,
-            "generateNext": true,
-            "serviceName": "connectToDB",
-            "relativeParentPath": "",
-            "_def": {
-                "defaults": {
-                    "label": {
-                        "value": ""
-                    },
-                    "disabled": {
-                        "value": false
-                    },
-                    "info": {
-                        "value": ""
-                    }
-                }
-            }
-        },
-        "serviceImportPath": "app/sd-services/connectToDB",
-        "category": "Function",
-        "x": 485,
-        "y": 120,
-        "wires": [
-            [
-                "sd_w36c2SeTfcyhcV3k"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "generated": true
     },
     {
         "id": "sd_aXitHtfyJQGCUNrC",
@@ -336,138 +259,6 @@
         "generated": true
     },
     {
-        "id": "sd_FgSoVQ8oEJl37Z3y",
-        "type": "PageCallService",
-        "z": "sd_Cu54QWQnD3m2CoTj",
-        "viewType": "pages",
-        "nodeType": "flow",
-        "name": "",
-        "outputs": 1,
-        "isValidNode": true,
-        "noerr": 0,
-        "service": {
-            "id": "sd_fSGlHyApcayt5tky",
-            "type": "tab",
-            "createdDate": "2022-07-20T13:20:26.916Z",
-            "label": "connectToDB",
-            "disabled": false,
-            "info": "",
-            "functionSeq": 0
-        },
-        "flow": {
-            "flowId": "sd_wWLt0L5xLxnb37WB",
-            "flowName": "getAllArtists"
-        },
-        "inputVariables": [
-            {
-                "key": "artist",
-                "map": true,
-                "valueType": "this.page",
-                "value": "arr"
-            }
-        ],
-        "outputMapping": [],
-        "serviceImportPath": "app/sd-services/connectToDB",
-        "startName": "getAllArtists",
-        "inputParams": [
-            "this.page.arr"
-        ],
-        "accept_bh": false,
-        "accept_csd": true,
-        "functionName": "sd_FgSoVQ8oEJl37Z3y",
-        "category": "General",
-        "x": 605,
-        "y": 100,
-        "wires": [
-            [
-                "sd_drykBe2Q00t3IchX"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true
-    },
-    {
-        "id": "sd_drykBe2Q00t3IchX",
-        "type": "Log",
-        "z": "sd_Cu54QWQnD3m2CoTj",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "outputs": 0,
-        "logObject": "this.page.arr",
-        "functionName": "sd_drykBe2Q00t3IchX",
-        "category": "General",
-        "x": 660,
-        "y": 100,
-        "wires": [],
-        "__ssdTypeInputs__": {
-            "logObject": {
-                "type": "this.page",
-                "value": "arr",
-                "constant": false
-            }
-        },
-        "__n_excludedFromValidation__": {},
-        "generateNext": true
-    },
-    {
-        "id": "sd_BDmYSO3qfbqyfF3u",
-        "type": "PageCallService",
-        "z": "sd_Cu54QWQnD3m2CoTj",
-        "viewType": "pages",
-        "nodeType": "flow",
-        "name": "",
-        "outputs": 1,
-        "isValidNode": true,
-        "noerr": 0,
-        "service": {
-            "id": "sd_fSGlHyApcayt5tky",
-            "type": "tab",
-            "createdDate": "2022-07-20T13:20:26.916Z",
-            "label": "connectToDB",
-            "disabled": false,
-            "info": "",
-            "functionSeq": 0
-        },
-        "flow": {
-            "flowId": "sd_wWLt0L5xLxnb37WB",
-            "flowName": "getAllArtists"
-        },
-        "inputVariables": [
-            {
-                "key": "artist",
-                "map": true,
-                "valueType": "this.page",
-                "value": "arr"
-            }
-        ],
-        "outputMapping": [
-            {
-                "mapVarType": "local",
-                "key": "client_result",
-                "valueType": "bh",
-                "value": "",
-                "mapVarName": "client_result"
-            }
-        ],
-        "serviceImportPath": "app/sd-services/connectToDB",
-        "startName": "getAllArtists",
-        "inputParams": [
-            "this.page.arr"
-        ],
-        "accept_bh": false,
-        "accept_csd": true,
-        "functionName": "sd_BDmYSO3qfbqyfF3u",
-        "category": "General",
-        "x": 345,
-        "y": 220,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": true
-    },
-    {
         "id": "sd_BHXpZj2BAXx4uWLf",
         "type": "PageStart",
         "z": "sd_Cu54QWQnD3m2CoTj",
@@ -523,11 +314,118 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "// reset the rates\nfor(let i = 0; i < page.arr[bh.input.itemIndex]['rate'].length; i++){\n    page.arr[bh.input.itemIndex]['rate'][i]['rate'] = false;\n    page.arr[bh.input.itemIndex]['rate'][i]['icon'] = 'star_border';\n}\n// Update rates\nfor(let i = 0; i < bh.input.ind + 1; i++){\n    page.arr[bh.input.itemIndex]['rate'][i]['rate'] = true;\n    page.arr[bh.input.itemIndex]['rate'][i]['icon'] = 'star';\n}",
+        "script": "// reset the rates\n\nfor(let i = 0; i < page.arr[bh.input.itemIndex]['rate'].length; i++){\n    page.arr[bh.input.itemIndex]['rate'][i]['rate'] = false;\n    page.arr[bh.input.itemIndex]['rate'][i]['icon'] = 'star_border';\n}\n\nfor(let i = 0; i < bh.input.ind + 1; i++){\n    page.arr[bh.input.itemIndex]['rate'][i]['rate'] = true;\n    page.arr[bh.input.itemIndex]['rate'][i]['icon'] = 'star';\n}\n\n// Update rates\n",
         "functionName": "sd_Ro6iepRQlEkBUWUI",
         "category": "Function",
-        "x": 165,
+        "x": 205,
         "y": 320,
+        "wires": [
+            [
+                "sd_cdAKkPmI1RgGSA57"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_cdAKkPmI1RgGSA57",
+        "type": "Log",
+        "z": "sd_Cu54QWQnD3m2CoTj",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "this.page.arr[bh.input.itemIndex]['rate']",
+        "functionName": "sd_cdAKkPmI1RgGSA57",
+        "category": "General",
+        "x": 325,
+        "y": 320,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "this.page",
+                "value": "arr[bh.input.itemIndex]['rate']",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_jMresiAMJWqmOT81",
+        "type": "PageCallService",
+        "z": "sd_Cu54QWQnD3m2CoTj",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_fSGlHyApcayt5tky",
+            "type": "tab",
+            "createdDate": "2022-07-20T13:20:26.916Z",
+            "label": "connectToDB",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_wWLt0L5xLxnb37WB",
+            "flowName": "getAllArtists"
+        },
+        "inputVariables": [
+            {
+                "key": "artist",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "searchAll"
+            }
+        ],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "client_result",
+                "valueType": "this.page",
+                "value": "arr",
+                "mapVarName": "client_result",
+                "localVar": "this.page.arr"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/connectToDB",
+        "startName": "getAllArtists",
+        "inputParams": [
+            "bh.input.searchAll"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_jMresiAMJWqmOT81",
+        "category": "General",
+        "x": 325,
+        "y": 60,
+        "wires": [
+            [
+                "sd_ZKmbjNwZZBl0od59"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_ZKmbjNwZZBl0od59",
+        "type": "Script",
+        "z": "sd_Cu54QWQnD3m2CoTj",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log('response',page.arr)",
+        "functionName": "sd_ZKmbjNwZZBl0od59",
+        "category": "Function",
+        "x": 445,
+        "y": 60,
         "wires": [
             []
         ],

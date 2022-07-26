@@ -10,47 +10,55 @@
           <mat-card class="marginbottom1em padding20px fullWidth">
             <mat-card-title class="fontSpecial font3em">{{event.eventName}}</mat-card-title>
 
-            <img mat-card-image [src]="event.imageUrl">
+            <img mat-card-image class="height296" [src]="event.imageUrl">
 
             <mat-card-content>
-              <div fxLayout="row wrap" class="margintop1em" fxLayoutAlign="start stretch" [fxShow]="true">
-                <h1 class="fontSpecial">
-                  {{event.description}}
-                </h1>
-              </div>
-              <div fxLayout="row wrap" class="fullWidth margintop1em" fxLayoutAlign="space-between center" [fxShow]="true">
-                <p class="fontSize1em">
-                  <b class="Monoton">Entrance Fee: </b> R{{event.entryFee}}
-                </p>
-              </div>
-              <div fxLayout="row wrap" class="fontSize1em fullWidth margintop1em" fxLayoutAlign="space-between center" [fxShow]="true">
-                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-                  <p>
-                    <b class="Monoton">Time: </b> {{event.time}}
-                  </p>
-                </div>
-              </div>
-              <p class="fontSize1em fullWidth margintop1em">
-                <b class="Monoton">Description: </b> {{event.description}}
-              </p>
-              <div fxLayout="row wrap" class="fullWidth margintop1em" fxLayoutAlign="space-between center" [fxShow]="true">
-                <div fxLayout="column wrap" class="fontSize1em" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
-                  <div>
-                    <p><b class="Monoton">Entrence Fee: </b> R{{event.entryFee}}</p>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div fxLayout="row wrap" class="width95" fxLayoutAlign="space-between center" [fxShow]="true">
+                  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                    <div fxLayout="row wrap" class="margintop1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <h1 class="fontSpecial">
+                        {{event.description}}
+                      </h1>
+                    </div>
+                    <div fxLayout="row wrap" class="fullWidth margintop1em" fxLayoutAlign="space-between center" [fxShow]="true">
+                      <p class="fontSize1em">
+                        <b class="Monoton">Entrance Fee: </b> R{{event.entryFee}}
+                      </p>
+                    </div>
+                    <div fxLayout="row wrap" class="fontSize1em fullWidth margintop1em" fxLayoutAlign="space-between center" [fxShow]="true">
+                      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                        <p>
+                          <b class="Monoton">Time: </b> {{event.time}}
+                        </p>
+                      </div>
+                    </div>
+                    <p class="fontSize1em fullWidth margintop1em">
+                      <b class="Monoton">Description: </b> {{event.description}}
+                    </p>
+                    <div fxLayout="row wrap" class="fullWidth margintop1em" fxLayoutAlign="space-between center" [fxShow]="true">
+                      <div fxLayout="column wrap" class="fontSize1em" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                        <div>
+                          <p><b class="Monoton">Entrence Fee: </b> R{{event.entryFee}}</p>
+                        </div>
+                        <div>
+                          <p><b class="Monoton">Address: </b> {{event.street}}</p>
+                          <p> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; {{event.suburb}}</p>
+                          <p> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; {{event.city}}</p>
+                          <p> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; {{event.code}}</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <p><b class="Monoton">Address: </b> {{event.street}}</p>
-                    <p> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; {{event.suburb}}</p>
-                    <p> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; {{event.city}}</p>
-                    <p> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; {{event.code}}</p>
+                  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                    <div fxLayout="row wrap" class="fontSize1em margintop1em fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+                      <div>
+                        <!-- <iframe width="727" height="409" src="https://www.youtube.com/embed/{{event.videoUrl}}" title="Ngizilalhlela Kuwe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                        <iframe width="100%" height="200" [src]="event.videoUrl" [title]="event.eventName" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <!-- <iframe width="100%" height="200" [src]="'https://www.youtube.com/embed/PuDB4KwGhHA'" [title]="event.eventName" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div fxLayout="row wrap" class="fontSize1em margintop1em fullWidth" fxLayoutAlign="center center" [fxShow]="true">
-                <div>
-                  <!-- <iframe width="727" height="409" src="https://www.youtube.com/embed/{{event.videoUrl}}" title="Ngizilalhlela Kuwe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-                  <iframe width="100%" height="200" [src]="event.videoUrl" [title]="event.eventName" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  <!-- <iframe width="100%" height="200" [src]="'https://www.youtube.com/embed/PuDB4KwGhHA'" [title]="event.eventName" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
                 </div>
               </div>
             </mat-card-content>

@@ -622,7 +622,7 @@
                                 },
                                 {
                                     "_key": "fxFlex",
-                                    "_value": "35",
+                                    "_value": "80",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -691,7 +691,7 @@
                                     },
                                     {
                                         "_key": "fxLayoutGap",
-                                        "_value": "",
+                                        "_value": "1em",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -703,7 +703,7 @@
                                     },
                                     {
                                         "_key": "layoutAlign",
-                                        "_value": "space-between",
+                                        "_value": "end",
                                         "_type": "a",
                                         "_attrDef": "p"
                                     },
@@ -1358,12 +1358,6 @@
                                             "_value": "true",
                                             "_type": "kv",
                                             "_attrDef": "p"
-                                        },
-                                        {
-                                            "_key": "routerLink",
-                                            "_value": "about",
-                                            "_type": "kv",
-                                            "_attrDef": "c"
                                         }
                                     ],
                                     "1ca1ae10-717b-4096-a4c6-7850e709be54": {
@@ -1554,6 +1548,12 @@
                                                 "_type": "kv",
                                                 "_attrDef": "p",
                                                 "_visibility": false
+                                            },
+                                            {
+                                                "_key": "routerLink",
+                                                "_value": "about",
+                                                "_type": "kv",
+                                                "_attrDef": "c"
                                             }
                                         ],
                                         "c52cfd1e-e7dc-fb43-4774-d74823abbc47": {
@@ -1605,6 +1605,7 @@
                                         {
                                             "_key": "class",
                                             "_value": [
+                                                "primaryBlackText",
                                                 "curser"
                                             ],
                                             "_type": "dav",
@@ -1645,21 +1646,6 @@
                                             "_value": "true",
                                             "_type": "kv",
                                             "_attrDef": "p"
-                                        },
-                                        {
-                                            "_key": "(click)",
-                                            "_value": "getArtsits(allArtist)",
-                                            "_type": "kv",
-                                            "_attrDef": "c",
-                                            "objValue": {
-                                                "nodeID": "sd_uLXJNBQ5d1MFajFA",
-                                                "functionName": "getArtsits",
-                                                "activeTree": "pages",
-                                                "z": "sd_U1FaiBaVYSMQ8kH1",
-                                                "input": [
-                                                    "allArtist"
-                                                ]
-                                            }
                                         }
                                     ],
                                     "15fbc19d-6268-2f24-87b2-b34d045dc8bd": {
@@ -1852,19 +1838,10 @@
                                                 "_visibility": false
                                             },
                                             {
-                                                "_key": "(click)",
-                                                "_value": "getArtsits(allArtists)",
+                                                "_key": "routerLink",
+                                                "_value": "/home/artwork",
                                                 "_type": "kv",
-                                                "_attrDef": "c",
-                                                "objValue": {
-                                                    "nodeID": "sd_uLXJNBQ5d1MFajFA",
-                                                    "functionName": "getArtsits",
-                                                    "activeTree": "pages",
-                                                    "z": "sd_U1FaiBaVYSMQ8kH1",
-                                                    "input": [
-                                                        "allArtists"
-                                                    ]
-                                                }
+                                                "_attrDef": "c"
                                             }
                                         ],
                                         "1584c0ac-d900-fbb9-b9b1-759550a00f41": {
@@ -1916,6 +1893,7 @@
                                         {
                                             "_key": "class",
                                             "_value": [
+                                                "primaryBlackText",
                                                 "curser"
                                             ],
                                             "_type": "dav",
@@ -1973,6 +1951,7 @@
                                             {
                                                 "_key": "class",
                                                 "_value": [
+                                                    "bluebottom",
                                                     "curser"
                                                 ],
                                                 "_type": "dav",
@@ -2202,6 +2181,7 @@
                                         {
                                             "_key": "class",
                                             "_value": [
+                                                "primaryBlackText",
                                                 "curser"
                                             ],
                                             "_type": "dav",

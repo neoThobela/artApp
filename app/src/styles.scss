@@ -34,14 +34,30 @@ p, h1{
 .marginbottom{
     margin-bottom: 0;
 }
+.margin-bottom2em{
+    margin-bottom:2em;
+}
 a{
     color:$yellow!important;
     text-decoration: none!important;
-
 }
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: $white;
+}
+.mat-input-element {
+    caret-color: white!important;
+}
+.mat-form-field-appearance-legacy.mat-focused .mat-form-field-legacy-thick {
+    color:$primaryBlack
+}
+
 .width95{
     width: 95%;
 }
+.height296{
+        height: 296px;
+}
+   
 .mat-form-field-prefix {
     padding-right: 5px;
 }
@@ -57,7 +73,7 @@ a{
 }
 .roundImg{
     border-radius: 50%;
-    width:200px;
+    width:180px;
     height:180px;
 }
 .centerText{
@@ -162,9 +178,31 @@ body{
     border-radius: 10px;
         box-shadow: 0 0 0 1px rgb(53 72 91 / 7%), 0 2px 2px rgb(0 0 0 / 1%), 0 4px 4px rgb(0 0 0 / 2%), 0 10px 8px rgb(0 0 0 / 3%), 0 15px 15px rgb(0 0 0 / 3%), 0 30px 30px rgb(0 0 0 / 4%), 0 70px 65px rgb(0 0 0 / 5%);
 }
-
+//changes
 .borderRadius{
     border-radius: 10px 0px 0px 10px;
+}
+.height150px{
+    height:150px;
+}
+.height350px{
+    height:350px;
+}
+.width350px{
+    width:350px
+}
+.width450px{
+    width:450px
+}
+.height500px{
+    height:500px
+}
+
+.height600px{
+    height:600px
+}
+.borderRadius20{
+    border-radius: 20%;
 }
 .bluebottom:focus{
     border-bottom:$primaryBlue solid 2px;

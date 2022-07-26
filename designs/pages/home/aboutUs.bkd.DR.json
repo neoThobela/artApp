@@ -201,14 +201,15 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "width: 1085px; height: 495px;",
+                            "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
                         {
                             "_key": "class",
                             "_value": [
-                                "marginTop2em"
+                                "height500px",
+                                "fullWidth"
                             ],
                             "_type": "dav",
                             "_attrDef": "p"
